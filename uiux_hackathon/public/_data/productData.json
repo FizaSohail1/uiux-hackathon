@@ -1,0 +1,226 @@
+ [
+    {
+      "id": "1",
+      "name": "Cantilever chair",
+      "code": "Y523201",
+      "price": 42.0,
+      "image": "/product-1.png",
+      "height": 178,
+      "width": 178,
+      "category": "featured"
+    },
+    {
+      "id": "2",
+      "name": "Cantilever chair",
+      "code" : "Y523201",
+      "price" : 42.0,
+      "image" : "/product-2.png",
+      "height" : 150,
+      "width" : 130,
+      "category" : "featured"
+    },
+    {
+      "id" : "3",
+      "name" : "Cantilever chair",
+      "code" : "Y523201",
+      "price" : 42.0,
+      "image" : "/product-3.png",
+      "height" : 175,
+      "width" : 175,
+      "category" : "featured"
+    },
+    {
+      "id" : 4,
+      "name" : "Cantilever chair",
+      "code" : "Y523201",
+      "price" : 42.0,
+      "image" : "/product-4.png",
+      "height" : 151,
+      "width" : 216,
+      "category" : "featured"
+    },
+    {
+      "id" : 5,
+      "name" : "Comfort Handy Craft",
+      "price" : 42.0,
+      "discountprice" : 65.00,
+      "image" : "/product-5.png",
+      "height" : 229,
+      "width" : 223,
+      "category" : "latest" 
+    },
+    {
+      "id" : 6,
+      "name" : "Comfort Handy Craft",
+      "price" : 42.0,
+      "discountprice" : 65.00,
+      "image" : "/product-6.png",
+      "height" : 245,
+      "width" : 245,
+      "category" : "latest"  
+    },
+    {
+      "id" : 7,
+      "name" : "Comfort Handy Craft",
+      "price" : 42.0,
+      "discountprice" : 65.00,
+      "image" : "/product-7.png",
+      "height" : 222.2,
+      "width" : 221.84,
+      "category" : "latest"  
+    },
+    {
+      "id" : 8,
+      "name" : "Comfort Handy Craft",
+      "price" : 42.0,
+      "discountprice" : 65.00,
+      "image" : "/product-8.png",
+      "height" : 277,
+      "width" : 267,
+      "category" : "latest"  
+    },
+    {
+      "id" : 9,
+      "name" : "Comfort Handy Craft",
+      "price" : 42.0,
+      "discountprice" : 65.00,
+      "image" : "/product-9.png",
+      "height" : 264,
+      "width" : 303,
+      "category" : "latest"  
+    },
+    {
+      "id" : 10,
+      "name" : "Comfort Handy Craft",
+      "price" : 42.0,
+      "discountprice" : 65.00,
+      "image" : "/product-4.png",
+      "height" : 178,
+      "width" : 178,
+      "category" : "latest"  
+    },
+    {
+      "id" : 11,
+      "name" : "Cantiliver Chair",
+      "price" : 42.0,
+      "discountprice" : 65.00,
+      "image" : "/product-12.png",
+      "height" : 171,
+      "width" : 171,
+      "category" : "trending"  
+    },
+    {
+      "id" : 12,
+      "name" : "Cantiliver Chair",
+      "price" : 42.0,
+      "discountprice" : 65.00,
+      "image" : "/product-12.png",
+      "height" : 187,
+      "width" : 187,
+      "category" : "trending"  
+    },
+    {
+      "id" : 13,
+      "name" : "Cantiliver Chair",
+      "price" : 42.0,
+      "discountprice" : 65.00,
+      "image" : "/product-13.png",
+      "height" : 189,
+      "width" : 197,
+      "category" : "trending"  
+    },
+    {
+      "id" : 14,
+      "name" : "Cantiliver Chair",
+      "price" : 42.0,
+      "discountprice" : 65.00,
+      "image" : "/product-14.png",
+      "height" : 211,
+      "width" : 253,
+      "category" : "trending"  
+    },
+    {
+        "id" : 15,
+        "name" : "Vel elit euismod",
+        "discountprice" : 25.00,
+        "price" : 42.00,
+        "image" : "/product-15.png",
+        "height" : 201,
+        "width" : 201
+      },
+      {
+        "id" : 16,
+        "name" : "Ultricies condimentum imperdiet",
+        "discountprice" : 25.00,
+        "price" : 42.00,
+        "image" : "/product-16.png",
+        "height" : 169,
+        "width" : 169
+      },
+      {
+        "id" : 17,
+        "name" : "Vitae suspendisse sed",
+        "discountprice" : 25.00,
+        "price" : 42.00,
+        "image" : "/product-17.png",
+        "height" : 201,
+        "width" : 201
+      },
+      {
+        "id" : 18,
+        "name" : "Sed at fermentum",
+        "discountprice" : 25.00,
+        "price" : 42.00,
+        "image" : "/product-18.png",
+        "height" : 188,
+        "width" : 188
+      },
+      {
+          "id" : 19,
+          "name" : "Fusce pellentesque at",
+          "price" : 42.0,
+          "discountprice" : 25.00,
+          "image" : "/product-19.png",
+          "height" : 139,
+          "width" : 128 
+        },
+        {
+          "id" : 20,
+          "name" : "Vestibulum magna laoreet",
+          "price" : 42.00,
+          "discountprice" : 25.00,
+          "image" : "/product-20.png",
+          "height" : 158,
+          "width" : 154 
+        },
+        {
+          "id" : 21,
+          "name" : "Sollicitudin amet orci",
+          "price" : 42.0,
+          "discountprice" : 25.00,
+          "image" : "/product-21.png",
+          "height" : 144,
+          "width" : 114 
+        },
+        {
+          "id" : 22,
+          "name" : "Ultrices mauris sit",
+          "price" : 42.00,
+          "discountprice" : 25.00,
+          "image" : "/product-22.png",
+          "height" : 167,
+          "width" : 167 
+        },
+        {
+          "id" : 23,
+          "name" : "Pellentesque condimentum ac",
+          "price" : 42.00,
+          "discountprice" : 25.00,
+          "image" : "/product-23.png",
+          "height" : 151,
+          "width" : 170 
+        }
+
+
+
+  ]
