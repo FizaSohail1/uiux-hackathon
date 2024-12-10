@@ -4,6 +4,7 @@ import { BsPerson, BsHeart } from "react-icons/bs";
 import { MdOutlineEmail } from "react-icons/md";
 import { IoCartOutline } from "react-icons/io5";
 import { FaPhoneVolume } from "react-icons/fa6";
+import Link from 'next/link';
 
 function Header() {
   return (
@@ -37,7 +38,8 @@ function Header() {
        </p>
         <p className="font-semibold text-[14px] lg:text-[16px] leading-[16px] flex ml-3">
           Wishlist <span><BsHeart /></span>         </p>
-         <p className="font-semibold text-[18px] lg:text-[16px] leading-[16px] flex">           <IoCartOutline />
+         <p className="font-semibold text-[18px] lg:text-[16px] leading-[16px] flex"> 
+          <Link href={'/cart'} > <IoCartOutline className='text-lg' /></Link>
          </p>
        </div>
        </div>

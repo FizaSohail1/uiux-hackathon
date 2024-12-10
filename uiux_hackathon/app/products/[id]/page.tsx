@@ -29,7 +29,7 @@ async function singleProductPage({ params }: ProductPostParams) {
     const {id} = params;
 
 
-    const res = await fetch('http://localhost:3000/_data/productData.json');
+    const res = await fetch('https://uiux-hackathon-a8a6.vercel.app/_data/productData.json');
     const data: IProduct[] = await res.json();
     console.log("Data ==>>", data);
 
@@ -131,7 +131,7 @@ async function singleProductPage({ params }: ProductPostParams) {
        <h2 className="text-4xl font-bold text-center text-headingsText mb-10">
           Related Products
         </h2>
-        <div className='grid grid-cols-1 lg:grid-cols-3 gap-[30px]'>
+        <div className='grid grid-cols-1 lg:grid-cols-4 gap-[20px]'>
             <div className="h-auto lg:h-[300px] 2xl:h-[380px] w-[270px]">
                 <Image src={'/related-1.jpg'}  alt='image' width={270} height={340} className="h-[340px] w-[270px] rounded-[3px] object-cover"  />
 
@@ -156,7 +156,7 @@ async function singleProductPage({ params }: ProductPostParams) {
             </div>
             </div>
 
-            <div className="h-auto lg:h-[300px] 2xl:h-[380px] w-[270px]">
+            <div className="h-auto lg:h-[300px] 2xl:h-[380px] w-[270px] ">
                 <Image src={'/related-3.jpg'}  alt='image' width={270} height={340} className="h-[340px] w-[270px] rounded-[3px] object-cover"  />
 
                 <div className='my-3 flex justify-between '>

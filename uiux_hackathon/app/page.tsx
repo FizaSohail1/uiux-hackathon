@@ -2,8 +2,6 @@ import Image from "next/image";
 import { FiHeart, FiShoppingCart } from "react-icons/fi";
 import { FaTruckFast,FaCheck } from "react-icons/fa6";
 import { PiHandCoinsFill } from "react-icons/pi";
-import { FaRegCircle } from "react-icons/fa";
-import { Ri24HoursFill } from "react-icons/ri";
  import { SlBadge } from "react-icons/sl";
 import { FaDiamond } from "react-icons/fa6";
 import { GoDiamond } from "react-icons/go";
@@ -131,7 +129,7 @@ export default function Home() {
       name: "Cantiliver Chair",
       price: 42.0,
       discountPrice: 65.00,
-      image: "/product-12.png",
+      image: "/product-1.png",
       height: 171,
       width: 171,
       category: "trending"  
@@ -151,7 +149,7 @@ export default function Home() {
       name: "Cantiliver Chair",
       price: 42.0,
       discountPrice: 65.00,
-      image: "/product-13.png",
+      image: "/product-14.png",
       height: 189,
       width: 197,
       category: "trending"  
@@ -195,7 +193,7 @@ export default function Home() {
       id: 3,
       name: "Cantiliver Chair",
       price: 42.00,
-      image: "/product-13.png",
+      image: "/product-9.png",
       height: 189,
       width: 197,
       category: "trending"  
@@ -236,7 +234,7 @@ export default function Home() {
      </div>
 
      <div className="items-center flex flex-col lg:flex-row mx-auto w-full lg:mx-[200px] 2xl:ml-default-margin ">
-       <div className=" mx-[12px] 2xl:mt-10 mt-0 max-w-[700px]">
+       <div className=" mx-[12px] 2xl:mt-10 mt-0 max-w-[700px] lg:ml-8">
          <h3 className= " text-secondary font-bold text-[16px] leading-7">
            Best Furniture For Your Castle....
          </h3>
@@ -262,9 +260,6 @@ export default function Home() {
              width={629}
             className="2xl:h-[629px] 2xl:w-[629px] h-[500px] w-[500px] object-cover"
            />
-           <div className="absolute bottom-10 right-10 bg-[#00C1FE] w-[137px] h-[138px] flex-shrink-0 items-center justify-center rounded-full">
-             <h2 className="text-white text-[35px] font-bold">50% off</h2>
-           </div>
          </div>
        </div>
      </div>
@@ -275,60 +270,6 @@ export default function Home() {
      </div>
    </div>
 </main>
-
-
-{/* <main className="w-full relative">
-  <div className="bg-maingray h-[640px] lg:h-[680px] 2xl:h-[764px]">
-    <div className="flex lg:items-start items-center lg:pl-10 2xl:pl-[71px] absolute top-0 left-0">
-      <div className="w-[200px] h-[130px] lg:w-[300px] lg:h-[300px] 2xl:w-[387px] 2xl:h-[387px] flex-shrink-0">
-        <Image
-          src="/hero-1.png"
-          alt="Hero 1"
-          height={387}
-          width={387}
-          className="w-full h-full object-cover"
-        />
-      </div>
-    </div>
-
-    <div className="flex  items-center mx-auto w-full px-4 lg:mx-[200px] 2xl:ml-default-margin gap-6 lg:gap-12">
-      <div className="mx-4 lg:mx-[12px] mt-[150px] lg:mt-0 max-w-[700px] text-center z-10 lg:z-0 lg:text-left">
-        <h3 className="text-secondary font-bold text-sm md:text-base">
-          Best Furniture For Your Castle....
-        </h3>
-        <h1 className="font-bold text-2xl md:text-4xl lg:text-[47px] leading-snug lg:leading-[50px] mt-4">
-          New Furniture Collection Trends in 2020
-        </h1>
-        <p className="font-medium text-sm md:text-base text-[#8A8FB9] mt-4 max-w-full lg:max-w-[500px]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est
-          adipiscing in phasellus non in justo.
-        </p>
-        <button className="bg-secondary text-white font-bold text-sm md:text-base px-6 py-3 lg:px-8 lg:py-4 mt-6 rounded">
-          Shop Now
-        </button>
-      </div>
-
-      <div className="relative flex justify-center items-center w-full lg:w-[706px] h-auto lg:h-[689px]">
-        <div className="absolute rounded-full w-[300px] h-[300px] lg:w-[450px] lg:h-[450px] 2xl:w-[651px] 2xl:h-[651px] bg-[#ECD2FA] opacity-40"></div>
-        <div className="absolute rounded-full w-[300px] h-[300px] lg:w-[450px] lg:h-[450px] 2xl:w-[648px] 2xl:h-[648px] bg-[#ECD2FA]">
-          <Image
-            src="/hero-2.png"
-            alt="Hero 2"
-            height={629}
-            width={629}
-            className="h-[250px] w-[250px] lg:h-[500px] lg:w-[500px] object-cover"
-          />
-        </div>
-      </div>
-    </div>
-
-    <div className="flex gap-2 mt-8 mx-auto items-center justify-center">
-      <FaDiamond className="text-secondary text-sm md:text-base" />
-      <GoDiamond className="text-secondary text-sm md:text-base" />
-      <GoDiamond className="text-secondary text-sm md:text-base" />
-    </div>
-  </div>
-</main> */}
 
 
 <section className="my-10 py-16">
@@ -423,17 +364,17 @@ export default function Home() {
             />
           </div>
 
-          <div className="flex justify-between items-center mt-4">
+          <div className="flex justify-between items-center mt-4 px-2">
             <div>
               <Link href={`/products/${product.id}`}>
-               <h3 className="text-xl font-bold text-headingsText">
+               <h3 className="text-base font-bold text-headingsText">
                   {product.name}
                 </h3>
                </Link>
               <div className="bg-[#EEEFFB] border-[2px] w-[100px] h-1 mt-2"></div>
             </div>
             <div className="flex flex-row gap-2 items-end">
-              <p className="text-textStyle font-bold">${product.price}</p>
+              <p className="text-textStyle font-bold ">${product.price}</p>
               <p className="text-[#FB2448] font-bold">${product.discountPrice}</p>
             </div>
           </div>
@@ -583,7 +524,7 @@ export default function Home() {
                   {product.name}
                 </h3>
                </Link>
-               <div className="flex  gap-2">
+               <div className="flex  gap-2 text-center justify-center">
                <p className="text-headingsText font-normal text-[14px] leading-[14px] mt-2">${product.price}</p>
                <p className="text-blue-100 font-normal text-[12px] leading-[12px] mt-2 line-through">${product.discountPrice}</p>
                </div>
@@ -599,7 +540,7 @@ export default function Home() {
 
 
 
-        <section >
+        <section className="">
         <h2 className="text-4xl font-bold text-center text-headingsText mb-10 ">
       Discount Item
     </h2>
@@ -617,7 +558,7 @@ export default function Home() {
     </ul>
 
 
-      <div  className="flex flex-col lg:flex-row mx-auto  lg:mx-[200px] 2xl:mx-default-margin">
+      <div  className="flex flex-col lg:flex-row mx-auto items-center lg:mx-[200px] 2xl:mx-default-margin lg:my-32">
 
       <div className=" mx-3 lg:mx-0 md:w-1/2 lg:w-full">
         <h2 className="text-[35px] leading-[46.2pxd text-[#00008B] mb-4 font-semibold ">
@@ -652,7 +593,7 @@ export default function Home() {
           </li>
          </div>
         </ul>
-        <button className="bg-secondary text-white px-4 py-2 rounded-md text-[18px] leading-[19.92px] mx-[25%] lg:mx-0 transition-all">
+        <button className="bg-secondary text-white px-4 py-2  text-[18px] leading-[19.92px] mx-[25%] lg:mx-0 transition-all">
           Shop Now
         </button>
       </div>
@@ -696,10 +637,11 @@ export default function Home() {
         />
           </div>
           <div className="p-4 text-center">
-          <h3 className="text-xl font-bold text-gray-800">
-            {product.name}
-          </h3>
-          <p className="text-gray-500">Code - {product.code}</p>
+          <Link href={`/products/${product.id}`}>
+               <h3 className="text-xl font-bold text-headingsText">
+                  {product.name}
+                </h3>
+               </Link>
           <p className="text-secondary font-bold mt-2">${product.price}</p>
         </div>
       </div>
@@ -734,14 +676,14 @@ export default function Home() {
    <Image src={'/logos.png'} alt="logos" height={93} width={904} className=" h-full w-full object-cover" />
    </div>
 
-   <section className="lg:py-16 my-10">
+   <section className="lg:py-16 my-10 lg:mb-32">
    <h2 className="text-4xl font-bold text-center text-headingsText mb-10 ">
      Our Blogs
     </h2>
 
    <div className="2xl:mx-default-margin lg:mx-[200px] mb-20 flex items-center justify-between lg:mb-20">
-   <div className="grid grid-cols-1 lg:grid-cols-3 gap-[30px] mx-auto space-y-44 lg:space-y-0">
-   <div className="2xl:h-[493px] 2xl:w-[370px] h-[300px] w-[300px]">
+   <div className="grid grid-cols-1 lg:grid-cols-3 gap-14 mx-auto space-y-44 lg:space-y-0">
+   <div className="2xl:h-[493px] 2xl:w-[370px] h-[300px] w-[320px]">
       <Image src={'/blog-1.jpg'} alt="blog-1" height={255} width={370} className="object-cover w-full h-full rounded-[8px]" />
       <div className="">
         <div className="flex gap-3 justify-between my-3">
@@ -762,7 +704,7 @@ export default function Home() {
       </div>
     </div>
 
-    <div className="2xl:h-[493px] 2xl:w-[370px] h-[300px] w-[300px] ">
+    <div className="2xl:h-[493px] 2xl:w-[370px] h-[300px] w-[320px] ">
       <Image src={'/blog-2.jpg'} alt="blog-1" height={255} width={370} className="object-cover w-full h-full rounded-[8px]" />
       <div className="">
         <div className="flex gap-3 justify-between my-3">
@@ -783,7 +725,7 @@ export default function Home() {
       </div>
     </div>
 
-    <div className="2xl:h-[493px] 2xl:w-[370px] h-[300px] w-[300px]">
+    <div className="2xl:h-[493px] 2xl:w-[370px] h-[300px] w-[320px]">
       <Image src={'/blog-3.jpg'} alt="blog-1" height={255} width={370} className="object-cover w-full h-full rounded-[8px]" />
       <div className="">
         <div className="flex gap-3 justify-between my-3">
