@@ -1,6 +1,6 @@
  [
     {
-      "id": "1",
+      "id": 1,
       "name": "Cantilever chair",
       "code": "Y523201",
       "price": 42.0,
@@ -10,7 +10,7 @@
       "category": "featured"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Cantilever chair",
       "code" : "Y523201",
       "price" : 42.0,
@@ -20,7 +20,7 @@
       "category" : "featured"
     },
     {
-      "id" : "3",
+      "id" : 3,
       "name" : "Cantilever chair",
       "code" : "Y523201",
       "price" : 42.0,
