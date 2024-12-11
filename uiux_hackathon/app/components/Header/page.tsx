@@ -14,19 +14,19 @@ function Header() {
          <div className="text-[#F1F1F1] my-2 flex ">
           <p className= "flex mx-2 ">
             <MdOutlineEmail className="mr-3"/>
-             <span className="font-semibold text-[16px] leading-[16px] underline decoration-solid">
+             <span className="font-semibold text-xs md:text-[16px] md:leading-[16px] underline decoration-solid">
              mhhasanul@gmail.com
             </span>
            </p>
 
            <p className= "flex mx-2 ">
-            <FaPhoneVolume />
-             <span className=" ml-4 font-semibold text-[16px] leading-[16px] underline decoration-solid">
+            <FaPhoneVolume className="text-sm"/>
+             <span className=" ml-1 md:ml-4 font-semibold text-xs md:text-[16px] md:leading-[16px] underline decoration-solid">
             (12345)67890
              </span>
            </p>
          </div>
-        <div className="flex  lg:flex-row items-center my-2 mx-4 lg:justify-between gap-4 md:gap-5 text-[#F1F1F1] lg:mx-[371px]">
+        <div className="flex  lg:flex-row items-center my-2 mx-2 md:mx-4 lg:justify-between gap-2 lg:gap-4 md:gap-5 text-[#F1F1F1] lg:mx-[371px]">
         <p className="font-semibold text-[14px] lg:text-[16px] leading-[16px] flex">
            English <span><FaAngleDown /></span>
          </p>
@@ -34,10 +34,10 @@ function Header() {
            USD <span><FaAngleDown /></span>
          </p>
          <p className="font-semibold text-[14px] lg:text-[16px] leading-[16px] flex">
-           Login <span><BsPerson /></span>
+           Login <span><BsPerson className='hidden md:block'/></span>
        </p>
         <p className="font-semibold text-[14px] lg:text-[16px] leading-[16px] flex ml-3">
-          Wishlist <span><BsHeart /></span>         </p>
+          Wishlist <span><BsHeart  className='hidden md:block'/></span>         </p>
          <p className="font-semibold text-[18px] lg:text-[16px] leading-[16px] flex"> 
           <Link href={'/cart'} > <IoCartOutline className='text-lg' /></Link>
          </p>

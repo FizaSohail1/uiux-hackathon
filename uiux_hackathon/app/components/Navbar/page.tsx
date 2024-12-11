@@ -9,12 +9,12 @@ function Navbar() {
 
   return (
     <div>
-      <nav className="flex items-center justify-between my-[23px] w-full mx-auto lg:mx-[200px] 2xl:mx-default-margin">
+      <nav className="flex items-center justify-between my-[13px] md:my-[23px]  mx-4 lg:mx-[220px] 2xl:mx-default-margin">
    
-        <div className="inline-flex items-center gap-[30px] lg:gap-[90px]">
+        <div className="inline-flex items-center gap-[30px] lg:gap-[80px] 2xl:gap-[90px] ">
  
           <div className="logo">
-            <h1 className={`font-bold text-[34px] leading-[34px] overflow-hidden`}>
+            <h1 className={`font-bold text-2xl lg:text-[34px] lg:leading-[34px] overflow-hidden`}>
               Hekto
             </h1>
           </div>
@@ -26,7 +26,7 @@ function Navbar() {
                 <FaAngleDown className="ml-2" />
               </span>
             </Link>
-            <Link href="/" className="">
+            <Link href="/cart" className="">
               Pages
             </Link>
             <Link href="/products" className="text-[#0D0E43] font-normal text-[16px] leading-[20px]">
@@ -35,8 +35,11 @@ function Navbar() {
             <Link href="/" className="text-[#0D0E43] font-normal text-[16px] leading-[20px]">
               Blog
             </Link>
-            <Link href="/cart" className="text-[#0D0E43] font-normal text-[16px] leading-[20px]">
+            <Link href="/shop" className="text-[#0D0E43] font-normal text-[16px] leading-[20px]">
               Shop
+            </Link>
+            <Link href="/shopList" className="text-[#0D0E43] font-normal text-[16px] leading-[20px]">
+              ShopList
             </Link>
             <Link href="/" className="text-[#0D0E43] font-normal text-[16px] leading-[20px]">
               Contact
@@ -44,8 +47,8 @@ function Navbar() {
           </div>
         </div>
 
-        <div className="hidden lg:flex">
-          <div className="flex items-center border border-gray-300 px-2 w-[70%]">
+        <div className="hidden lg:flex lg:ml-20 2xl:ml-0">
+          <div className="flex items-center border border-gray-300 px-2 ">
             <input type="text" className="px-6 py-1 text-sm focus:outline-none" />
           </div>
           <button className="bg-secondary text-white px-2 py-1">
@@ -54,7 +57,7 @@ function Navbar() {
         </div>
 
         <button
-          className="lg:hidden text-2xl text-[#FB2E86]"
+          className="lg:hidden text-xl text-[#FB2E86]"
           onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <FaTimes /> : <FaBars />}

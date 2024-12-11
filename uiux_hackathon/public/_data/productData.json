@@ -34,7 +34,7 @@
       "name" : "Cantilever chair",
       "code" : "Y523201",
       "price" : 42.0,
-      "image" : "/product-4.png",
+      "image" : "/trending-4.png",
       "height" : 151,
       "width" : 216,
       "category" : "featured"
@@ -124,7 +124,7 @@
       "name" : "Cantiliver Chair",
       "price" : 42.0,
       "discountprice" : 65.00,
-      "image" : "/product-13.png",
+      "image" : "/trending-4.png",
       "height" : 189,
       "width" : 197,
       "category" : "trending"  
@@ -162,7 +162,7 @@
         "name" : "Vitae suspendisse sed",
         "discountprice" : 25.00,
         "price" : 42.00,
-        "image" : "/product-17.png",
+        "image" : "/trending-4.png",
         "height" : 201,
         "width" : 201
       },

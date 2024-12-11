@@ -8,7 +8,7 @@ import { FaAngleDown } from 'react-icons/fa6';
 import { TiThLargeOutline } from "react-icons/ti";
 import { TiThList } from "react-icons/ti";
 import { FaCircle } from "react-icons/fa";
-import { Ri24HoursFill } from "react-icons/ri";
+
 import Link from 'next/link';
 function Products() {
     const featuredProducts = [
@@ -97,8 +97,6 @@ function Products() {
       ];
     
 
-
-
   return (
     <div>
         <Header />
@@ -110,25 +108,25 @@ function Products() {
         </div>
       </main>
 
-      <div className="my-16 lg:my-32 2xl:my-[410px] mx-auto lg:mx-[200px] 2xl:mx-default-margin block space-y-3 lg:flex lg:items-center lg:justify-between">
+      <div className="my-16 lg:my-32  mx-auto lg:mx-[200px] 2xl:mx-default-margin block space-y-3 lg:flex lg:items-center lg:justify-between">
         <div className="">
-          <h1 className='text-headingsText text-[22px] leading-[25.78px] font-semibold'>Ecommerce Acceories & Fashion item </h1>
-        <p className='font-normal text-[12px] leading-[14.4px] text-[#8A8FB9]'>About 9,620 results (0.62 seconds)</p>
+          <h1 className='text-headingsText text-2xl text-center md:text-left md:text-[22px] md:leading-[25.78px] font-semibold'>Ecommerce Acceories & Fashion item </h1>
+        <p className='font-normal text-[12px] leading-[14.4px] text-[#8A8FB9] text-center md:text-left'>About 9,620 results (0.62 seconds)</p>
         </div>
-        <div className="flex items-center justify-between gap-2 ">
-          <div className="flex gap-2 items-center">
+        <div className=" block md:flex items-center justify-between gap-2 mx-4 md:mx-0 ">
+          <div className="flex gap-2 items-center mt-2 md:mt-0">
             <p className='font-normal text-[16px] leading-[19.2px] text-[#3F509E]'>Pre-Pages:</p>
             <div className="h-[23px] w-[45px] 2xl:h-[25px] 2xl:w-[55px] border-[#E7E6EF] border-[1px] border-solid"></div>
           </div>
-          <div className="flex gap-2 items-center">
-            <p className='font-normal text-[16px] leading-[19.2px] text-[#3F509E]'>Sort By:</p>
+          <div className="flex gap-7 md:gap-2 items-center mt-2 md:mt-0">
+            <p className='font-normal text-[16px] leading-[19.2px] text-[#3F509E] '>Sort By:</p>
             <div className="h-[25px] w-[75px] 2xl:h-[28px] 2xl:w-[96px] border-[#E7E6EF] border-[1px] border-solid px-1">
               <p className="font-normal text-[9px] 2xl:text-[12px] leading-[18px] text-[#3F509E] flex items-center">Best Match
                 <span><FaAngleDown /></span>
               </p>
             </div>
           </div>
-          <div className="flex gap-2 items-center">
+          <div className="flex gap-2 items-center mt-2 md:mt-0">
             <p className='font-normal text-[16px] leading-[19.2px] text-[#3F509E] flex items-center gap-1'>view:
               <span><TiThList /> </span>
               <span>< TiThLargeOutline /></span>
@@ -141,16 +139,16 @@ function Products() {
 
 
      
-      <section className="">
+      <section className="lg:mb-14">
       <div className=" lg:mx-[200px] 2xl:mx-default-margin mx-auto">
 
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-between 2xl:justify-center ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-center ">
           {featuredProducts.map((product) => (
             <div
               key={product.id}
-              className="bg-white transition h-[240px] w-[240px] lg:h-[361px] my-8 md:my-4 mx-auto lg:mx-0 ">
-                <div className="h-[240px] w-[240px] lg::h-[236px] lg::w-[270px] bg-[#F6F7FB]">
+              className="bg-white transition h-[380px] w-[270px] lg:h-[361px] md:my-4 mx-auto lg:mx-0  ">
+                <div className="h-[250px] w-[240px] lg:h-[236px] lg::w-[270px] bg-[#F6F7FB] flex items-center">
                   
               <Image
                 src={product.image}
@@ -172,7 +170,7 @@ function Products() {
 
               <div className="p-4 md:text-center">
                <Link href={`/products/${product.id}`}>
-               <h3 className="text-xl font-bold text-gray-800">
+               <h3 className="text-xl font-bold text-headingsText">
                   {product.name}
                 </h3>
                

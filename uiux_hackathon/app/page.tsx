@@ -51,7 +51,7 @@ export default function Home() {
       name: "Cantilever chair",
       code: "Y523201",
       price: 42.0,
-      image: "/product-4.png",
+      image: "/trending-4.png",
       height: 151,
       width: 216,
       category: "featured"
@@ -60,7 +60,7 @@ export default function Home() {
 
   const latestProducts = [
     {
-      id: 1,
+      id: 5,
       name: "Comfort Handy Craft",
       price: 42.0,
       discountPrice: 65.00,
@@ -70,7 +70,7 @@ export default function Home() {
       category: "latest" 
     },
     {
-      id: 2,
+      id: 6,
       name: "Comfort Handy Craft",
       price: 42.0,
       discountPrice: 65.00,
@@ -80,7 +80,7 @@ export default function Home() {
       category: "latest"  
     },
     {
-      id: 3,
+      id: 7,
       name: "Comfort Handy Craft",
       price: 42.0,
       discountPrice: 65.00,
@@ -90,7 +90,7 @@ export default function Home() {
       category: "latest"  
     },
     {
-      id: 4,
+      id: 8,
       name: "Comfort Handy Craft",
       price: 42.0,
       discountPrice: 65.00,
@@ -100,7 +100,7 @@ export default function Home() {
       category: "latest"  
     },
     {
-      id: 5,
+      id: 9,
       name: "Comfort Handy Craft",
       price: 42.0,
       discountPrice: 65.00,
@@ -110,7 +110,7 @@ export default function Home() {
       category: "latest"  
     },
     {
-      id: 6,
+      id: 10,
       name: "Comfort Handy Craft",
       price: 42.0,
       discountPrice: 65.00,
@@ -125,7 +125,7 @@ export default function Home() {
     const trendingProducts = [
   
     {
-      id: 1,
+      id: 11,
       name: "Cantiliver Chair",
       price: 42.0,
       discountPrice: 65.00,
@@ -135,7 +135,7 @@ export default function Home() {
       category: "trending"  
     },
     {
-      id: 2,
+      id: 12,
       name: "Cantiliver Chair",
       price: 42.0,
       discountPrice: 65.00,
@@ -145,21 +145,21 @@ export default function Home() {
       category: "trending"  
     },
     {
-      id: 3,
+      id: 13,
       name: "Cantiliver Chair",
       price: 42.0,
       discountPrice: 65.00,
-      image: "/product-14.png",
+      image: "/trending-4.png",
       height: 189,
       width: 197,
       category: "trending"  
     },
     {
-      id: 4,
+      id: 14,
       name: "Cantiliver Chair",
       price: 42.0,
       discountPrice: 65.00,
-      image: "/product-14.png",
+      image: "/product-2.png",
       height: 211,
       width: 253,
       category: "trending"  
@@ -170,7 +170,7 @@ export default function Home() {
 
   const topProducts = [
     {
-      id: 1,
+      id: 15,
       name: "Cantilever chair",
       code: "Y523201",
       price: 42.00,
@@ -180,7 +180,7 @@ export default function Home() {
       category: "featured"
     },
     {
-      id: 2,
+      id: 16,
       name: "Cantilever chair",
       code: "Y523201",
       price: 42.00,
@@ -190,16 +190,16 @@ export default function Home() {
       category: "featured"
     },
     {
-      id: 3,
+      id: 17,
       name: "Cantiliver Chair",
       price: 42.00,
-      image: "/product-9.png",
+      image: "/trending-4.png",
       height: 189,
       width: 197,
       category: "trending"  
     },
     {
-      id: 4,
+      id: 18,
       name: "Comfort Handy Craft",
       price: 42.00,
       image: "/product-8.png",
@@ -219,10 +219,10 @@ export default function Home() {
    
 
 
-<main className="w-full  relative ">
-   <div className="bg-maingray h-auto lg:h-[680px] 2xl:h-[764px]  ">
+<main className="w-full bg-maingray py-2 ">
+   <div className=" h-auto lg:h-[650px] 2xl:h-[764px]  ">
      <div className="flex items-start  2xl:pl-[71px] absolute ">
-       <div className="w-[200px] h-[130px] lg:w-[300px] lg:h-[300px] 2xl:w-[387px] 2xl:h-[387px] flex-shrink-0">
+       <div className="w-[150px] h-[120px] lg:w-[290px] lg:h-[240px] 2xl:w-[387px] 2xl:h-[387px] flex-shrink-0">
          <Image
            src="/hero-1.png"
            alt="Hero 1"
@@ -233,12 +233,12 @@ export default function Home() {
        </div>
      </div>
 
-     <div className="items-center flex flex-col lg:flex-row mx-auto w-full lg:mx-[200px] 2xl:ml-default-margin ">
-       <div className=" mx-[12px] 2xl:mt-10 mt-0 max-w-[700px] lg:ml-8">
-         <h3 className= " text-secondary font-bold text-[16px] leading-7">
+     <div className="items-center flex flex-col lg:flex-row mx-2 lg:ml-[220px] 2xl:ml-default-margin">
+       <div className=" 2xl:mt-10 mt-32 lg:mt-0 max-w-[700px] justify-center text-center md:text-left">
+         <h3 className= " text-secondary font-bold text-sm md:text-[16px] leading-7">
            Best Furniture For Your Castle....
          </h3>
-         <h1 className= "font-bold 2xl:text-[53px] 2xl:leading-[81.98px] text-[47px] leading-[50px] mt-4 ">
+         <h1 className= "font-bold text-xl 2xl:text-[53px] 2xl:leading-[81.98px] md:text-[47px] md:leading-[50px] mt-4 ">
            New Furniture Collection Trends in 2020
          </h1>
          <p className="font-bold text-[16px] leading-[28px] text-[#8A8FB9] mt-4 max-w-[500px]">
@@ -249,42 +249,43 @@ export default function Home() {
            Shop Now
          </button>
        </div>
-       <div className="relative flex  w-[706px] h-[689px] items-start ">
-         <div className="absolute rounded-full 2xl:w-[651px] 2xl:h-[651px] w-[450px] h-[450px] bg-[#ECD2FA] opacity-40 mt-10 2xl:ml-36"></div>
+       <div className="relative flex h-[400px]  lg:w-[706px] lg:h-[689px] lg:items-start items-center justify-center ">
+         <div className="absolute rounded-full h-[300px] w-[300px] 2xl:w-[651px] 2xl:h-[651px] lg:w-[450px] lg:h-[450px] bg-[#ECD2FA] opacity-40 lg:mt-10 2xl:ml-36"></div>
 
-         <div className="absolute rounded-full 2xl:w-[648px] 2xl:h-[648px] w-[450px] h-[450px] bg-[#ECD2FA] my-20 2xl:ml-44">
+         <div className="absolute rounded-full h-[300px] w-[300px] 2xl:w-[648px] 2xl:h-[648px] lg:w-[450px] lg:h-[450px] bg-[#ECD2FA] lg:my-20 2xl:ml-44">
            <Image
              src="/hero-2.png"
             alt="Hero 2"
              height={629}
              width={629}
-            className="2xl:h-[629px] 2xl:w-[629px] h-[500px] w-[500px] object-cover"
+            className=" h-[250px] w-[250px] 2xl:h-[629px] 2xl:w-[629px] lg:h-[500px] lg:w-[500px] object-cover mt-10 mx-auto"
            />
          </div>
        </div>
+     
      </div>
-     <div className="flex gap-2 mx-auto items-center justify-center">
+   </div>
+   <div className="flex gap-2 mx-auto items-center justify-center mb-5">
         <FaDiamond className="text-secondary"/>
         <GoDiamond className="text-secondary"/>
        <GoDiamond className="text-secondary"/>
      </div>
-   </div>
 </main>
 
 
-<section className="my-10 py-16">
-      <div className=" lg:mx-[200px] 2xl:mx-default-margin">
+<section className="my-10 md:py-16 ">
+      <div className=" mx-auto lg:mx-[200px] 2xl:mx-default-margin ">
 
-        <h2 className="text-4xl font-bold text-center text-headingsText mb-10  ">
+        <h2 className=" text-2xl md:text-4xl font-bold text-center text-headingsText mb-10  ">
           Featured Products
         </h2>
 
-        <div className=" grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] justify-between flex items-center">
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] 2xl:gap-[70px] 2xl:flex  justify-center 2xl:mt-24">
           {featuredProducts.map((item) => (
             <div
               key={item.id}
-              className="bg-white shadow-lg  transition  2xl:h-[361px] w-[270px] hover:bg-[#2F1AC4]">
-                <div className="h-[200px] w-[220px] 2xl:h-[236px] 2xl:w-[270px] bg-[#F6F7FB]">
+              className="bg-white shadow-lg  transition w-[240px] 2xl:w-[270px] 2xl:h-[361px] md:w-full hover:bg-[#2F1AC4] mx-auto lg:mx-0">
+                <div className="h-[200px]  w-[240px] md:w-full 2xl:w-[270px] 2xl:h-[236px]  bg-[#F6F7FB] ">
                   
               <Image
                 src={item.image}
@@ -310,29 +311,37 @@ export default function Home() {
                   {item.name}
                 </h3>
                </Link>
+               <div className="flex gap-2 justify-center my-2">
+                <div className="h-1 w-[14px] rounded-md bg-green-200"></div>
+                <div className="h-1 w-[14px] rounded-md bg-secondary"></div>
+                <div className="h-1 w-[14px] rounded-md bg-headingsText"></div>
+
+               </div>
                 <p className="text-gray-500">Code - {item.code}</p>
-                <p className="text-secondary font-bold mt-2">${item.price}</p>
+                <p className="text-secondary font-bold my-2">${item.price}</p>
               </div>
             </div>
           ))}
-          <div className="flex gap-4 mx-auto my-5">
-            <div className="bg-secondary h-4 w-full rounded"></div>
-            <div className="bg-pink-300 h-4 w-1/3 rounded"></div>
-            <div className="bg-pink-300 h-4 w-2/5 rounded"></div>
-            <div className="bg-pink-300 h-4 w-1/2 rounded"></div>
-         </div>
         </div>
+        <div className="flex gap-2 justify-center mt-8 lg:mt-20">
+                <div className="h-1 w-6 rounded-md bg-secondary"></div>
+                <div className="h-1 w-5 rounded-md bg-pink-200"></div>
+                <div className="h-1 w-5 rounded-md bg-pink-200"></div>
+                <div className="h-1 w-5 rounded-md bg-pink-200"></div>
+               </div>
       </div>
       
     </section>
 
-    <section className="py-16">
+    
+
+    <section className="md:py-16">
   <div className="mx-auto lg:mx-[200px] 2xl:mx-default-margin">
-    <h2 className="text-4xl font-bold text-center text-headingsText mb-10  ">
+    <h2 className="text-2xl md:text-4xl font-bold text-center text-headingsText mb-10  ">
       Latest Products 
     </h2>
 
-    <ul className="flex flex-wrap justify-center  gap-8 my-8 2xl:mx-[450px] ">
+    <ul className="flex flex-wrap justify-center gap-4 md:gap-8 my-8 2xl:mx-[450px] ">
       <li className="text-secondary underline decoration-solid cursor-pointer">
         New Arrival
       </li>
@@ -347,14 +356,14 @@ export default function Home() {
       </li>
     </ul>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-between ">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px]  justify-center 2xl:mt-24">
       {latestProducts.map((product) => (
         <div
           key={product.id}
-          className="bg-white shadow-lg 2xl:h-[306px]  2xl:w-[365px] h-[310px] w-[300px]  my-5"
+          className="bg-white shadow-lg 2xl:h-[306px] md:w-full 2xl:w-[365px] h-[310px] w-[250px] lg:h-[310px] lg:w-[300px] mx-auto  my-5"
         >
 
-          <div className="h-[250px] w-full bg-[#F6F7FB] flex items-center ">
+          <div className="h-[250px] w-full bg-[#F6F7FB] flex items-center  ">
             <Image
               src={product.image}
               alt={product.name}
@@ -367,14 +376,14 @@ export default function Home() {
           <div className="flex justify-between items-center mt-4 px-2">
             <div>
               <Link href={`/products/${product.id}`}>
-               <h3 className="text-base font-bold text-headingsText">
+               <h3 className=" text-sm lg:text-base font-bold text-headingsText">
                   {product.name}
                 </h3>
                </Link>
               <div className="bg-[#EEEFFB] border-[2px] w-[100px] h-1 mt-2"></div>
             </div>
-            <div className="flex flex-row gap-2 items-end">
-              <p className="text-textStyle font-bold ">${product.price}</p>
+            <div className="flex flex-row gap-2 items-end text-sm md:text-base">
+              <p className="text-textStyle font-bold  ">${product.price}</p>
               <p className="text-[#FB2448] font-bold">${product.discountPrice}</p>
             </div>
           </div>
@@ -387,13 +396,13 @@ export default function Home() {
 
 
 
-    <div className=" my-20">
-       <h2 className="text-4xl font-bold text-center text-headingsText mb-10 ">
+    <div className=" my-10 md:my-20">
+       <h2 className=" text-2xl md:text-4xl font-bold text-center text-headingsText mb-10 ">
       What Shopex Offer
     </h2>
  
-  <div className="flex flex-col lg:flex-row gap-[30px] mx-auto 2xl:mx-default-margin lg:mx-[200px]">
-    <div className="h-[320px] w-[270px] mt-8 cursor-pointer bg-white shadow-md p-4 flex flex-col items-center justify-center">
+  <div className="flex flex-col lg:flex-row  mx-auto justify-center gap-[30px] 2xl:gap-[70px] 2xl:flex 2xl:mx-default-margin lg:mx-[200px]">
+    <div className="h-[320px] w-[250px] md:w-[270px] mt-8 cursor-pointer bg-white shadow-md p-4 flex flex-col items-center justify-center mx-auto">
       <FaTruckFast className="text-4xl text-secondary mb-4" />
       <h2 className="text-center mt-2 text-[22px] leading-[25.78px] font-bold">
         Fast Delivery
@@ -403,7 +412,7 @@ export default function Home() {
       </p>
     </div>
 
-    <div className="h-[320px] w-[270px] mt-8 cursor-pointer bg-white shadow-md p-4 flex flex-col items-center justify-center">
+    <div className="h-[320px] w-[250px] md:w-[270px] mt-8 cursor-pointer bg-white shadow-md p-4 flex flex-col items-center justify-center">
       <PiHandCoinsFill className="text-4xl text-secondary mb-4" />
       <h2 className="text-center mt-2 text-[22px] leading-[25.78px] font-bold">
         Secure Payment
@@ -413,7 +422,7 @@ export default function Home() {
       </p>
     </div>
 
-    <div className="h-[320px] w-[270px] mt-8 cursor-pointer bg-white shadow-md p-4 flex flex-col items-center justify-center">
+    <div className="h-[320px] w-[250px] md:w-[270px] mt-8 cursor-pointer bg-white shadow-md p-4 flex flex-col items-center justify-center">
       <SlBadge className="text-4xl text-secondary mb-4" />
       <h2 className="text-center mt-2 text-[22px] leading-[25.78px] font-bold">
         Premium Quality
@@ -423,7 +432,7 @@ export default function Home() {
       </p>
     </div>
 
-    <div className="h-[320px] w-[270px] mt-8 cursor-pointer bg-white shadow-md p-4 flex flex-col items-center justify-center">
+    <div className="h-[320px] w-[250px] md:w-[270px] mt-8 cursor-pointer bg-white shadow-md p-4 flex flex-col items-center justify-center">
       <SlBadge className="text-4xl text-secondary mb-4" />
       <h2 className="text-center mt-2 text-[22px] leading-[25.78px] font-bold">
         Premium Quality
@@ -437,20 +446,20 @@ export default function Home() {
 
 
 <div className="h-auto lg:h-[579px] w-full my-8  py-14 bg-maingray ">
-  <div className="2xl:mx-default-margin lg:mx-[200px]  flex flex-col lg:flex-row  items-center gap-[50px]">
+  <div className="2xl:mx-default-margin lg:mx-[200px] mx-auto justify-center flex flex-col lg:flex-row  items-center gap-[50px]">
    
-    <div className="bg-[#F5E1FC] h-[449.62px] w-[481px] flex items-center justify-center rounded-full">
+    <div className="bg-[#F5E1FC] h-[300px] w-[280px] lg:h-[449.62px] lg:w-[481px] flex items-center justify-center rounded-full">
       <Image
         src={"/hero-3.png"}
         alt="hero3"
         height={100}
         width={300}
-        className="h-[449.62px] w-[481px]  object-cover"
+        className=" h-[270px] w-[270px] lg:h-[449.62px] lg:w-[481px]  object-cover"
       />
     </div>
 
-    <div className="flex flex-col mx-3">
-      <h1 className="text-[35px] leading-[46.2px] text-headingsText font-semibold">
+    <div className="flex flex-col mx-4">
+      <h1 className=" text-2xl md:text-[35px] md:leading-[46.2px] text-headingsText font-semibold text-center md:text-left">
         Unique Features Of Latest & Trending Products
       </h1>
 
@@ -475,11 +484,11 @@ export default function Home() {
         </li>
       </ul>
 
-      <div className="flex items-center gap-5">
-        <button className="bg-secondary text-white font-bold text-[16px] px-8 py-4 mt-6">
+      <div className="flex items-center gap-3 lg:gap-5">
+        <button className="bg-secondary text-white font-bold text-xs lg:text-[16px] p-3 lg:px-8 lg:py-4 mt-6">
           Add To Cart
         </button>
-        <div>
+        <div className="mt-4">
           <h3 className="text-headingsText text-[14px] leading-[16.41px]">B&B Italian Sofa</h3>
           <p className="text-headingsText text-[14px] leading-[16.41px] font-normal">$32.00</p>
         </div>
@@ -488,17 +497,17 @@ export default function Home() {
   </div>
 </div>
 
-<section className="my-10 py-16 lg:py-16">
+<section className="my-10 md:py-16 ">
       <div className=" mx-auto lg:mx-[200px] 2xl:mx-default-margin">
 
-        <h2 className="text-4xl font-bold text-center text-headingsText mb-10 ">
+        <h2 className="text-2xl md:text-4xl font-bold text-center text-headingsText mb-10 2xl:mt-24">
           Trending Products
         </h2>
 
-        <div className=" grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] justify-between flex items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] 2xl:gap-[70px] 2xl:flex justify-center ">
           {trendingProducts.map((product) => (
-            <div key={product.id} className="bg-white shadow-lg  transition  2xl:h-[361px] w-[280px] ">
-                <div className="h-[200px] w-[200px] 2xl:h-[236px] 2xl:w-[270px] bg-[#F6F7FB] mx-2 items-center">
+            <div key={product.id} className="bg-white shadow-lg  transition   w-[240px]  2xl:h-[361px] md:w-full  md:my-0 mx-auto">
+                <div className="h-[200px]  w-[240px] md:w-full 2xl:h-[236px] 2xl:w-[270px] bg-[#F6F7FB]  items-center mx-auto">
                   
               <Image
                 src={product.image}
@@ -541,11 +550,11 @@ export default function Home() {
 
 
         <section className="">
-        <h2 className="text-4xl font-bold text-center text-headingsText mb-10 ">
+        <h2 className=" text-2xl md:text-4xl font-bold text-center text-headingsText mb-10 ">
       Discount Item
     </h2>
 
-    <ul className="flex flex-wrap justify-center 2xl:justify-start gap-8 my-8 2xl:mx-[450px] ">
+    <ul className="flex flex-wrap justify-center 2xl:justify-start gap-4 md:gap-8 my-8 2xl:mx-[450px] ">
       <li className="text-secondary underline decoration-solid cursor-pointer">
         Wood Chair
       </li>
@@ -561,10 +570,10 @@ export default function Home() {
       <div  className="flex flex-col lg:flex-row mx-auto items-center lg:mx-[200px] 2xl:mx-default-margin lg:my-32">
 
       <div className=" mx-3 lg:mx-0 md:w-1/2 lg:w-full">
-        <h2 className="text-[35px] leading-[46.2pxd text-[#00008B] mb-4 font-semibold ">
+        <h2 className=" text-2xl md:text-[35px] md:leading-[46.2px] text-[#00008B] mb-4 font-semibold ">
           20% Discount Of All Products
         </h2>
-        <h3 className="text-2xl text-secondary font-semibold mb-4">
+        <h3 className=" text-xl md:text-2xl text-secondary font-semibold mb-4">
           Eams Sofa Compact
         </h3>
         <p className="text-gray-500 mb-6">
@@ -605,7 +614,7 @@ export default function Home() {
           alt="Eams Sofa"
           width = {699}
           height = {597}
-          className="2xl:w-[699px] 2xl:h-[597px] h-[470px] w-[460px] object-cover absolute "
+          className="2xl:w-[699px] 2xl:h-[597px] h-[400px] md:h-[470px] w-[400px] object-cover absolute "
         />
         </div>
        
@@ -614,26 +623,26 @@ export default function Home() {
        
     </section>
 
-<section className="my-36 py-16">
-<div className=" lg:mx-[200px] 2xl:mx-default-margin">
+<section className=" my-10 md:my-36 md:py-16">
+<div className=" lg:mx-[200px] 2xl:mx-default-margin mx-auto">
 
-  <h2 className="text-4xl font-bold text-center text-headingsText mb-10 ">
+  <h2 className=" text-2xl md:text-4xl font-bold text-center text-headingsText mb-10 ">
     Top Categoriese
   </h2>
 
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] ">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] 2xl:gap-[70px] 2xl:flex justify-center 2xl:mt-24 ">
     {topProducts.map((product) => (
       <div
         key={product.id}
-        className="bg-white shadow-lg  transition h-[200px] w-[220px]  2xl:h-[361px]  rounded-full">
-          <div className="h-[200px] w-[220px] 2xl:h-[236px] 2xl:w-[270px] bg-[#F6F7FB] rounded-full">
+        className="  h-[280px] w-[220px]  2xl:h-[361px] mx-auto">
+          <div className="h-[200px] w-[220px] 2xl:h-[236px] 2xl:w-[270px] bg-[#F6F7FB] rounded-full mx-auto">
             
         <Image
           src={product.image}
           alt={product.name}
           height ={178}
           width = {178}
-          className={`h-[${product.height}px] w-[${product.width}px] object-cover mx-auto `}
+          className={`h-[${product.height}px] w-[${product.width}px] object-cover mx-auto my-4 `}
         />
           </div>
           <div className="p-4 text-center">
@@ -677,14 +686,14 @@ export default function Home() {
    </div>
 
    <section className="lg:py-16 my-10 lg:mb-32">
-   <h2 className="text-4xl font-bold text-center text-headingsText mb-10 ">
+   <h2 className="text-2xl md:text-4xl font-bold text-center text-headingsText mb-10 ">
      Our Blogs
     </h2>
 
-   <div className="2xl:mx-default-margin lg:mx-[200px] mb-20 flex items-center justify-between lg:mb-20">
-   <div className="grid grid-cols-1 lg:grid-cols-3 gap-14 mx-auto space-y-44 lg:space-y-0">
-   <div className="2xl:h-[493px] 2xl:w-[370px] h-[300px] w-[320px]">
-      <Image src={'/blog-1.jpg'} alt="blog-1" height={255} width={370} className="object-cover w-full h-full rounded-[8px]" />
+   <div className="2xl:mx-default-margin lg:mx-[200px] mx-auto mb-20 flex items-center justify-between lg:mb-20 2xl:mt-24">
+   <div className="grid grid-cols-1 lg:grid-cols-3 justify-center gap-[70px] 2xl:flex space-y-44 lg:space-y-0 mx-auto">
+   <div className="2xl:h-[493px] 2xl:w-[370px] h-[300px] w-[250px] lg:h-[300px] lg:w-[320px] mx-auto">
+      <Image src={'/blog-1.jpg'} alt="blog-1" height={255} width={370} className="object-cover w-full h-full rounded-[8px] mx-auto" />
       <div className="">
         <div className="flex gap-3 justify-between my-3">
           <p className="flex text-headingsText text-[14px] leading-[16.41px]">
@@ -704,7 +713,7 @@ export default function Home() {
       </div>
     </div>
 
-    <div className="2xl:h-[493px] 2xl:w-[370px] h-[300px] w-[320px] ">
+    <div className="2xl:h-[493px] 2xl:w-[370px] h-[300px] w-[250px] lg:h-[300px] lg:w-[320px] mx-auto">
       <Image src={'/blog-2.jpg'} alt="blog-1" height={255} width={370} className="object-cover w-full h-full rounded-[8px]" />
       <div className="">
         <div className="flex gap-3 justify-between my-3">
@@ -725,9 +734,9 @@ export default function Home() {
       </div>
     </div>
 
-    <div className="2xl:h-[493px] 2xl:w-[370px] h-[300px] w-[320px]">
+    <div className="2xl:h-[493px] 2xl:w-[370px] h-[300px] w-[250px] lg:h-[300px] lg:w-[320px] mx-auto">
       <Image src={'/blog-3.jpg'} alt="blog-1" height={255} width={370} className="object-cover w-full h-full rounded-[8px]" />
-      <div className="">
+      <div className="mb-24">
         <div className="flex gap-3 justify-between my-3">
           <p className="flex text-headingsText text-[14px] leading-[16.41px]">
             <span className="text-secondary text-md"><FaPenNib /></span>

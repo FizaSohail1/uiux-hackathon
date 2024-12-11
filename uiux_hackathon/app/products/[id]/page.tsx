@@ -105,8 +105,8 @@ async function singleProductPage({ params }: ProductPostParams) {
       </div>
 
       <div className="h-auto lg:h-[549px] 2xl:h-[649px] py-3 2xl:flex 2xl:items-center  w-full bg-maingray ">
-      <div className="2xl:mx-default-margin lg:mx-[200px]">
-        <ul className='text-headingsText underline decoration-solid text-lg lg:text-[24px] lg:leading-[28.13px] flex mx-auto lg:mx-0 gap-5 lg:gap-[30px] my-4 lg:my-8'>
+      <div className="2xl:mx-default-margin lg:mx-[200px] mx-4">
+        <ul className='text-headingsText underline decoration-solid text-base md:text-lg lg:text-[24px] lg:leading-[28.13px] flex mx-auto lg:mx-0 gap-2 md:gap-5 lg:gap-[30px] my-4 lg:my-8'>
           <li>Description</li>
           <li>Additional Info</li>
           <li>Reviws</li>
@@ -116,7 +116,7 @@ async function singleProductPage({ params }: ProductPostParams) {
         <h3 className='text-headingsText underline solid text-xl 2xl:text-[22px] 2xl:leading-[25.78px] '>Varius tempor</h3>
         <p className='text-[16px] leading-[29px] text-[#A9ACC6]'>Aliquam dis vulputate vulputate integer sagittis. Faucibus dolor ornare faucibus vel sed et eleifend habitasse amet. Montes, mauris varius ac est bibendum. Scelerisque a, risus ac ante. Velit consectetur neque, elit, aliquet. Non varius proin sed urna, egestas consequat laoreet diam tincidunt. Magna eget faucibus cras justo, tortor sed donec tempus. Imperdiet consequat, quis diam arcu, nulla lobortis justo netus dis. Eu in fringilla vulputate nunc nec. Dui, massa viverr .</p>
 
-        <h3 className='text-headingsText underline solid text-xl 2xl:text-[22px] 2xl:leading-[25.78px]my-3'>More Details</h3>
+        <h3 className='text-headingsText underline solid text-base 2xl:text-[22px] 2xl:leading-[25.78px] my-3'>More Details</h3>
         <ul>
             <li className='flex gap-2'> <FaArrowRight className='text-md'/> <p className='text-[16px] leading-[29px] text-[#A9ACC6] w-full'>Aliquam dis vulputate vulputate integer sagittis. Faucibus ds diam arcu, nulla lobortis justo netus dis. Eu in fringilla vulputate nunc nec. Dui, massa viverr .</p></li>
             <li className='flex gap-2'> <FaArrowRight className='text-md' /> <p className='text-[16px] leading-[29px] text-[#A9ACC6] '>Aliquam dis vulputate vulputate integer sagittis. Faucibus ds diam arcu, nulla lobortis justo netus dis. Eu in fringilla vulputate nunc nec. Dui, massa viverr .</p></li>
@@ -128,11 +128,11 @@ async function singleProductPage({ params }: ProductPostParams) {
          </div>
 
        <div className=' mx-auto lg:mx-[200px] 2xl:mx-default-margin my-36 '>
-       <h2 className="text-4xl font-bold text-center text-headingsText mb-10">
+       <h2 className="text-2xl md:text-4xl font-bold text-center text-headingsText mb-10">
           Related Products
         </h2>
-        <div className='grid grid-cols-1 lg:grid-cols-4 gap-[20px]'>
-            <div className="h-auto lg:h-[300px] 2xl:h-[380px] w-[270px]">
+        <div className='grid grid-cols-1 lg:grid-cols-4 gap-[20px] lg:my-24 justify-center mx-5'>
+            <div className="h-auto lg:h-[300px] 2xl:h-[380px] w-full mx-auto">
                 <Image src={'/related-1.jpg'}  alt='image' width={270} height={340} className="h-[340px] w-[270px] rounded-[3px] object-cover"  />
 
                 <div className='my-3 flex justify-between '>
@@ -144,7 +144,7 @@ async function singleProductPage({ params }: ProductPostParams) {
             </div>
             </div>
 
-            <div className="h-auto lg:h-[300px] 2xl:h-[380px] w-[270px]">
+            <div className="h-auto lg:h-[300px] 2xl:h-[380px] w-full mx-auto">
                 <Image src={'/related-2.jpg'}  alt='image' width={270} height={340} className="h-[340px] w-[270px] rounded-[3px] object-cover"  />
 
                 <div className='my-3 flex justify-between '>
@@ -156,7 +156,7 @@ async function singleProductPage({ params }: ProductPostParams) {
             </div>
             </div>
 
-            <div className="h-auto lg:h-[300px] 2xl:h-[380px] w-[270px] ">
+            <div className="h-auto lg:h-[360px] 2xl:h-[380px] w-full mx-auto ">
                 <Image src={'/related-3.jpg'}  alt='image' width={270} height={340} className="h-[340px] w-[270px] rounded-[3px] object-cover"  />
 
                 <div className='my-3 flex justify-between '>
@@ -168,7 +168,7 @@ async function singleProductPage({ params }: ProductPostParams) {
             </div>
             </div>
 
-            <div className=" h-auto lg:h-[300px] 2xl:h-[380px] w-[270px]">
+            <div className=" h-auto lg:h-[300px] 2xl:h-[380px] w-full mx-auto">
                 <Image src={'/related-4.jpg'}  alt='image' width={270} height={340} className="h-[340px] w-[270px] rounded-[3px] object-cover"  />
 
                 <div className='my-3 flex justify-between '>
