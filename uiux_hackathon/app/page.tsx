@@ -7,10 +7,7 @@ import { FaDiamond } from "react-icons/fa6";
 import { GoDiamond } from "react-icons/go";
 import { FaPenNib } from "react-icons/fa";
 import { FaCalendarAlt } from "react-icons/fa";
-import Navbar from "./components/Navbar/page";
-import Header from "./components//Header/page";
 import Link from "next/link";
-import Footer from "./components/Footer/page";
 
 
 
@@ -212,12 +209,6 @@ export default function Home() {
 
   return (
  <div >
-
- <Header />
-
-<Navbar />
-   
-
 
 <main className="w-full bg-maingray py-2 ">
    <div className=" h-auto lg:h-[650px] 2xl:h-[764px]  ">
@@ -761,8 +752,6 @@ export default function Home() {
    </div>
    </section>
 
-
-     <Footer />
  </div>
   );
 }

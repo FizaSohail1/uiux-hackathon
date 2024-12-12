@@ -33,9 +33,12 @@ function Header() {
       <p className="font-semibold text-[14px] lg:text-[16px] leading-[16px] flex">
            USD <span><FaAngleDown /></span>
          </p>
-         <p className="font-semibold text-[14px] lg:text-[16px] leading-[16px] flex">
+      <Link href={'/login'}>
+      <p className="font-semibold text-[14px] lg:text-[16px] leading-[16px] flex">
            Login <span><BsPerson className='hidden md:block'/></span>
        </p>
+
+      </Link>
         <p className="font-semibold text-[14px] lg:text-[16px] leading-[16px] flex ml-3">
           Wishlist <span><BsHeart  className='hidden md:block'/></span>         </p>
          <p className="font-semibold text-[18px] lg:text-[16px] leading-[16px] flex"> 

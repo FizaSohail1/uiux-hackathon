@@ -6,6 +6,7 @@ import { FaAngleDown, FaBars, FaTimes, FaSearch } from 'react-icons/fa';
 
 function Navbar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [dropdown,setDropdown] = useState(false);
 
   return (
     <div>
@@ -20,13 +21,40 @@ function Navbar() {
           </div>
 
           <div className={`hidden lg:flex space-x-8 text-[16px] leading-[20px]`}>
+           <ul className='flex'>
+            <li className='relative' 
+            onMouseEnter={() => setDropdown(true)}
+            onMouseLeave={() => setDropdown(false)}
+            >
             <Link href="/" className="text-[#FB2E86] top-[10px] flex">
               Home
               <span>
                 <FaAngleDown className="ml-2" />
               </span>
             </Link>
-            <Link href="/cart" className="">
+
+            {dropdown && (
+               <ul className="absolute top-full left-0 mt-2 bg-white shadow-lg border rounded-md text-gray-800 z-10 w-[200px]">
+               <li className="hover:bg-gray-100 px-4 py-2">
+                 <Link href="/demo">Demo</Link>
+               </li>
+               <li className="hover:bg-gray-100 px-4 py-2">
+                 <Link href="/shopList">Shop List</Link>
+               </li>
+               <li className="hover:bg-gray-100 px-4 py-2">
+                 <Link href="/about">About Us</Link>
+               </li>
+               <li className="hover:bg-gray-100 px-4 py-2">
+                 <Link href="/about">FAQ</Link>
+               </li>
+               <li className="hover:bg-gray-100 px-4 py-2">
+                 <Link href="/orders">Orders</Link>
+               </li>
+             </ul>
+            )}
+            </li>
+           </ul>
+            <Link href="/404" className="">
               Pages
             </Link>
             <Link href="/products" className="text-[#0D0E43] font-normal text-[16px] leading-[20px]">
@@ -37,9 +65,6 @@ function Navbar() {
             </Link>
             <Link href="/shop" className="text-[#0D0E43] font-normal text-[16px] leading-[20px]">
               Shop
-            </Link>
-            <Link href="/shopList" className="text-[#0D0E43] font-normal text-[16px] leading-[20px]">
-              ShopList
             </Link>
             <Link href="/" className="text-[#0D0E43] font-normal text-[16px] leading-[20px]">
               Contact

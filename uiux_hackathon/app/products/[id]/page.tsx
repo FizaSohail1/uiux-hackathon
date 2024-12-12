@@ -1,12 +1,9 @@
-import Header from '@/app/components/Header/page';
-import Navbar from '@/app/components/Navbar/page';
 import React from 'react';
 import Image from 'next/image';
 import { FaArrowRight, FaStar } from 'react-icons/fa6';
 import  { FiHeart} from 'react-icons/fi'
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa6';
 import StarRating from '@/app/components/DynamicStar/page';
-import Footer from '@/app/components/Footer/page';
 
 
 interface IProduct {
@@ -47,8 +44,6 @@ async function singleProductPage({ params }: ProductPostParams) {
 
   return (
     <div>
-          <Header />
-      <Navbar />
       <main className='bg-maingray w-full h-[266px] flex items-center mx-auto'>
         <div className="mx-auto lg:mx-[200px] 2xl:mx-default-margin ">
             <h1 className="text-headingsText text-[36px] leading-[42.19px] text-center lg:text-left font-semibold">Product Details</h1>
@@ -182,8 +177,6 @@ async function singleProductPage({ params }: ProductPostParams) {
 
         </div>
         </div> 
-
-        <Footer />
 
     </div>
   )

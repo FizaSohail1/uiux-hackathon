@@ -1,6 +1,4 @@
 import React from 'react'
-import Header from '../components/Header/page'
-import Navbar from '../components/Navbar/page'
 import HeroSection from '../components/Hero/page';
 import { FaAngleDown } from 'react-icons/fa6';
 import { TiThLargeOutline } from "react-icons/ti";
@@ -10,14 +8,12 @@ import { TfiZoomIn } from "react-icons/tfi";
 import Image from 'next/image';
 import StarRating from '../components/DynamicStar/page';
 import { IoCartOutline } from 'react-icons/io5';
-import Footer from '../components/Footer/page';
 import { BsHeart } from 'react-icons/bs';
 
 function shopList() {
   return (
     <div>
-      <Header />
-      <Navbar />
+
       <HeroSection name={'Shop List'}/>
 
       <div className="my-16 lg:my-32  mx-auto lg:mx-[200px] 2xl:mx-default-margin block space-y-3 lg:flex lg:items-center lg:justify-between">
@@ -278,8 +274,6 @@ function shopList() {
       <div className="lg:mx-[200px] 2xl:mx-default-margin mx-auto my-20 ">
    <Image src={'/logos.png'} alt="logos" height={93} width={904} className=" h-full w-full object-cover" />
    </div>
-
-   <Footer />
 
     </div>
   )

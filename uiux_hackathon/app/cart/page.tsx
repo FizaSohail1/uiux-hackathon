@@ -1,17 +1,12 @@
 import React from "react";
-import Navbar from "../components/Navbar/page";
-import Header from "../components/Header/page";
 import HeroSection from "../components/Hero/page";
 import Image from "next/image";
 
 import { FaPlus, FaMinus, FaCircle } from "react-icons/fa";
-import Footer from "../components/Footer/page";
 
 function shoppingCart() {
   return (
     <div>
-      <Header />
-      <Navbar />
 
       <HeroSection name={"Shopping Cart"} />
 
@@ -321,7 +316,6 @@ function shoppingCart() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

@@ -1,9 +1,6 @@
 import React from 'react'
-import Navbar from '../components/Navbar/page'
-import Header from '../components/Header/page';
 import Image from 'next/image';
 import { FiHeart, FiShoppingCart } from "react-icons/fi";
-import Footer from '../components/Footer/page';
 import { FaAngleDown } from 'react-icons/fa6';
 import { TiThLargeOutline } from "react-icons/ti";
 import { TiThList } from "react-icons/ti";
@@ -99,8 +96,6 @@ function Products() {
 
   return (
     <div>
-        <Header />
-      <Navbar />
       <main className='bg-maingray w-full h-[266px] flex items-center'>
         <div className="mx-auto lg:mx-[200px] 2xl:mx-default-margin ">
             <h1 className="text-headingsText text-[36px] leading-[42.19px] text-center lg:text-left">Shop Grid Default</h1>
@@ -188,9 +183,6 @@ function Products() {
       </div>
       
     </section>
-
-    <Footer />
-
 
     </div>
   )

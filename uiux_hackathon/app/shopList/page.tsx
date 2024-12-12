@@ -1,6 +1,4 @@
 import React from 'react'
-import Header from '../components/Header/page'
-import Navbar from '../components/Navbar/page'
 import HeroSection from '../components/Hero/page'
 import { FaAngleDown } from 'react-icons/fa6';
 import { TiThLargeOutline } from "react-icons/ti";
@@ -13,13 +11,10 @@ import { IoIosCheckboxOutline } from "react-icons/io";
 import { IoMdCheckbox } from "react-icons/io";
 import StarRating from '../components/DynamicStar/page';
 import Image from 'next/image';
-import Footer from '../components/Footer/page';
 
 function shopLeftSidebar() {
   return (
     <div>
-      <Header />
-      <Navbar />
       <HeroSection name={'Shop List'} />
 
       <div className="my-16 lg:my-32  mx-auto lg:mx-[200px] 2xl:mx-default-margin block space-y-3 lg:flex lg:items-center lg:justify-between">
@@ -372,10 +367,6 @@ function shopLeftSidebar() {
       <div className="lg:mx-[200px] 2xl:mx-default-margin mx-auto my-20 ">
    <Image src={'/logos.png'} alt="logos" height={93} width={904} className=" h-full w-full object-cover" />
    </div>
-
-   <Footer />
-
-
     </div>
   )
 }
