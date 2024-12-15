@@ -45,7 +45,7 @@ function Navbar() {
                  <Link href="/about">About Us</Link>
                </li>
                <li className="hover:bg-gray-100 px-4 py-2">
-                 <Link href="/about">FAQ</Link>
+                 <Link href="/faq">FAQ</Link>
                </li>
                <li className="hover:bg-gray-100 px-4 py-2">
                  <Link href="/orders">Orders</Link>
@@ -60,13 +60,13 @@ function Navbar() {
             <Link href="/products" className="text-[#0D0E43] font-normal text-[16px] leading-[20px]">
               Product
             </Link>
-            <Link href="/" className="text-[#0D0E43] font-normal text-[16px] leading-[20px]">
+            <Link href="/blogs" className="text-[#0D0E43] font-normal text-[16px] leading-[20px]">
               Blog
             </Link>
             <Link href="/shop" className="text-[#0D0E43] font-normal text-[16px] leading-[20px]">
               Shop
             </Link>
-            <Link href="/" className="text-[#0D0E43] font-normal text-[16px] leading-[20px]">
+            <Link href="/contact" className="text-[#0D0E43] font-normal text-[16px] leading-[20px]">
               Contact
             </Link>
           </div>
@@ -91,25 +91,52 @@ function Navbar() {
 
       {isMobileMenuOpen && (
         <div className="lg:hidden bg-white shadow-md p-4 space-y-4 mx-3">
-          <Link href="/" className="block text-[#FB2E86]">
+         <li className='relative list-none'
+           onMouseEnter={() => setDropdown(true)}
+           onMouseLeave={() => setDropdown(false)}
+         >
+
+
+         <Link href="/" className="block text-[#FB2E86]">
             Home
             <span>
               <FaAngleDown className="ml-2 inline" />
             </span>
           </Link>
-          <Link href="/" className="block text-[#0D0E43]">
+
+          {dropdown && (
+               <ul className="absolute top-full left-0 mt-2 bg-white shadow-lg border rounded-md text-gray-800 z-10 w-[200px]">
+               <li className="hover:bg-gray-100 px-4 py-2">
+                 <Link href="/demo">Demo</Link>
+               </li>
+               <li className="hover:bg-gray-100 px-4 py-2">
+                 <Link href="/shopList">Shop List</Link>
+               </li>
+               <li className="hover:bg-gray-100 px-4 py-2">
+                 <Link href="/about">About Us</Link>
+               </li>
+               <li className="hover:bg-gray-100 px-4 py-2">
+                 <Link href="/faq">FAQ</Link>
+               </li>
+               <li className="hover:bg-gray-100 px-4 py-2">
+                 <Link href="/orders">Orders</Link>
+               </li>
+             </ul>
+            )}
+         </li>
+          <Link href="/404" className="block text-[#0D0E43]">
             Pages
           </Link>
           <Link href="/products" className="block text-[#0D0E43]">
             Product
           </Link>
-          <Link href="/" className="block text-[#0D0E43]">
+          <Link href="/blogs" className="block text-[#0D0E43]">
             Blog
           </Link>
-          <Link href="/" className="block text-[#0D0E43]">
+          <Link href="/shop" className="block text-[#0D0E43]">
             Shop
           </Link>
-          <Link href="/" className="block text-[#0D0E43]">
+          <Link href="/contact" className="block text-[#0D0E43]">
             Contact
           </Link>
 

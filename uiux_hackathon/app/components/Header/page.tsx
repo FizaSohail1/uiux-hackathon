@@ -10,7 +10,7 @@ function Header() {
   return (
      
 <div className="bg-violet w-full items-center h-16 md:h-11 mx-auto md:mx-0 ">
-      <div className="2xl:mx-[371px] lg:mx-[200px] flex flex-col md:items-center md:flex-row md:justify-between mx-auto ">
+      <div className="2xl:mx-[371px] lg:mx-[200px] flex flex-col md:items-center md:flex-row md:justify-between ">
          <div className="text-[#F1F1F1] my-2 flex ">
           <p className= "flex mx-2 ">
             <MdOutlineEmail className="mr-3"/>
@@ -26,7 +26,7 @@ function Header() {
              </span>
            </p>
          </div>
-        <div className="flex  lg:flex-row items-center my-2 mx-2 md:mx-4 lg:justify-between gap-2 lg:gap-4 md:gap-5 text-[#F1F1F1] lg:mx-[371px]">
+        <div className="flex  lg:flex-row items-center my-2 mx-2 md:mx-4 lg:justify-between gap-3 lg:gap-4 md:gap-5 text-[#F1F1F1] lg:mx-[371px]">
         <p className="font-semibold text-[14px] lg:text-[16px] leading-[16px] flex">
            English <span><FaAngleDown /></span>
          </p>

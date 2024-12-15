@@ -14,7 +14,7 @@ function shoppingCart() {
         <div className="mx-auto lg:mx-[200px] 2xl:mx-default-margin">
           <div className="flex flex-col lg:flex-row lg:justify-between lg:gap-[30px]">
             <div className="">
-              <div className="my-10 md:my-14 2xl:my-20">
+              <div className="my-10 md:my-14 2xl:my-20 px-4 lg:px-0">
                 <div className="flex justify-between items-center mx-4">
                   <h2 className="text-base lg:text-[20px] lg:leading-[23.44px] text-[#1D317B] lg:mx-8">
                     Product
