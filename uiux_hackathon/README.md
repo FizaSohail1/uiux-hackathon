@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# E-Commerce UI/UX Project
 
-## Getting Started
+This project is a modern and responsive UI/UX design for an e-commerce website. It showcases a sleek and professional interface for displaying top products with interactive hover effects. The project is focused on creating a user-friendly experience that highlights products and includes smooth interactions.
 
-First, run the development server:
 
+
+## Features
+
+- **Responsive Design**: Fully responsive layout optimized for all devices.
+
+- **Dynamic Data Rendering**: Product details like images, names, and prices are dynamically fetched from a list.
+
+- **Clean Design**: Minimalistic and visually appealing design for better user engagement.
+
+
+## Built With
+
+- **Next.js**: As the framework for server-side rendering and routing.
+
+- **Tailwind CSS**: For styling and layout.
+
+- **TypeScript**: For dynamic interactions and functionality.
+
+- **Icons**: React Icons
+
+
+## Deployment
+
+This project is deployed and accessible at the following URL:
+[https://uiux-hackathon-a8a6.vercel.app/](https://uiux-hackathon-a8a6.vercel.app/)
+
+
+
+## Installation
+
+Follow the steps below to set up the project locally:
+
+1. Clone the repo:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone https://github.com/FizaSohail1/uiux-hackathon.git
+```
+2. Navigate to the project directory:
+```bash
+  cd uiux_hackathon
+```
+3. Install NPM packages
+```bash
+  npm install
+```
+4. Run the development server:
+```bash
+  npm run dev
+```
+5. Open your browser and go to:
+```bash
+  http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Acknowledgements
 
-## Learn More
+ - [Awesome Figma Templates](https://www.figma.com/design/585QVON4vlgEbmEblRwXDn/Project---Ecom-(An-Ecommerce-Ui-Kit)-(Community)?node-id=87-622&t=FsjGTEVMJT9ccIuO-0)
 
-To learn more about Next.js, take a look at the following resources:
+- Special thanks to my teacher and peers for their feedback. 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
