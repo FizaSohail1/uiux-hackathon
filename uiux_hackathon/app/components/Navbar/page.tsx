@@ -8,6 +8,8 @@ function Navbar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropdown,setDropdown] = useState(false);
 
+
+
   return (
     <div>
       <nav className="flex items-center justify-between my-[13px] md:my-[23px]  mx-4 lg:mx-[220px] 2xl:mx-default-margin">
@@ -23,15 +25,17 @@ function Navbar() {
           <div className={`hidden lg:flex space-x-8 text-[16px] leading-[20px]`}>
            <ul className='flex'>
             <li className='relative' 
-            onMouseEnter={() => setDropdown(true)}
-            onMouseLeave={() => setDropdown(false)}
+           
             >
-            <Link href="/" className="text-[#FB2E86] top-[10px] flex">
+          <div className="flex items-center text-[#FB2E86] top-[10px]">
+          <Link href="/" className=" ">
               Home
-              <span>
-                <FaAngleDown className="ml-2" />
-              </span>
             </Link>
+
+            <span>
+                <FaAngleDown className="ml-2"  onClick={() => setDropdown(!dropdown)}/>
+              </span>
+          </div>
 
             {dropdown && (
                <ul className="absolute top-full left-0 mt-2 bg-white shadow-lg border rounded-md text-gray-800 z-10 w-[200px]">
@@ -92,17 +96,21 @@ function Navbar() {
       {isMobileMenuOpen && (
         <div className="lg:hidden bg-white shadow-md p-4 space-y-4 mx-3">
          <li className='relative list-none'
-           onMouseEnter={() => setDropdown(true)}
-           onMouseLeave={() => setDropdown(false)}
+           onClick={() => setDropdown(!dropdown)}
          >
 
-
-         <Link href="/" className="block text-[#FB2E86]">
+          <div className="flex text-[#FB2E86] items-center">
+            
+         <Link href="/" className="block ">
             Home
-            <span>
+          </Link>
+
+          <span>
               <FaAngleDown className="ml-2 inline" />
             </span>
-          </Link>
+
+          </div>
+
 
           {dropdown && (
                <ul className="absolute top-full left-0 mt-2 bg-white shadow-lg border rounded-md text-gray-800 z-10 w-[200px]">

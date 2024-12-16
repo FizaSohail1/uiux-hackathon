@@ -762,9 +762,9 @@ export default function Home() {
             {topProducts.map((product) => (
               <div
                 key={product.id}
-                className="h-[280px] w-[220px]  2xl:h-[361px] mx-auto"
+                className="h-[280px] w-[220px]  2xl:h-[361px] mx-auto relative group"
               >
-                <div className="`h-[200px] w-[220px] 2xl:h-[236px] 2xl:w-[270px] bg-[#F6F7FB] rounded-full mx-auto hover:border-b-4 hover:border-l-4 hover:border-[#31208a]">
+                <div className=" h-[200px] w-[220px] 2xl:h-[236px] 2xl:w-[270px] bg-[#F6F7FB] rounded-full mx-auto hover:border-b-4 hover:border-l-4 hover:border-[#31208a] relative">
                   <Image
                     src={product.image}
                     alt={product.name}
@@ -772,6 +772,12 @@ export default function Home() {
                     width={178}
                     className={`h-[${product.height}px] w-[${product.width}px] object-cover mx-auto my-4 `}
                   />
+
+                  <div className="absolute inset-0 flex items-end mb-4 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button className="px-3 py-2 bg-green-500 text-white rounded">
+                      View More
+                    </button>
+                  </div>
                 </div>
                 <div className="p-4 text-center">
                   <Link href={`/products/${product.id}`}>
@@ -824,7 +830,7 @@ export default function Home() {
         </h2>
 
         <div className="2xl:mx-default-margin lg:mx-[200px] mx-auto mb-20 flex items-center justify-between lg:mb-20 2xl:mt-24">
-          <div className="grid grid-cols-1 lg:grid-cols-3 justify-center gap-[70px] 2xl:flex space-y-44 lg:space-y-0 mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-[70px] 2xl:flex space-y-44 lg:space-y-0 mx-auto">
             <div className="2xl:h-[493px] 2xl:w-[370px] h-[300px] w-[250px] lg:h-[300px] lg:w-[320px] mx-auto">
               <Image
                 src={"/blog-1.jpg"}
