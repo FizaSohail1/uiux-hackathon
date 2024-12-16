@@ -236,7 +236,7 @@ function blog() {
               <div className="flex items-center gap-2 ">
                 <div className="">
                   <Image
-                    src={"/blogside-1.jpg"}
+                    src={"/blogside-2.jpg"}
                     alt=""
                     height={51}
                     width={70}
@@ -254,7 +254,7 @@ function blog() {
               <div className="flex items-center gap-2 ">
                 <div className="">
                   <Image
-                    src={"/blogside-1.jpg"}
+                    src={"/blogside-3.jpg"}
                     alt=""
                     height={51}
                     width={70}
@@ -272,7 +272,7 @@ function blog() {
               <div className="flex items-center gap-2 ">
                 <div className="">
                   <Image
-                    src={"/blogside-1.jpg"}
+                    src={"/blogside-4.jpg"}
                     alt=""
                     height={51}
                     width={70}

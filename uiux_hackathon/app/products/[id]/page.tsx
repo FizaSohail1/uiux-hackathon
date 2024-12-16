@@ -73,7 +73,7 @@ async function singleProductPage({ params }: ProductPostParams) {
             className= {`h-[${487}px] w-[${375}px] rounded-[3px]`}/>
 
            <div className='ml-4 lg:ml-8  '>
-            <h1 className='text-[36px] leading-[42.19px] '>Playwood arm chair</h1>
+            <h1 className='text-[36px] leading-[42.19px] '>{product.name}</h1>
             <div className='flex gap-3 items-center mt-3'>
               <StarRating rating={5}/>
                <div className='text-headingsText text-[14px] leading-[29px]'> (22) </div>

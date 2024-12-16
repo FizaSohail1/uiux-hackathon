@@ -762,9 +762,9 @@ export default function Home() {
             {topProducts.map((product) => (
               <div
                 key={product.id}
-                className="  h-[280px] w-[220px]  2xl:h-[361px] mx-auto"
+                className="h-[280px] w-[220px]  2xl:h-[361px] mx-auto"
               >
-                <div className="h-[200px] w-[220px] 2xl:h-[236px] 2xl:w-[270px] bg-[#F6F7FB] rounded-full mx-auto">
+                <div className="`h-[200px] w-[220px] 2xl:h-[236px] 2xl:w-[270px] bg-[#F6F7FB] rounded-full mx-auto hover:border-b-4 hover:border-l-4 hover:border-[#31208a]">
                   <Image
                     src={product.image}
                     alt={product.name}

@@ -10,7 +10,7 @@ import Link from 'next/link';
 function Products() {
     const featuredProducts = [
         {
-          id: 1,
+          id: 15,
           name: "Vel elit euismod",
           discountPrice: 25.00,
           price: 42.00,
@@ -19,7 +19,7 @@ function Products() {
           width: 201
         },
         {
-          id: 2,
+          id: 16,
           name: "Ultricies condimentum imperdiet",
           discountPrice: 25.00,
           price: 42.00,
@@ -28,7 +28,7 @@ function Products() {
           width: 169
         },
         {
-          id: 3,
+          id: 17,
           name: "Vitae suspendisse sed",
           discountPrice: 25.00,
           price: 42.00,
@@ -37,7 +37,7 @@ function Products() {
           width: 201
         },
         {
-          id: 4,
+          id: 18,
           name: "Sed at fermentum",
           discountPrice: 25.00,
           price: 42.00,
@@ -46,7 +46,7 @@ function Products() {
           width: 188
         },
         {
-            id: 5,
+            id: 19,
             name: "Fusce pellentesque at",
             price: 42.0,
             discountPrice: 25.00,
@@ -55,7 +55,7 @@ function Products() {
             width: 128 
           },
           {
-            id: 6,
+            id: 20,
             name: "Vestibulum magna laoreet",
             price: 42.00,
             discountPrice: 25.00,
@@ -64,7 +64,7 @@ function Products() {
             width: 154 
           },
           {
-            id: 7,
+            id: 21,
             name: "Sollicitudin amet orci",
             price: 42.0,
             discountPrice: 25.00,
@@ -73,7 +73,7 @@ function Products() {
             width: 114 
           },
           {
-            id: 8,
+            id: 22,
             name: "Ultrices mauris sit",
             price: 42.00,
             discountPrice: 25.00,
@@ -82,7 +82,7 @@ function Products() {
             width: 167 
           },
           {
-            id: 9,
+            id: 23,
             name: "Pellentesque condimentum ac",
             price: 42.00,
             discountPrice: 25.00,
