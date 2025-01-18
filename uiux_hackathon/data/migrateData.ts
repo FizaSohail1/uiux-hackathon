@@ -1,7 +1,7 @@
 "use server"
 import { client } from "@/sanity/lib/client";
 
-export async function uploadImage (imageUrl) {
+export async function uploadImage (imageUrl:string) {
  
     try {
         const respone = await fetch(imageUrl);

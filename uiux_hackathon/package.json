@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "migrateData": "node data/migrateData.mjs"
+    "lint": "next lint"
   },
   "dependencies": {
     "@sanity/image-url": "^1.1.0",
