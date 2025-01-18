@@ -10,7 +10,7 @@ function Header() {
   return (
      
 <div className="bg-violet w-full items-center h-16 md:h-11 mx-auto md:mx-0 ">
-      <div className="2xl:mx-[371px] lg:mx-[200px] flex flex-col md:items-center md:flex-row md:justify-between ">
+      <div className="2xl:mx-[371px] lg:mx-[130px] flex flex-col md:items-center md:flex-row md:justify-between ">
          <div className="text-[#F1F1F1] my-2 flex ">
           <p className= "flex mx-2 ">
             <MdOutlineEmail className="mr-3"/>

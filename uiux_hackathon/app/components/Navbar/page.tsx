@@ -12,7 +12,7 @@ function Navbar() {
 
   return (
     <div>
-      <nav className="flex items-center justify-between my-[13px] md:my-[23px]  mx-4 lg:mx-[220px] 2xl:mx-default-margin">
+      <nav className="flex items-center justify-between my-[13px] md:my-[23px]  mx-4 lg:mx-[200px] 2xl:mx-default-margin">
    
         <div className="inline-flex items-center gap-[30px] lg:gap-[80px] 2xl:gap-[90px] ">
  
