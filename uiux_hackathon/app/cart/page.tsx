@@ -1,275 +1,170 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import HeroSection from "../components/Hero/page";
 import Image from "next/image";
-import { FaPlus, FaMinus, FaCircle } from "react-icons/fa";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { FaCircle } from "react-icons/fa";
+import { useRouter, useSearchParams } from "next/navigation";
+import Link from "next/link";
 
+interface IProduct {
+  id:string,
+  name: string;
+  price: number;
+  description: string;
+  imagePath: string;
+  quantity?: number;
+}
 
-function shoppingCart() {
+function ShoppingCart() {
+  const searchParam = useSearchParams();
+  const router = useRouter(); 
+  const [cart, setCart] = useState<IProduct[]>([]);
+  const [qty,setQty] = useState(1)
+
+  useEffect(() => {
+    const storedCart = localStorage.getItem("cart");
+    const updatedCart = storedCart ? JSON.parse(storedCart) : [];
+
+    const name = searchParam.get("name");
+    const description = searchParam.get("description");
+    const price = searchParam.get("price");
+    const imagePath = searchParam.get("imagePath");
+
+    console.log("name test:", name);
+
+    if (name && price && description && imagePath) {
+      const isDuplicate = updatedCart.some(
+        (item: IProduct) => item.name === name
+      );
+
+      if (!isDuplicate) {
+        updatedCart.push({ name, price, description, imagePath, quantity:1 });
+        setCart(updatedCart);
+        localStorage.setItem("cart", JSON.stringify(updatedCart));
+      }
+      router.replace("/cart");
+    } else {
+      // Set the cart state directly from localStorage on initial load
+      setCart(updatedCart);
+    }
+  }, [searchParam, router]);
+
+  const removeItem = (id: string) => {
+    const updatedCart = cart.filter((item) => item.id !== id);
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  };
+
+  function handleQuantity(index:number, num:string){
+    const updatedCart = [...cart]
+    updatedCart[index].quantity = +num
+    localStorage.setItem("cart",JSON.stringify(updatedCart))
+    setCart(updatedCart)
+  }
+
+  const getTotalPrice = () => {
+    return cart.reduce(
+      (total, item) => total + (item.price || 0) * (item.quantity || 1),
+      0
+    ).toFixed(2);
+  };
+
   return (
     <div>
-
       <HeroSection name={"Shopping Cart"} />
-
       <div className="my-10 md:my-20 2xl:my-32">
-        <div className="mx-auto lg:mx-[170px] 2xl:mx-default-margin">
-          <div className="flex flex-col lg:flex-row lg:justify-between lg:gap-[30px]">
-            <div className="">
-              <div className="my-10 md:my-14 2xl:my-20 px-4 lg:px-0">
-                <div className="flex justify-between items-center mx-4">
-                  <h2 className="text-base lg:text-[20px] lg:leading-[23.44px] text-[#1D317B] lg:mr-8">
-                    Product
-                  </h2>
-                  <h2 className="text-base lg:text-[20px] lg:leading-[23.44px] text-[#1D317B] lg:mx-14">
-                    Price
-                  </h2>
-
-                  <h2 className="text-base lg:text-[20px] lg:leading-[23.44px] text-[#1D317B]">
-                    Quantity
-                  </h2>
-
-                  <h2 className="text-base lg:text-[20px] lg:leading-[23.44px] text-[#1D317B]">
-                    Total
-                  </h2>
-                </div>
-                <div className="flex items-center justify-between gap-4 my-12  ">
-                  <div className="flex items-center gap-2">
-                    <div className="">
-                      <Image
-                        src={"/cart-1.jpg"}
-                        alt="image"
-                        height={83}
-                        width={87}
-                        className="object-cover h-[83px] w-[87px] radius-[3px] "
+        <div className="mx-auto lg:mx-[150px] 2xl:mx-default-margin">
+          <div className="flex flex-col lg:flex-row lg:justify-between lg:gap-4">
+            <div className="my-10 md:my-14 px-4 lg:px-0">
+              <Table className="w-[600px]">
+                <TableCaption>Your shopping Cart!</TableCaption>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Product</TableHead>
+                    <TableHead>Price</TableHead>
+                    <TableHead>Quantity</TableHead>
+                    <TableHead>Total</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {cart.map((item: IProduct, i: number) => (
+                    <TableRow key={i}>
+                      <TableCell>
+                        <div className="flex items-center gap-2">
+                          <Image
+                            src={item.imagePath}
+                            alt={item.name}
+                            height={83}
+                            width={87}
+                            className="object-cover h-[83px] w-[87px] rounded"
+                          />
+                          <div>
+                            <h3 className="text-sm text-black">{item.name}</h3>
+                          </div>
+                        </div>
+                      </TableCell>
+                      <TableCell className="text-sm text-[#15245E]">
+                        {item.price}
+                      </TableCell>
+                      <TableCell>
+                      <div className="">
+                      <input
+                        type="number"
+                        min={1}
+                        value={item.quantity}
+                        onChange={(e) =>
+                        {handleQuantity(i,e.target.value)}
+                        }
+                        className="w-16 text-center border rounded"
                       />
                     </div>
-                    <div className=" md:mr-4">
-                      <h3 className="text-sm text-black">Ut diam consequat</h3>
-                      <p className="flex text-xs text-[#A1A8C1]">
-                        color:<span className="text-sm">Brown</span>
-                      </p>
-                      <p className="flex text-xs text-[#A1A8C1]">
-                        Size:<span className="text-sm">XL</span>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="md:mx-5">
-                    <p className="text-sm text-[#15245E]">$32.00</p>
-                  </div>
-
-                  <div className="flex items-center border border-gray-300  bg-gray-50 w-[51px] h-[15px] mx-8">
-                    <button className="flex items-center justify-center w-4 h-full text-base text-gray-700 bg-gray-200">
-                      <FaMinus />
-                    </button>
-                    <div className="w-12 text-center text-xs ">1</div>
-                    <button className="flex items-center justify-center w-4 h-full text-base text-gray-700">
-                      <FaPlus />
-                    </button>
-                  </div>
-
-                  <div className="">
-                    <p className="text-sm text-[#15245E]">£219.00</p>
-                  </div>
-                </div>
-                <hr className="border-1px border-solid border-[#E1E1E4] shadow-sm mt-2" />
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <Image
-                      src={"/cart-2.jpg"}
-                      alt="image"
-                      height={83}
-                      width={87}
-                      className="object-cover h-[83px] w-[87px] radius-[3px]"
-                    />
-                    <div className="">
-                      <h3 className="text-sm text-black">
-                        Vel faucibus posuere
-                      </h3>
-                      <p className="flex text-xs text-[#A1A8C1]">
-                        color:<span className="text-sm">Brown</span>
-                      </p>
-                      <p className="flex text-xs text-[#A1A8C1]">
-                        Size:<span className="text-sm">XL</span>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="">
-                    <p className="text-sm text-[#15245E]">$32.00</p>
-                  </div>
-
-                  <div className="flex items-center border border-gray-300  bg-gray-50 w-[51px] h-[15px]">
-                    <button className="flex items-center justify-center w-4 h-full text-base text-gray-700 bg-gray-200">
-                      <FaMinus />
-                    </button>
-                    <div className="w-12 text-center text-xs ">1</div>
-                    <button className="flex items-center justify-center w-4 h-full text-base text-gray-700">
-                      <FaPlus />
-                    </button>
-                  </div>
-
-                  <div className="">
-                    <p className="text-sm text-[#15245E]">£219.00</p>
-                  </div>
-                </div>
-                <hr className="border-1px border-solid border-[#E1E1E4] shadow-sm mt-2" />
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <Image
-                      src={"/cart-3.jpg"}
-                      alt="image"
-                      height={83}
-                      width={87}
-                      className="object-cover h-[83px] w-[87px] radius-[3px]"
-                    />
-                    <div className="">
-                      <h3 className="text-sm text-black">
-                        Ac vitae vestibulum
-                      </h3>
-                      <p className="flex text-xs text-[#A1A8C1]">
-                        color:<span className="text-sm">Brown</span>
-                      </p>
-                      <p className="flex text-xs text-[#A1A8C1]">
-                        Size:<span className="text-sm">XL</span>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="">
-                    <p className="text-sm text-[#15245E]">$32.00</p>
-                  </div>
-
-                  <div className="flex items-center border border-gray-300  bg-gray-50 w-[51px] h-[15px]">
-                    <button className="flex items-center justify-center w-4 h-full text-base text-gray-700 bg-gray-200">
-                      <FaMinus />
-                    </button>
-                    <div className="w-12 text-center text-xs ">1</div>
-                    <button className="flex items-center justify-center w-4 h-full text-base text-gray-700">
-                      <FaPlus />
-                    </button>
-                  </div>
-
-                  <div className="">
-                    <p className="text-sm text-[#15245E]">£219.00</p>
-                  </div>
-                </div>
-                <hr className="border-1px border-solid border-[#E1E1E4] shadow-sm mt-2" />
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <Image
-                      src={"/cart-4.jpg"}
-                      alt="image"
-                      height={83}
-                      width={87}
-                      className="object-cover h-[83px] w-[87px] radius-[3px]"
-                    />
-                    <div className="">
-                      <h3 className="text-sm text-black">Elit massa diam</h3>
-                      <p className="flex text-xs text-[#A1A8C1]">
-                        color:<span className="text-sm">Brown</span>
-                      </p>
-                      <p className="flex text-xs text-[#A1A8C1]">
-                        Size:<span className="text-sm">XL</span>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="">
-                    <p className="text-sm text-[#15245E]">$32.00</p>
-                  </div>
-
-                  <div className="flex items-center border border-gray-300  bg-gray-50 w-[51px] h-[15px]">
-                    <button className="flex items-center justify-center w-4 h-full text-base text-gray-700 bg-gray-200">
-                      <FaMinus />
-                    </button>
-                    <div className="w-12 text-center text-xs ">1</div>
-                    <button className="flex items-center justify-center w-4 h-full text-base text-gray-700">
-                      <FaPlus />
-                    </button>
-                  </div>
-
-                  <div className="">
-                    <p className="text-sm text-[#15245E]">£219.00</p>
-                  </div>
-                </div>
-                <hr className="border-1px border-solid border-[#E1E1E4] shadow-sm mt-2" />
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <Image
-                      src={"/cart-3.jpg"}
-                      alt="image"
-                      height={83}
-                      width={87}
-                      className="object-cover h-[83px] w-[87px] radius-[3px]"
-                    />
-                    <div className="">
-                      <h3 className="text-sm text-black">
-                        Ac vitae vestibulum
-                      </h3>
-                      <p className="flex text-xs text-[#A1A8C1]">
-                        color:<span className="text-sm">Brown</span>
-                      </p>
-                      <p className="flex text-xs text-[#A1A8C1]">
-                        Size:<span className="text-sm">XL</span>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="">
-                    <p className="text-sm text-[#15245E]">$32.00</p>
-                  </div>
-
-                  <div className="flex items-center border border-gray-300  bg-gray-50 w-[51px] h-[15px]">
-                    <button className="flex items-center justify-center w-4 h-full text-base text-gray-700 bg-gray-200">
-                      <FaMinus />
-                    </button>
-                    <div className="w-12 text-center text-xs ">1</div>
-                    <button className="flex items-center justify-center w-4 h-full text-base text-gray-700">
-                      <FaPlus />
-                    </button>
-                  </div>
-
-                  <div className="">
-                    <p className="text-sm text-[#15245E]">£219.00</p>
-                  </div>
-                </div>
-                <hr className="border-1px border-solid border-[#E1E1E4] shadow-sm mt-2" />
-              </div>
+                      </TableCell>
+                      <TableCell className="text-sm text-[#15245E]">
+                       {Number(item.price) * (item.quantity || 1)}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
               <div className="flex justify-between mt-6">
-              <button className="bg-secondary text-white py-2 px-4 rounded">
-                Continue Shopping
-              </button>
-              <button className="bg-secondary text-white py-2 px-4 rounded">
-                Checkout
-              </button>
-            </div>
-
-
-            </div>
-
-            <div>
-              <div>
-                <h2 className=" text-lg text-center font-semibold lg:text-[20px] lg:leading-[23.44px] text-[#1D317B] my-10">
-                  Cart Total
-                </h2>
+                <Link href={'/products'}>
+                <button className="bg-secondary text-white py-2 px-4 rounded">
+                  Continue Shopping
+                </button>
+                </Link>
+                <button className="bg-secondary text-white py-2 px-4 rounded">
+                  Checkout
+                </button>
               </div>
+            </div>
 
-              <div className="h-[260px] w-[270px] md:h-[264px] md:w-[371px] mx-4 md:mx-0 p-4 bg-maingray">
+            <div className="my-10 md:my-14 px-4 lg:px-0">
+            <div className="h-[260px] w-[270px] md:h-[264px] md:w-[371px] mx-4 md:mx-0 p-4 bg-maingray">
                 <div className="flex items-center justify-between">
                   <h4 className="font-semibold text-lg text-[#15245E]">
                     Subtotals:
                   </h4>
                   <h4 className="font-semibold text-base text-[#15245E]">
-                    £219.00
+                    ${getTotalPrice()}
                   </h4>
                 </div>
                 <hr className="border-1px border-solid border-[#E1E1E4] shadow-sm mt-2" />
                 <div className="flex items-center justify-between mt-4">
                   <h4 className="font-semibold text-lg text-[#15245E]">
-                    Totals:
+                    Totals: 
                   </h4>
                   <h4 className="font-semibold text-base text-[#15245E]">
-                    £219.00
+                  ${getTotalPrice()}
                   </h4>
                 </div>
                 <hr className="border-1px border-solid border-[#E1E1E4] shadow-sm mt-2" />
@@ -311,7 +206,7 @@ function shoppingCart() {
                 <button className="w-[70%] md:w-1/2 h-[41px] text-center font-bold text-base bg-secondary py-2 my-3 text-white">
                   Calculate Shiping
                 </button>
-              </div>
+              </div>   
             </div>
           </div>
         </div>
@@ -320,4 +215,4 @@ function shoppingCart() {
   );
 }
 
-export default shoppingCart;
+export default ShoppingCart;

@@ -6,22 +6,11 @@ import { TiThLargeOutline } from "react-icons/ti";
 import { TiThList } from "react-icons/ti";
 import { FaCircle } from "react-icons/fa";
 import Link from 'next/link';
-import { client } from '@/sanity/lib/client';
+import allProducts from '../components/fetchData/page';
 
-interface IProductData {
-  id: number;
-  name: string;
-  price: number;
-  discountPercentage: number;
-  description: string;
-  imagePath: string;
-  category: string;
-  isFeaturedProduct: boolean;
-  stockLevel: string;
-}
+
 async function Products() {
-  const featuredProducts: IProductData[] = await client.fetch('*[_type == "product"]{"name":name,"description":description,"price" : price,"discoutPercentage": discountPercentage, "imagePath":image.asset->url ,"isFeaturedProduct": isFeaturedProduct,"stockLevel": stockLevel,"category": category}')
-
+  const { allProduct } = await allProducts()
 
   return (
     <div>
@@ -64,9 +53,9 @@ async function Products() {
       <section className="lg:mb-14">
         <div className=" lg:mx-[170px] 2xl:mx-default-margin mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-center ">
-            {featuredProducts.map((product) => (
+            {allProduct.map((product, i) => (
               <div
-                key={product.id}
+                key={i}
                 className="bg-white transition h-[380px] w-[270px] lg:h-[361px] md:my-4 mx-auto lg:mx-0  ">
                 <div className="h-[250px] w-[240px] lg:h-[236px] lg::w-[270px] bg-[#F6F7FB] flex items-center">
 
@@ -89,8 +78,7 @@ async function Products() {
 
 
                 <div className="p-4 md:text-center">
-                  <Link href={`/products/id?name=${product.name}&description=${product.description
-                    }&price=${product.price}&image=${product.imagePath
+                  <Link href={`/products/id?name=${product.name}&description=${product.description}&price=${product.price}&imagePath=${product.imagePath
                     }&category=${product.category}&discountPercentage=${product.discountPercentage}&stockLevel=${product.stockLevel}&isFeaturedProduct=${product.isFeaturedProduct}`}
                   >
                     <h3 className=" text-sm lg:text-base font-bold text-headingsText">

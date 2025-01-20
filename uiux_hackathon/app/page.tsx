@@ -1,110 +1,39 @@
 import Image from "next/image";
 import { FiHeart, FiShoppingCart } from "react-icons/fi";
-import { FaTruckFast, FaCheck } from "react-icons/fa6";
-import { PiHandCoinsFill } from "react-icons/pi";
-import { SlBadge } from "react-icons/sl";
-import { FaDiamond } from "react-icons/fa6";
-import { GoDiamond } from "react-icons/go";
+import { FaCheck } from "react-icons/fa6";
 import { FaPenNib } from "react-icons/fa";
 import { FaCalendarAlt } from "react-icons/fa";
 import Link from "next/link";
 import { fetchData } from "@/data/migrateData";
-import { client } from "@/sanity/lib/client";
+import allProducts from "./components/fetchData/page";
+import { CarouselPlugin } from "./components/carousel/page";
 
 interface IData {
   id: number;
   name: string;
   price: number;
-  discountPercentage:number;
+  discountPercentage: number;
   description: string;
   imagePath: string;
   category: string;
-  isFeaturedProduct:boolean;
-  stockLevel:string;
+  isFeaturedProduct: boolean;
+  stockLevel: string;
 }
 
 export default async function Home() {
 
   await fetchData()
-  const featuredProducts:IData[] = await client.fetch('*[_type == "product" && isFeaturedProduct == true][0...4]{"name":name,"description":description,"price" : price,"discoutPercentage": discountPercentage,"imagePath": image.asset->url,"isFeaturedProduct": isFeaturedProduct,"stockLevel": stockLevel,"category": category}')
-  
-  const latestProducts:IData[] = await client.fetch('*[_type == "product"][3...9]{"name":name,"description":description,"price" : price,"discoutPercentage": discountPercentage,"imagePath": image.asset->url,"isFeaturedProduct": isFeaturedProduct,"stockLevel": stockLevel,"category": category}')
+  const { featuredProducts } = await allProducts()
 
-  const trendingProducts:IData[] = await client.fetch('*[_type == "product"][10...14]{"name":name,"description":description,"price" : price,"discoutPercentage": discountPercentage,"imagePath": image.asset->url,"isFeaturedProduct": isFeaturedProduct,"stockLevel": stockLevel,"category": category}')
+  const { latestProducts } = await allProducts()
 
-  const topProducts =await client.fetch('*[_type == "product"][17...21]{"name":name,"description":description,"price" : price,"discoutPercentage": discountPercentage,"imagePath": image.asset->url,"isFeaturedProduct": isFeaturedProduct,"stockLevel": stockLevel,"category": category}')
+  const { trendingProducts } = await allProducts()
+
+  const { topProducts } = await allProducts()
 
   return (
     <div>
-      <main className="w-full bg-maingray py-2 ">
-        <div className=" h-auto lg:h-[650px] 2xl:h-[764px]  ">
-          <div className="flex items-start  2xl:pl-[71px] absolute ">
-            <div className="w-[150px] h-[120px] lg:w-[270px] lg:h-[240px] 2xl:w-[387px] 2xl:h-[387px] flex-shrink-0">
-              <Image
-                src="/hero-1.png"
-                alt="Hero 1"
-                height={387}
-                width={387}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-
-          <div className="items-center flex flex-col lg:flex-row mx-2 lg:ml-[200px] 2xl:ml-default-margin">
-            <div className=" 2xl:mt-10 mt-32 lg:mt-0 max-w-[700px] justify-center text-center md:text-left">
-              <h3 className=" text-secondary font-bold text-sm md:text-[16px] leading-7">
-                Best Furniture For Your Castle....
-              </h3>
-              <h1 className="font-bold text-xl 2xl:text-[53px] 2xl:leading-[81.98px] md:text-[47px] md:leading-[50px] mt-4 ">
-                New Furniture Collection Trends in 2020
-              </h1>
-              <p className="font-bold text-[16px] leading-[28px] text-[#8A8FB9] mt-4 max-w-[500px]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna
-                in est adipiscing in phasellus non in justo.
-              </p>
-              <button className="bg-secondary text-white font-bold text-[16px] px-8 py-4 mt-6 rounded">
-                Shop Now
-              </button>
-            </div>
-
-            <div className="relative flex h-[400px] lg:w-[706px] lg:h-[689px] lg:items-start items-center justify-center">
-              <div className="absolute rounded-full h-[300px] w-[300px] 2xl:w-[651px] 2xl:h-[651px] lg:w-[450px] lg:h-[450px] bg-[#ECD2FA] opacity-40 lg:mt-10 2xl:ml-36">
-                
-              </div>
-
-              <div className="absolute rounded-full h-[300px] w-[300px] 2xl:w-[648px] 2xl:h-[648px] lg:w-[450px] lg:h-[450px] bg-[#ECD2FA] lg:my-20 2xl:ml-44">
-                <Image
-                  src="/hero-2.png"
-                  alt="Hero 2"
-                  height={629}
-                  width={629}
-                  className="h-[250px] w-[250px] 2xl:h-[629px] 2xl:w-[629px] lg:h-[500px] lg:w-[500px] object-cover mt-10 mx-auto"
-                />
-                <div className="absolute top-[-35px] lg:top-[-70px] left-[70%] transform -translate-x-1/2">
-                  <div className="relative flex items-center justify-center">
-                    <Image
-                      src="/Vector-14.png"
-                      alt="Vector"
-                      height={138}
-                      width={132}
-                      className="object-cover"
-                    />
-
-                    <div className="absolute inset-0 flex items-center justify-center text-white text-sm lg:text-[35px] lg:leading-[43.89px] font-bold text-center">
-                      50% Off
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="flex gap-2 mx-auto items-center justify-center mb-5">
-          <FaDiamond className="text-secondary" />
-          <GoDiamond className="text-secondary" />
-          <GoDiamond className="text-secondary" />
-        </div>
-      </main>
+      <CarouselPlugin />
 
       <section className="my-10 md:py-16 ">
         <div className=" mx-auto lg:mx-[150px] 2xl:mx-default-margin ">
@@ -113,7 +42,7 @@ export default async function Home() {
           </h2>
 
           <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 2xl:gap-[70px] 2xl:flex  justify-center 2xl:mt-24">
-            {featuredProducts.map((item:IData,i) => (
+            {featuredProducts.map((item: IData, i) => (
               <div key={i}
                 className="bg-white shadow-lg  transition w-[240px] 2xl:w-[270px] 2xl:h-[361px] md:w-full hover:bg-[#2F1AC4] mx-auto lg:mx-0"
               >
@@ -136,16 +65,14 @@ export default async function Home() {
                 </div>
 
                 <div className="p-4 text-center">
-                <Link href={`/products/id?name=${item.name}&description=${
-                  item.description
-                }&price=${item.price}&image=${
-                  item.imagePath
-                }&category=${item.category}&discountPercentage=${item.discountPercentage}&stockLevel=${item.stockLevel}&isFeaturedProduct=${item.isFeaturedProduct}`}
-              >
-                      <h3 className=" text-sm lg:text-base font-bold text-headingsText">
-                        {item.name}
-                      </h3>
-                    </Link>
+                  <Link href={`/products/id?name=${item.name}&description=${item.description
+                    }&price=${item.price}&imagePath=${item.imagePath
+                    }&category=${item.category}&discountPercentage=${item.discountPercentage}&stockLevel=${item.stockLevel}&isFeaturedProduct=${item.isFeaturedProduct}`}
+                  >
+                    <h3 className=" text-sm lg:text-base font-bold text-headingsText">
+                      {item.name}
+                    </h3>
+                  </Link>
                   <div className="flex gap-2 justify-center my-2">
                     <div className="h-1 w-[14px] rounded-md bg-green-200"></div>
                     <div className="h-1 w-[14px] rounded-md bg-secondary"></div>
@@ -188,7 +115,7 @@ export default async function Home() {
           </ul>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px]  justify-center 2xl:mt-24">
-            {latestProducts.map((product,i) => (
+            {latestProducts.map((product, i) => (
               <div
                 key={i}
                 className="bg-white shadow-lg 2xl:h-[306px] md:w-full 2xl:w-[365px] h-[310px] w-[250px] lg:h-[320px] lg:w-[300px] mx-auto my-5"
@@ -205,12 +132,10 @@ export default async function Home() {
 
                 <div className="flex justify-between items-center mt-4 px-2">
                   <div>
-                    <Link href={`/products/id?name=${product.name}&description=${
-                  product.description
-                }&price=${product.price}&image=${
-                  product.imagePath
-                }&category=${product.category}&discountPercentage=${product.discountPercentage}&stockLevel=${product.stockLevel}&isFeaturedProduct=${product.isFeaturedProduct}`}
-              >
+                    <Link href={`/products/id?name=${product.name}&description=${product.description
+                      }&price=${product.price}&imagePath=${product.imagePath
+                      }&category=${product.category}&discountPercentage=${product.discountPercentage}&stockLevel=${product.stockLevel}&isFeaturedProduct=${product.isFeaturedProduct}`}
+                    >
                       <h3 className=" text-sm lg:text-base font-bold text-headingsText">
                         {product.name}
                       </h3>
@@ -383,7 +308,7 @@ export default async function Home() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] 2xl:gap-[70px] 2xl:flex justify-center ">
-            {trendingProducts.map((product,i) => (
+            {trendingProducts.map((product, i) => (
               <div
                 key={i}
                 className="bg-white shadow-lg transition w-[240px] 2xl:h-[361px] md:w-full  md:my-0 mx-auto"
@@ -407,16 +332,14 @@ export default async function Home() {
                 </div>
 
                 <div className="p-4 text-center">
-                <Link href={`/products/id?name=${product.name}&description=${
-                  product.description
-                }&price=${product.price}&image=${
-                  product.imagePath
-                }&category=${product.category}&discountPercentage=${product.discountPercentage}&stockLevel=${product.stockLevel}&isFeaturedProduct=${product.isFeaturedProduct}`}
-              >
-                      <h3 className=" text-sm lg:text-base font-bold text-headingsText">
-                        {product.name}
-                      </h3>
-                    </Link>
+                  <Link href={`/products/id?name=${product.name}&description=${product.description
+                    }&price=${product.price}&imagePath=${product.imagePath
+                    }&category=${product.category}&discountPercentage=${product.discountPercentage}&stockLevel=${product.stockLevel}&isFeaturedProduct=${product.isFeaturedProduct}`}
+                  >
+                    <h3 className=" text-sm lg:text-base font-bold text-headingsText">
+                      {product.name}
+                    </h3>
+                  </Link>
                   <div className="flex  gap-2 text-center justify-center">
                     <p className="text-headingsText font-normal text-[14px] leading-[14px] mt-2">
                       ${product.price}
@@ -607,9 +530,9 @@ export default async function Home() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] 2xl:gap-[70px] 2xl:flex justify-center 2xl:mt-24 ">
-            {topProducts.map((product:IData) => (
+            {topProducts.map((product: IData, i: number) => (
               <div
-                key={product.id}
+                key={i}
                 className="h-[280px] w-[220px]  2xl:h-[361px] mx-auto relative group"
               >
                 <div className=" h-[200px] w-[220px] 2xl:h-[236px] 2xl:w-[270px] bg-[#F6F7FB] rounded-full mx-auto hover:border-b-4 hover:border-l-4 hover:border-[#31208a] relative">
@@ -622,22 +545,25 @@ export default async function Home() {
                   />
 
                   <div className="absolute inset-0 flex items-end mb-4 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <button className="px-3 py-2 bg-green-500 text-white rounded">
-                      View More
-                    </button>
+                    <Link href={`/products/id?name=${product.name}&description=${product.description
+                      }&price=${product.price}&imagePath=${product.imagePath
+                      }&category=${product.category}&discountPercentage=${product.discountPercentage}&stockLevel=${product.stockLevel}&isFeaturedProduct=${product.isFeaturedProduct}`}>
+
+                      <button className="px-3 py-2 bg-green-500 text-white rounded">
+                        View More
+                      </button>
+                    </Link>
                   </div>
                 </div>
                 <div className="p-4 text-center">
-                <Link href={`/products/id?name=${product.name}&description=${
-                  product.description
-                }&price=${product.price}&image=${
-                  product.imagePath
-                }&category=${product.category}&discountPercentage=${product.discountPercentage}&stockLevel=${product.stockLevel}&isFeaturedProduct=${product.isFeaturedProduct}`}
-              >
-                      <h3 className=" text-sm lg:text-base font-bold text-headingsText">
-                        {product.name}
-                      </h3>
-                    </Link>
+                  <Link href={`/products/id?name=${product.name}&description=${product.description
+                    }&price=${product.price}&imagePath=${product.imagePath
+                    }&category=${product.category}&discountPercentage=${product.discountPercentage}&stockLevel=${product.stockLevel}&isFeaturedProduct=${product.isFeaturedProduct}`}
+                  >
+                    <h3 className=" text-sm lg:text-base font-bold text-headingsText">
+                      {product.name}
+                    </h3>
+                  </Link>
                   <p className="text-secondary font-bold mt-2">
                     ${product.price}
                   </p>
