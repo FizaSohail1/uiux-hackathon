@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { FaAngleDown, FaBars, FaTimes, FaSearch } from 'react-icons/fa';
+import SearchBar from '../searchBar/page';
 
 function Navbar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -12,7 +13,7 @@ function Navbar() {
 
   return (
     <div>
-      <nav className="flex items-center justify-between my-[13px] md:my-[23px]  mx-4 lg:mx-[200px] 2xl:mx-default-margin">
+      <nav className="flex items-center h-12 justify-between my-[13px] md:my-[23px]  mx-4 lg:mx-[200px] 2xl:mx-default-margin">
    
         <div className="inline-flex items-center gap-[30px] lg:gap-[80px] 2xl:gap-[90px] ">
  
@@ -76,15 +77,10 @@ function Navbar() {
           </div>
         </div>
 
-        <div className="hidden lg:flex lg:ml-20 2xl:ml-0">
-          <div className="flex items-center border border-gray-300 px-2 ">
-            <input type="text" className="px-6 py-1 text-sm focus:outline-none" />
-          </div>
-          <button className="bg-secondary text-white px-2 py-1">
-            <FaSearch />
-          </button>
+       
+        <div className="relative  left-10">
+        <SearchBar />
         </div>
-
         <button
           className="lg:hidden text-xl text-[#FB2E86]"
           onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
@@ -104,7 +100,6 @@ function Navbar() {
          <Link href="/" className="block ">
             Home
           </Link>
-
           <span>
               <FaAngleDown className="ml-2 inline" />
             </span>

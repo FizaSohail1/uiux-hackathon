@@ -114,7 +114,7 @@ function ShoppingCart() {
                         </div>
                       </TableCell>
                       <TableCell className="text-sm text-[#15245E]">
-                        {item.price}
+                        ${item.price}
                       </TableCell>
                       <TableCell>
                       <div className="">
@@ -130,7 +130,7 @@ function ShoppingCart() {
                     </div>
                       </TableCell>
                       <TableCell className="text-sm text-[#15245E]">
-                       {Number(item.price) * (item.quantity || 1)}
+                       ${Number(item.price) * (item.quantity || 1)}
                       </TableCell>
                     </TableRow>
                   ))}
@@ -142,9 +142,11 @@ function ShoppingCart() {
                   Continue Shopping
                 </button>
                 </Link>
-                <button className="bg-secondary text-white py-2 px-4 rounded">
+              <Link href={'/checkout'}>
+              <button className="bg-secondary text-white py-2 px-4 rounded">
                   Checkout
                 </button>
+              </Link>
               </div>
             </div>
 
