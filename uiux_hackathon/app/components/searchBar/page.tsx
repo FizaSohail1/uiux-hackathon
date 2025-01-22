@@ -1,13 +1,22 @@
+"use client"
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { client } from "@/sanity/lib/client";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import Image from "next/image";
+import Link from "next/link";
 
 interface ProductDetailsProps {
-  name: string;
-  imagePath: string;
+  id : number,
+  name : string,
+  price : number,
+  discountPercentage: number,
+  imagePath : string,
+  category : string  
+  description:string,
+  stockLevel:number,
+  isFeaturedProduct:boolean
 }
-
 const SearchBar = () => {
   const [query, setQuery] = useState("");
   const [products, setProducts] = useState<ProductDetailsProps[]>([]);
@@ -28,7 +37,7 @@ const SearchBar = () => {
           "name": name,
           "imagePath": image.asset->url
         }`,
-        { searchQuery: `${searchQuery}*` } // GROQ wildcard search
+        { searchQuery: `${searchQuery}*` } // GROQ search
       );
       setProducts(results);
     } catch (error) {
@@ -38,7 +47,6 @@ const SearchBar = () => {
 
   return (
     <div className="relative">
-      {/* Search Bar */}
       <form onSubmit={(e) => e.preventDefault()}>
         <div className="flex items-center border border-gray-300 px-2">
           <input
@@ -61,12 +69,17 @@ const SearchBar = () => {
                 key={index}
                 className="flex items-center gap-4 mb-4 hover:bg-gray-100 p-2 rounded-md"
               >
-                <img
+               <Link href={`/products/id?name=${product.name}&description=${product.description}&price=${product.price}&imagePath=${product.imagePath
+                    }&category=${product.category}&discountPercentage=${product.discountPercentage}&stockLevel=${product.stockLevel}&isFeaturedProduct=${product.isFeaturedProduct}`}>
+               <Image
                   src={product.imagePath}
                   alt={product.name}
                   className="w-12 h-12 object-cover rounded-md"
+                  width={40}
+                  height={42}
                 />
                 <span className="text-sm font-medium">{product.name}</span>
+               </Link>
               </div>
             ))}
           </div>

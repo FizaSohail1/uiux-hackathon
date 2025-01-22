@@ -608,10 +608,11 @@ export default async function Home() {
           Our Blogs
         </h2>
 
-        <div className="2xl:mx-default-margin lg:mx-[170px] mx-auto mb-20 flex items-center justify-between lg:mb-20 2xl:mt-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-[70px] 2xl:flex space-y-44 lg:space-y-0 mx-auto">
-            <div className="2xl:h-[493px] 2xl:w-[370px] h-[300px] w-[250px] lg:h-[300px] lg:w-[320px] mx-auto">
-              <Image
+        <div className="2xl:mx-default-margin lg:mx-[150px] mx-auto mb-20 flex items-center justify-between lg:mb-20 2xl:mt-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 2xl:flex lg:space-y-0 mx-auto">
+            <div className="2xl:h-[493px] 2xl:w-[370px] h-[300px]  lg:h-[300px]  mx-auto">
+             <div>
+             <Image
                 src={"/blog-1.jpg"}
                 alt="blog-1"
                 height={255}
@@ -645,10 +646,12 @@ export default async function Home() {
                   Read More
                 </p>
               </div>
+             </div>
             </div>
 
-            <div className="2xl:h-[493px] 2xl:w-[370px] h-[300px] w-[250px] lg:h-[300px] lg:w-[320px] mx-auto">
-              <Image
+            <div className="2xl:h-[493px] 2xl:w-[370px] h-[300px]  lg:h-[300px]  mx-auto">
+             <div>
+             <Image
                 src={"/blog-2.jpg"}
                 alt="blog-1"
                 height={255}
@@ -682,9 +685,11 @@ export default async function Home() {
                   Read More
                 </p>
               </div>
+             </div>
             </div>
 
-            <div className="2xl:h-[493px] 2xl:w-[370px] h-[430px] w-[250px] lg:h-[300px] lg:w-[320px] mx-auto">
+            <div className="2xl:h-[493px] 2xl:w-[370px] h-[430px]  lg:h-[300px] mx-auto">
+              <div>
               <Image
                 src={"/blog-3.jpg"}
                 alt="blog-1"
@@ -692,7 +697,7 @@ export default async function Home() {
                 width={370}
                 className="object-cover w-full h-[300px] rounded-[8px]"
               />
-              <div className="mb-24">
+              <div className="">
                 <div className="flex gap-3 justify-between my-3">
                   <p className="flex text-headingsText text-[14px] leading-[16.41px]">
                     <span className="text-secondary text-md">
@@ -718,6 +723,7 @@ export default async function Home() {
                 <p className="text-[#72718F] font-normal text-[16px] leading-[30px] my-2">
                   Read More
                 </p>
+              </div>
               </div>
             </div>
           </div>

@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import HeroSection from "../components/Hero/page";
 import Image from "next/image";
@@ -15,6 +14,7 @@ import {
 import { FaCircle } from "react-icons/fa";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { Trash2 } from "lucide-react";
 
 interface IProduct {
   id:string,
@@ -59,11 +59,12 @@ function ShoppingCart() {
     }
   }, [searchParam, router]);
 
-  const removeItem = (id: string) => {
-    const updatedCart = cart.filter((item) => item.id !== id);
+  const removeItem = (name: string) => {
+    const updatedCart = cart.filter((item) => item.name !== name);
     setCart(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
+
 
   function handleQuantity(index:number, num:string){
     const updatedCart = [...cart]
@@ -132,6 +133,12 @@ function ShoppingCart() {
                       <TableCell className="text-sm text-[#15245E]">
                        ${Number(item.price) * (item.quantity || 1)}
                       </TableCell>
+
+                      <TableCell>
+                      <button onClick={() => removeItem(item.name)} className="ml-4 text-red-500 hover:text-red-700">
+                    <Trash2 size={20} />
+                     </button>
+                      </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -142,7 +149,7 @@ function ShoppingCart() {
                   Continue Shopping
                 </button>
                 </Link>
-              <Link href={'/checkout'}>
+              <Link href={'/demo'}>
               <button className="bg-secondary text-white py-2 px-4 rounded">
                   Checkout
                 </button>

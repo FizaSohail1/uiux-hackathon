@@ -1,4 +1,5 @@
 
+import Link from 'next/link';
 import React from 'react';
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa6';
 
@@ -6,7 +7,7 @@ function Footer() {
   return (
     <div>
     <footer className="bg-maingray h-auto lg:h-[330px] 2xl:h-[479px] w-full py-4">
-  <div className="mx-4 lg:mx-[200px] 2xl:mx-default-margin flex flex-col lg:flex-row items-center justify-between gap-10 lg:mt-14">
+  <div className="mx-4 lg:mx-[150px] 2xl:mx-default-margin flex flex-col lg:flex-row items-center justify-between gap-10 lg:mt-14">
 
     <div className="lg:w-1/2 text-center lg:text-left">
       <h1 className="font-medium text-[38px] leading-[44px] text-black mb-4">
@@ -28,21 +29,7 @@ function Footer() {
       </p>
     </div>
 
-    <div className="lg:w-[70%] flex flex-wrap lg:flex-nowrap justify-between  ">
-      <div>
-        <h2 className="text-black text-lg lg:text-[22px] lg:leading-[25.78px] mb-3">
-          CATEGORIES
-        </h2>
-        <nav className="list-none">
-          <li><a className="text-sm text-[#8A8FB9]">Laptops & Computers</a></li>
-          <li><a className="text-sm text-[#8A8FB9]">Camera & Photography</a></li>
-          <li><a className="text-sm text-[#8A8FB9]">Smart Phones & Tablets</a></li>
-          <li><a className="text-sm text-[#8A8FB9]">Video Games & Console</a></li>
-          <li><a className="text-sm text-[#8A8FB9]">Waterproof Headphones</a></li>
-        </nav>
-      </div>
-
-      {/* Customer Care */}
+    <div className=" flex flex-wrap lg:flex-nowrap gap-8  ">
       <div>
         <h2 className="text-black text-lg lg:text-[22px] lg:leading-[25.78px] mb-3">
           CUSTOMER CARE
@@ -55,19 +42,17 @@ function Footer() {
           <li><a className="text-sm text-[#8A8FB9]">Order Tracking</a></li>
         </nav>
       </div>
-
-      {/* Pages */}
       <div>
         <h2 className="text-black text-lg lg:text-[22px] lg:leading-[25.78px] mb-3">
           PAGES
         </h2>
         <nav className="list-none">
-          <li><a className="text-sm text-[#8A8FB9]">Blog</a></li>
-          <li><a className="text-sm text-[#8A8FB9]">Browse the Shop</a></li>
-          <li><a className="text-sm text-[#8A8FB9]">Category</a></li>
-          <li><a className="text-sm text-[#8A8FB9]">Pre-built Pages</a></li>
-          <li><a className="text-sm text-[#8A8FB9]">Visual Composer Elements</a></li>
-          <li><a className="text-sm text-[#8A8FB9]">WooCommerce Pages</a></li>
+          <li><Link href={'/products'} className='text-sm text-[#8A8FB9]'>Products</Link></li>
+          <li><Link href={'/login'} className='text-sm text-[#8A8FB9]'>Login</Link></li>
+          <li><Link href={'/cart'} className='text-sm text-[#8A8FB9]'>Cart</Link></li>
+          <li><Link href={'/faq'} className='text-sm text-[#8A8FB9]'>FAQ</Link></li>
+         <li> <Link href={'/about'} className='text-sm text-[#8A8FB9]'>About</Link></li>
+          <li><Link href={'/contact'} className='text-sm text-[#8A8FB9]'>Contact</Link></li>
         </nav>
       </div>
     </div>
