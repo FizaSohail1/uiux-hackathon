@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import StarRating from "../DynamicStar/page";
 import { FaArrowRight, FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa6";
 import { FiHeart } from "react-icons/fi";
 import Link from "next/link";
@@ -62,7 +61,6 @@ export default function ProductDetails({
           <div className='ml-4 lg:ml-8'>
             <h1 className='text-[36px] leading-[42.19px] font sami-bold'>{name}</h1>
             <div className='flex gap-3 items-center mt-3'>
-              <StarRating rating={5} />
               <div className='text-headingsText text-[14px] leading-[29px]'> ({stockLevel}) </div>
             </div>
             <p className='flex gap-2 text-headingsText text-[14px] leading-[29px] my-2'><span className="font-semibold">Price:</span>${price} <span className='text-secondary line-through'>${discountPercentage}</span></p>

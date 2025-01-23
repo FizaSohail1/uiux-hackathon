@@ -1,15 +1,17 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: true, 
   },
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: true, 
   },
   images: {
-    domains: ['cdn.sanity.io'], // Add 'cdn.sanity.io' to the list of allowed domains
-}
+    domains: ['cdn.sanity.io'], 
+  },
+  experimental: {
+    missingSuspenseWithCSRBailout: false, 
+  },
 };
 
 export default nextConfig;

@@ -15,6 +15,7 @@ import { FaCircle } from "react-icons/fa";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Trash2 } from "lucide-react";
+import { Suspense } from "react";
 
 interface IProduct {
   id:string,
@@ -25,11 +26,10 @@ interface IProduct {
   quantity?: number;
 }
 
-function ShoppingCart() {
+function Cart() {
   const searchParam = useSearchParams();
   const router = useRouter(); 
   const [cart, setCart] = useState<IProduct[]>([]);
-  const [qty,setQty] = useState(1)
 
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
@@ -149,9 +149,9 @@ function ShoppingCart() {
                   Continue Shopping
                 </button>
                 </Link>
-              <Link href={'/demo'}>
+              <Link href={'/information'}>
               <button className="bg-secondary text-white py-2 px-4 rounded">
-                  Checkout
+                  Next Step
                 </button>
               </Link>
               </div>
@@ -185,9 +185,11 @@ function ShoppingCart() {
                   Shipping & taxes calculated at checkout
                 </p>
 
+                <Link href={'/checkout'}>
                 <button className="w-full h-[40px] text-center font-bold text-sm bg-[#19d16f] py-2 my-3 text-white">
                   Proceed To Checkout
                 </button>
+                </Link>
               </div>
 
               <div>
@@ -224,4 +226,15 @@ function ShoppingCart() {
   );
 }
 
-export default ShoppingCart;
+
+function ShoppingCart() {
+  return (
+    <div>
+      <Suspense>
+       <Cart/>
+      </Suspense>
+    </div>
+  )
+}
+
+export default ShoppingCart

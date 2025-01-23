@@ -5,8 +5,8 @@ import { FaPenNib } from "react-icons/fa";
 import { FaCalendarAlt } from "react-icons/fa";
 import Link from "next/link";
 import { fetchData } from "@/data/migrateData";
-import allProducts from "./components/fetchData/page";
-import { CarouselPlugin } from "./components/carousel/page";
+import {allProducts} from "./components/fetchData/page";
+import CarouselPlugin from "./components/carousel/page";
 
 interface IData {
   id: number;
@@ -23,13 +23,12 @@ interface IData {
 export default async function Home() {
 
   await fetchData()
-  const { featuredProducts } = await allProducts()
-
-  const { latestProducts } = await allProducts()
-
-  const { trendingProducts } = await allProducts()
-
-  const { topProducts } = await allProducts()
+  const  [
+    featuredProducts,
+    latestProducts,
+    trendingProducts,
+    topProducts
+   ] = await allProducts()
 
   return (
     <div>
@@ -42,7 +41,7 @@ export default async function Home() {
           </h2>
 
           <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 2xl:gap-[70px] 2xl:flex  justify-center 2xl:mt-24">
-            {featuredProducts.map((item: IData, i) => (
+            {featuredProducts.map((item: IData, i:number) => (
               <div key={i}
                 className="bg-white shadow-lg  transition w-[240px] 2xl:w-[270px] 2xl:h-[361px] md:w-full hover:bg-[#2F1AC4] mx-auto lg:mx-0"
               >
@@ -115,7 +114,7 @@ export default async function Home() {
           </ul>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px]  justify-center 2xl:mt-24">
-            {latestProducts.map((product, i) => (
+            {latestProducts.map((product:IData, i:number) => (
               <div
                 key={i}
                 className="bg-white shadow-lg 2xl:h-[306px] md:w-full 2xl:w-[365px] h-[310px] w-[250px] lg:h-[320px] lg:w-[300px] mx-auto my-5"
@@ -308,7 +307,7 @@ export default async function Home() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] 2xl:gap-[70px] 2xl:flex justify-center ">
-            {trendingProducts.map((product, i) => (
+            {trendingProducts.map((product:IData, i:number) => (
               <div
                 key={i}
                 className="bg-white shadow-lg transition w-[240px] 2xl:h-[361px] md:w-full  md:my-0 mx-auto"
@@ -609,15 +608,15 @@ export default async function Home() {
         </h2>
 
         <div className="2xl:mx-default-margin lg:mx-[150px] mx-auto mb-20 flex items-center justify-between lg:mb-20 2xl:mt-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 2xl:flex lg:space-y-0 mx-auto">
-            <div className="2xl:h-[493px] 2xl:w-[370px] h-[300px]  lg:h-[300px]  mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6  mx-auto">
+            <div className="2xl:h-[493px] h-[300px] mx-auto">
              <div>
              <Image
                 src={"/blog-1.jpg"}
                 alt="blog-1"
                 height={255}
                 width={370}
-                className="object-cover w-full h-full rounded-[8px] mx-auto"
+                className="object-cover w-full h-[250px] 2xl:h-[350px] rounded-[8px] mx-auto"
               />
               <div className="">
                 <div className="flex gap-3 justify-between my-3">
@@ -649,14 +648,14 @@ export default async function Home() {
              </div>
             </div>
 
-            <div className="2xl:h-[493px] 2xl:w-[370px] h-[300px]  lg:h-[300px]  mx-auto">
+            <div className="2xl:h-[493px] h-[300px] mx-auto">
              <div>
              <Image
                 src={"/blog-2.jpg"}
                 alt="blog-1"
                 height={255}
                 width={370}
-                className="object-cover w-full h-full rounded-[8px]"
+                className="object-cover w-full h-[250px] 2xl:h-[350px] rounded-[8px]"
               />
               <div className="">
                 <div className="flex gap-3 justify-between my-3">
@@ -688,14 +687,14 @@ export default async function Home() {
              </div>
             </div>
 
-            <div className="2xl:h-[493px] 2xl:w-[370px] h-[430px]  lg:h-[300px] mx-auto">
+            <div className="2xl:h-[493px] h-[300px] mx-auto">
               <div>
               <Image
                 src={"/blog-3.jpg"}
                 alt="blog-1"
                 height={255}
                 width={370}
-                className="object-cover w-full h-[300px] rounded-[8px]"
+                className="object-cover w-full h-[250px] 2xl:h-[350px] rounded-[8px]"
               />
               <div className="">
                 <div className="flex gap-3 justify-between my-3">

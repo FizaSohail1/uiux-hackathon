@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import Image from "next/image"
-import { Trash2, Plus, Minus } from "lucide-react"
+import { Trash2 } from "lucide-react"
 import HeroSection from "../components/Hero/page"
 
 interface CartItem {

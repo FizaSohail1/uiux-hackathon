@@ -6,7 +6,6 @@ import { TiThList } from "react-icons/ti";
 import { FaCircle } from "react-icons/fa";
 import { TfiZoomIn } from "react-icons/tfi";
 import Image from 'next/image';
-import StarRating from '../components/DynamicStar/page';
 import { IoCartOutline } from 'react-icons/io5';
 import { BsHeart } from 'react-icons/bs';
 
@@ -62,7 +61,7 @@ function shopList() {
 
                 <div className="flex gap-3 items-center my-2">
                    <p className='flex gap-2 text-headingsText text-[15.46px] leading-[19px] my-2'>$25.00 <span className='text-secondary'>$32.00</span></p>
-                   <StarRating rating={4} />
+                  
 
                 </div>
 
@@ -94,7 +93,7 @@ function shopList() {
 
                 <div className="flex gap-3 items-center my-2">
                    <p className='flex gap-2 text-headingsText text-[15.46px] leading-[19px] my-2'>$25.00 <span className='text-secondary'>$32.00</span></p>
-                   <StarRating rating={4} />
+                  
 
                 </div>
 
@@ -126,7 +125,7 @@ function shopList() {
 
                 <div className="flex gap-3 items-center my-2">
                    <p className='flex gap-2 text-headingsText text-[15.46px] leading-[19px] my-2'>$25.00 <span className='text-secondary'>$32.00</span></p>
-                   <StarRating rating={4} />
+                  
 
                 </div>
 
@@ -159,7 +158,7 @@ function shopList() {
 
                 <div className="flex gap-3 items-center my-2">
                    <p className='flex gap-2 text-headingsText text-[15.46px] leading-[19px] my-2'>$25.00 <span className='text-secondary'>$32.00</span></p>
-                   <StarRating rating={4} />
+                  
 
                 </div>
 
@@ -191,7 +190,7 @@ function shopList() {
 
                 <div className="flex gap-3 items-center my-2">
                    <p className='flex gap-2 text-headingsText text-[15.46px] leading-[19px] my-2'>$25.00 <span className='text-secondary'>$32.00</span></p>
-                   <StarRating rating={4} />
+                  
 
                 </div>
 
@@ -223,7 +222,7 @@ function shopList() {
 
                 <div className="flex gap-3 items-center my-2">
                    <p className='flex gap-2 text-headingsText text-[15.46px] leading-[19px] my-2'>$25.00 <span className='text-secondary'>$32.00</span></p>
-                   <StarRating rating={4} />
+                  
 
                 </div>
 
@@ -255,7 +254,7 @@ function shopList() {
 
                 <div className="flex gap-3 items-center my-2">
                    <p className='flex gap-2 text-headingsText text-[15.46px] leading-[19px] my-2'>$25.00 <span className='text-secondary'>$32.00</span></p>
-                   <StarRating rating={4} />
+                  
 
                 </div>
 

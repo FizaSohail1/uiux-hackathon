@@ -1,20 +1,6 @@
 import React from 'react';
 import ProductDetails from '@/app/components/productDetail/page';
-import allProducts from '@/app/components/fetchData/page';
 import RelatedProducts from '@/app/components/relatedProduct/page';
-
-
-interface IProduct {
-    id : number,
-    name : string,
-    price : number,
-    discountPercentage: number,
-    imagePath : string,
-    category : string  
-    description:string,
-    stockLevel:number,
-    isFeaturedProduct:boolean
-}
 
 async function singleProductPage({searchParams} : {searchParams: Promise<{
   name:string,

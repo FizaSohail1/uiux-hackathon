@@ -11,7 +11,7 @@ import {
 import { FaDiamond } from "react-icons/fa6"
 import { GoDiamond } from "react-icons/go"
 
-export function CarouselPlugin() {
+export default function CarouselPlugin() {
   // Array containing data for each slide
   const slides = [
     {

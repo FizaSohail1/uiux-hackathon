@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 
 interface IProduct {
-    id : number,
+    id ?: number,
     name : string,
     price : number,
     discountPercentage: number,
@@ -15,11 +15,11 @@ interface IProduct {
     isFeaturedProduct:boolean
 }
 
-const RelatedProducts = async ({ category }: { category: string }) => {
+const RelatedProducts = async ({ category }: { category?: string }) => {
 
   const sofaProducts = await client.fetch(`*[_type == "product" && category == 'Sofa'][3...7]{"name":name,"description":description,"price" : price,"discoutPercentage": discountPercentage, "imagePath":image.asset->url ,"isFeaturedProduct": isFeaturedProduct,"stockLevel": stockLevel,"category": category}`)
 
-  let chairProducts = await client.fetch(`*[_type == "product" && category == 'Chair'][5...9]{"name":name,"description":description,"price" : price,"discoutPercentage": discountPercentage, "imagePath":image.asset->url ,"isFeaturedProduct": isFeaturedProduct,"stockLevel": stockLevel,"category": category}`)
+  const chairProducts = await client.fetch(`*[_type == "product" && category == 'Chair'][5...9]{"name":name,"description":description,"price" : price,"discoutPercentage": discountPercentage, "imagePath":image.asset->url ,"isFeaturedProduct": isFeaturedProduct,"stockLevel": stockLevel,"category": category}`)
 
   const relatedProducts = category === 'Sofa' ? sofaProducts : chairProducts;
 

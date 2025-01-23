@@ -1,22 +1,23 @@
 "use client"
+import { ScrollArea } from "@/components/ui/scroll-area";
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { client } from "@/sanity/lib/client";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import Image from "next/image";
 import Link from "next/link";
 
 interface ProductDetailsProps {
-  id : number,
-  name : string,
-  price : number,
-  discountPercentage: number,
-  imagePath : string,
-  category : string  
-  description:string,
-  stockLevel:number,
-  isFeaturedProduct:boolean
+  id: number;
+  name: string;
+  price: number;
+  discountPercentage: number;
+  imagePath: string;
+  category: string;
+  description: string;
+  stockLevel: number;
+  isFeaturedProduct: boolean;
 }
+
 const SearchBar = () => {
   const [query, setQuery] = useState("");
   const [products, setProducts] = useState<ProductDetailsProps[]>([]);
@@ -37,7 +38,7 @@ const SearchBar = () => {
           "name": name,
           "imagePath": image.asset->url
         }`,
-        { searchQuery: `${searchQuery}*` } // GROQ search
+        { searchQuery: `${searchQuery}*` }
       );
       setProducts(results);
     } catch (error) {
@@ -46,44 +47,51 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="relative">
-      <form onSubmit={(e) => e.preventDefault()}>
-        <div className="flex items-center border border-gray-300 px-2">
+    <div className="relative w-full max-w-lg mx-auto">
+      <form onSubmit={(e) => e.preventDefault()} className="flex items-center">
+        <div className="flex items-center w-full border border-gray-300 rounded-md overflow-hidden">
           <input
             type="text"
-            className="px-4 py-2 text-sm focus:outline-none w-full"
+            className="w-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
             value={query}
             onChange={handleInputChange}
             placeholder="Search products..."
           />
-          <button className="bg-secondary text-white px-2 py-2">
+          <button
+            type="submit"
+            className="bg-secondary text-white px-4 py-2 hover:bg-blue-600"
+          >
             <FaSearch />
           </button>
         </div>
       </form>
       {products.length > 0 && (
-        <ScrollArea className="absolute z-10 top-[120px] w-full max-h-72 bg-white border border-gray-300 mt-2 rounded-md shadow-lg overflow-y-auto">
-          <div className="p-4">
+        <div className="absolute z-10 left-0 top-full mt-2 w-full bg-white border border-gray-300 rounded-md shadow-lg">
+          <ul className="py-2">
+            <ScrollArea className="h-[300px]">
             {products.map((product, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-4 mb-4 hover:bg-gray-100 p-2 rounded-md"
-              >
-               <Link href={`/products/id?name=${product.name}&description=${product.description}&price=${product.price}&imagePath=${product.imagePath
-                    }&category=${product.category}&discountPercentage=${product.discountPercentage}&stockLevel=${product.stockLevel}&isFeaturedProduct=${product.isFeaturedProduct}`}>
-               <Image
-                  src={product.imagePath}
-                  alt={product.name}
-                  className="w-12 h-12 object-cover rounded-md"
-                  width={40}
-                  height={42}
-                />
-                <span className="text-sm font-medium">{product.name}</span>
-               </Link>
-              </div>
+              <li key={index}>
+                <Link
+                  href={`/products/id?name=${product.name}&description=${product.description}&price=${product.price}&imagePath=${product.imagePath}&category=${product.category}&discountPercentage=${product.discountPercentage}&stockLevel=${product.stockLevel}&isFeaturedProduct=${product.isFeaturedProduct}`}
+                >
+                  <div className="flex items-center gap-4 px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                    <Image
+                      src={product.imagePath}
+                      alt={product.name}
+                      className="w-10 h-10 object-cover rounded-md"
+                      width={40}
+                      height={40}
+                    />
+                    <span className="text-sm font-medium text-gray-700">
+                      {product.name}
+                    </span>
+                  </div>
+                </Link>
+              </li>
             ))}
-          </div>
-        </ScrollArea>
+            </ScrollArea>
+          </ul>
+        </div>
       )}
     </div>
   );

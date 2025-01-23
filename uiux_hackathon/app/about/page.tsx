@@ -1,9 +1,6 @@
 import React from "react";
 import HeroSection from "../components/Hero/page";
 import Image from "next/image";
-import { FaTruckFast, FaCheck } from "react-icons/fa6";
-import { PiHandCoinsFill } from "react-icons/pi";
-import { SlBadge } from "react-icons/sl";
 
 function about() {
   return (

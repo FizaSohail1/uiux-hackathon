@@ -1,6 +1,5 @@
+"use server"
 import { client } from '@/sanity/lib/client';
-import React from 'react'
-
 
 interface IData {
     id: number;
@@ -14,7 +13,7 @@ interface IData {
     stockLevel:string;
   }
   
-async function allProducts() {
+export async function allProducts() {
 
           const featuredProducts:IData[] = await client.fetch('*[_type == "product" && isFeaturedProduct == true][0...4]{"name":name,"description":description,"price" : price,"discoutPercentage": discountPercentage,"imagePath": image.asset->url,"isFeaturedProduct": isFeaturedProduct,"stockLevel": stockLevel,"category": category}')
           
@@ -26,22 +25,19 @@ async function allProducts() {
             const allProduct: IData[] = await client.fetch('*[_type == "product"]{"name":name,"description":description,"price" : price,"discoutPercentage": discountPercentage, "imagePath":image.asset->url ,"isFeaturedProduct": isFeaturedProduct,"stockLevel": stockLevel,"category": category}')
 
             const relatedProducts = await client.fetch('*[_type == "product"][11...15]{"name":name,"description":description,"price" : price,"discoutPercentage": discountPercentage, "imagePath":image.asset->url ,"isFeaturedProduct": isFeaturedProduct,"stockLevel": stockLevel,"category": category}')
-            
-          
+   
 
   return (
-   {
+   [
     featuredProducts,
     latestProducts,
     trendingProducts,
     topProducts,
     allProduct,
     relatedProducts
-   }
+   ]
   )
 }
-
-export default allProducts
 
 
 export async function fetchProductsByCategory(category: string) {
@@ -55,4 +51,6 @@ export async function fetchProductsByCategory(category: string) {
     { category } 
   );
 }
+
+
 

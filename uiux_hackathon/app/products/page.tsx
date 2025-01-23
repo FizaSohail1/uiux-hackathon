@@ -3,15 +3,34 @@ import Image from "next/image";
 import { FaCircle } from "react-icons/fa";
 import Link from "next/link";
 import FilterProduct from "../components/filterProduct/page";
-import allProducts from "../components/fetchData/page";
+import {allProducts} from "../components/fetchData/page";
 import HeroSection from "../components/Hero/page";
 
+
+interface IData {
+  id: number;
+  name: string;
+  price: number;
+  discountPercentage: number;
+  description: string;
+  imagePath: string;
+  category: string;
+  isFeaturedProduct: boolean;
+  stockLevel: string;
+}
 async function Products({ searchParams }: { searchParams: { category?: string } }) {
-  const { allProduct } = await allProducts(); 
+  const [
+    featuredProducts,
+    latestProducts,
+    trendingProducts,
+    topProducts,
+    allProduct,
+    relatedProducts
+   ]= await allProducts();
   const category = searchParams?.category || ""; 
 
   const filteredProducts = category
-    ? allProduct.filter((product) => product.category === category)
+    ? allProduct.filter((product:IData) => product.category === category)
     : allProduct;
 
   return (
@@ -35,7 +54,7 @@ async function Products({ searchParams }: { searchParams: { category?: string } 
       <section className="lg:mb-14">
         <div className="lg:mx-[170px] 2xl:mx-default-margin mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-center">
-            {filteredProducts.map((product, i) => (
+            {filteredProducts.map((product:IData, i:number) => (
               <div
                 key={i}
                 className="bg-white transition h-[380px] w-[270px] lg:h-[361px] md:my-4 mx-auto lg:mx-0"

@@ -4,10 +4,8 @@ import Image from "next/image";
 import { FaPenNib } from "react-icons/fa";
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaArrowLeft, FaArrowRight, FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa6";
-import StarRating from "@/app/components/DynamicStar/page";
 
-async function singleBlogPage({ params }) {
-  const { id } = await params;
+async function singleBlogPage() {
   return (
     <div>
       <HeroSection name={"Single Blog Page"} />
@@ -96,7 +94,6 @@ async function singleBlogPage({ params }) {
                   <h3 className="mx-4 text-[19.68px] leading-[23.06px] my-3">Quam sed</h3>
                   <div className="flex gap-2">
                     <p className="text-headingsText text-[13.89px] leading-[16.28px]">$32.00 <span className="text-secondary ">$56.00</span></p>
-                    <StarRating rating={4} />
                   </div>
                 </div>
 
@@ -106,7 +103,6 @@ async function singleBlogPage({ params }) {
                   <h3 className="mx-4 text-[19.68px] leading-[23.06px] my-3">Quam sed</h3>
                   <div className="flex gap-2">
                     <p className="text-headingsText text-[13.89px] leading-[16.28px]">$32.00 <span className="text-secondary ">$56.00</span></p>
-                    <StarRating rating={4} />
                   </div>
                 </div>
 
@@ -116,7 +112,6 @@ async function singleBlogPage({ params }) {
                   <h3 className="mx-4 text-[19.68px] leading-[23.06px] my-3">Quam sed</h3>
                   <div className="flex gap-2">
                     <p className="text-headingsText text-[13.89px] leading-[16.28px]">$32.00 <span className="text-secondary ">$56.00</span></p>
-                    <StarRating rating={4} />
                   </div>
                 </div>
 
@@ -126,7 +121,6 @@ async function singleBlogPage({ params }) {
                   <h3 className="mx-4 text-[19.68px] leading-[23.06px] my-3">Quam sed</h3>
                   <div className="flex gap-2">
                     <p className="text-headingsText text-[13.89px] leading-[16.28px]">$32.00 <span className="text-secondary ">$56.00</span></p>
-                    <StarRating rating={4} />
                   </div>
                 </div>
               </div>

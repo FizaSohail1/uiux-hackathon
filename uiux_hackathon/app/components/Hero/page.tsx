@@ -1,6 +1,6 @@
 import React from 'react'
 
-function HeroSection({name}) {
+function HeroSection({name}:{name:string}) {
   return (
     <div>
          <main className='bg-maingray w-full h-[266px] flex items-center'>

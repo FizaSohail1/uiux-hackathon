@@ -9,7 +9,6 @@ import { IoCartOutline } from 'react-icons/io5';
 import { BsHeart } from 'react-icons/bs';
 import { IoIosCheckboxOutline } from "react-icons/io";
 import { IoMdCheckbox } from "react-icons/io";
-import StarRating from '../components/DynamicStar/page';
 import Image from 'next/image';
 
 function shopLeftSidebar() {
@@ -73,10 +72,10 @@ function shopLeftSidebar() {
                    <div className=" ">
                    <h1 className='text-[20px] leading-[30px] text-headingsText underline decoration-solid'>Rating Item</h1>
                     <ul className='list-none my-3'>
-                        <li className="text-[#7e81a2] font-normal text-[16px] leading-[30px] gap-2 flex items-center"><span><IoIosCheckboxOutline className='text-yellow-600' /> </span><StarRating rating={4}/><span className='text-black'>(254)</span> </li>
-                        <li className="text-[#7e81a2] font-normal text-[16px] leading-[30px] gap-2 flex items-center"><span><IoIosCheckboxOutline className='text-yellow-600' /> </span> <StarRating rating={3}/><span className='text-black'>(154)</span></li>
-                        <li className="text-[#7e81a2] font-normal text-[16px] leading-[30px] gap-2 flex items-center"><span><IoIosCheckboxOutline className='text-yellow-600'/> </span><StarRating rating={2}/><span className='text-black'>(54)</span></li> 
-                        <li className="text-[#7e81a2] font-normal text-[16px] leading-[30px] gap-2 flex items-center"><span><IoIosCheckboxOutline className='text-yellow-600' /> </span><StarRating rating={2}/><span className='text-black'>(25)</span></li>        
+                        <li className="text-[#7e81a2] font-normal text-[16px] leading-[30px] gap-2 flex items-center"><span><IoIosCheckboxOutline className='text-yellow-600' /> </span><span className='text-black'>(254)</span> </li>
+                        <li className="text-[#7e81a2] font-normal text-[16px] leading-[30px] gap-2 flex items-center"><span><IoIosCheckboxOutline className='text-yellow-600' /> </span><span className='text-black'>(154)</span></li>
+                        <li className="text-[#7e81a2] font-normal text-[16px] leading-[30px] gap-2 flex items-center"><span><IoIosCheckboxOutline className='text-yellow-600'/> </span><span className='text-black'>(54)</span></li> 
+                        <li className="text-[#7e81a2] font-normal text-[16px] leading-[30px] gap-2 flex items-center"><span><IoIosCheckboxOutline className='text-yellow-600' /> </span><span className='text-black'>(25)</span></li>        
 
                     </ul>
                    </div>
@@ -153,7 +152,7 @@ function shopLeftSidebar() {
 
                 <div className="flex gap-3 items-center my-2">
                    <p className='flex gap-2 text-headingsText text-[15.46px] leading-[19px] my-2'>$25.00 <span className='text-secondary'>$32.00</span></p>
-                   <StarRating rating={4} />
+                 
 
                 </div>
 
@@ -185,7 +184,7 @@ function shopLeftSidebar() {
 
                 <div className="flex gap-3 items-center my-2">
                    <p className='flex gap-2 text-headingsText text-[15.46px] leading-[19px] my-2'>$25.00 <span className='text-secondary'>$32.00</span></p>
-                   <StarRating rating={4} />
+                 
 
                 </div>
 
@@ -217,7 +216,7 @@ function shopLeftSidebar() {
 
                 <div className="flex gap-3 items-center my-2">
                    <p className='flex gap-2 text-headingsText text-[15.46px] leading-[19px] my-2'>$25.00 <span className='text-secondary'>$32.00</span></p>
-                   <StarRating rating={4} />
+                 
 
                 </div>
 
@@ -250,7 +249,7 @@ function shopLeftSidebar() {
 
                 <div className="flex gap-3 items-center my-2">
                    <p className='flex gap-2 text-headingsText text-[15.46px] leading-[19px] my-2'>$25.00 <span className='text-secondary'>$32.00</span></p>
-                   <StarRating rating={4} />
+                 
 
                 </div>
 
@@ -282,7 +281,7 @@ function shopLeftSidebar() {
 
                 <div className="flex gap-3 items-center my-2">
                    <p className='flex gap-2 text-headingsText text-[15.46px] leading-[19px] my-2'>$25.00 <span className='text-secondary'>$32.00</span></p>
-                   <StarRating rating={4} />
+                 
 
                 </div>
 
@@ -314,7 +313,7 @@ function shopLeftSidebar() {
 
                 <div className="flex gap-3 items-center my-2">
                    <p className='flex gap-2 text-headingsText text-[15.46px] leading-[19px] my-2'>$25.00 <span className='text-secondary'>$32.00</span></p>
-                   <StarRating rating={4} />
+                 
 
                 </div>
 
@@ -346,7 +345,7 @@ function shopLeftSidebar() {
 
                 <div className="flex gap-3 items-center my-2">
                    <p className='flex gap-2 text-headingsText text-[15.46px] leading-[19px] my-2'>$25.00 <span className='text-secondary'>$32.00</span></p>
-                   <StarRating rating={4} />
+                 
 
                 </div>
 

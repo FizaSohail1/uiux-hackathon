@@ -40,7 +40,7 @@ export async function postReq(item: Data) {
     },
     body: JSON.stringify({
       "shipment": {
-        "carrier_id": "se-1714970",
+        "carrier_id": "se-1755050",
         "service_code": "usps_priority_mail",
         "ship_to": {
           "name": to_name,
