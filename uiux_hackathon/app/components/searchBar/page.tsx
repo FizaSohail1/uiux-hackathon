@@ -59,7 +59,7 @@ const SearchBar = () => {
           />
           <button
             type="submit"
-            className="bg-secondary text-white px-4 py-2 hover:bg-blue-600"
+            className="bg-secondary text-white px-4 py-2 hover:bg-pink-600"
           >
             <FaSearch />
           </button>

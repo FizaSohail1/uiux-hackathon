@@ -4,8 +4,6 @@ import HeroSection from '../components/Hero/page';
 import { IoMdCheckbox } from "react-icons/io";
 import { postReq } from '@/api/shipmentApi';
 import ShipmentResponseViewer from '../components/shipmentResponse/shipmentResponseViewer';
-import Link from 'next/link';
-import router from 'next/router';
 
 
 function ShipmentInfo() {
@@ -72,7 +70,7 @@ function ShipmentInfo() {
           type="email"
           id="email"
           value={shipToEmail} onChange={(e) => setShipToEmail(e.target.value)} autoComplete='off'
-          className="peer w-full border-b-2 border-gray-300 bg-transparent text-sm focus:outline-none mt-5 lg:mt-10"
+          className="peer w-full border-b-2 border-gray-300 bg-transparent text-sm focus:outline-none mt-16 md:mt-5 lg:mt-10"
         />
       </div>
 
@@ -116,7 +114,7 @@ function ShipmentInfo() {
           <input
             type="number"
             id="number"
-            value={shipToPhone} onChange={(e) => setShipToPhone(e.target.value)} 
+            value={shipToPhone} onChange={(e) => setShipToPhone(e.target.value)} autoComplete='off'
             className="peer w-full border-b-2 border-gray-300 bg-transparent text-sm focus:outline-none mt-10"
           />
         </div>
@@ -202,7 +200,7 @@ function ShipmentInfo() {
    <div className='flex flex-col md:flex-row justify-between items-center'>
    <button
         type="submit"
-        className="bg-secondary w-[30%] text-white py-2 px-4 mt-7 lg:mt-16"
+        className="bg-secondary md:w-[30%] text-white py-2 px-4 mt-7 lg:mt-16"
       >
         Confirm Order
       </button>

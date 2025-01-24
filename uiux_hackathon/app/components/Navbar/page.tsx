@@ -78,7 +78,7 @@ function Navbar() {
         </div>
 
        
-        <div className="relative  left-10">
+        <div className="relative hidden md:flex left-10">
         <SearchBar />
         </div>
         <button
@@ -95,7 +95,7 @@ function Navbar() {
            onClick={() => setDropdown(!dropdown)}
          >
 
-          <div className="flex text-[#FB2E86] items-center">
+          <div className="flex text-[#FB2E86] items-center ">
             
          <Link href="/" className="block ">
             Home
@@ -143,11 +143,8 @@ function Navbar() {
             Contact
           </Link>
 
-          <div className="flex items-center border border-gray-300 px-2 mt-4">
-            <input type="text" className="w-full py-1 text-sm focus:outline-none" />
-            <button className="bg-secondary text-white px-2 py-1">
-              <FaSearch />
-            </button>
+          <div className="relative">
+           <SearchBar/>
           </div>
         </div>
       )}
