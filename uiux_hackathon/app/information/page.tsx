@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import HeroSection from '../components/Hero/page';
 import { IoMdCheckbox } from "react-icons/io";
-import { postReq } from '@/api/shipmentApi';
+import { postReq } from '@/data/shipmentApi';
 import ShipmentResponseViewer from '../components/shipmentResponse/shipmentResponseViewer';
 
 
