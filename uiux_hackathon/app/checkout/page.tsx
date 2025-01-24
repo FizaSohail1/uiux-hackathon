@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import { Trash2 } from "lucide-react"
 import HeroSection from "../components/Hero/page"
+import Link from "next/link"
 
 interface CartItem {
   id: string
@@ -108,9 +109,11 @@ const updateQuantity = (itemName: string, num: number) => {
                 <span>${total.toFixed(2)}</span>
               </div>
             </div>
-            <button className="w-full bg-secondary text-white py-2 px-4 rounded-md mt-4 hover:bg-pink-500 transition duration-300">
-              Proceed to Payment
+          <Link href={'/information'}>
+          <button className="w-full bg-secondary text-white py-2 px-4 rounded-md mt-4 hover:bg-pink-500 transition duration-300">
+            Continue to Shipping Details
             </button>
+          </Link>
           </div>
         </div>
       </div>

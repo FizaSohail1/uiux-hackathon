@@ -5,7 +5,7 @@ export async function getReq() {
    const res = await fetch("https://api.shipengine.com/v1/carriers",{
     method: "GET",
     headers: {
-      "API-Key" : process.env.NEXT_PUBLIC_SHIPENGINE_API_TOKEN as string,
+      "API-Key" : process.env.NEXT_PUBLIC_SHIPENGINE_API_KEY as string,
       "Content-Type": "application/json"
     }
    })
@@ -22,20 +22,17 @@ interface Data {
   to_phone: string
   to_address: string
   to_city: string
-  weight_value: number
-  height: number
-  width: number
-  length: number
+  to_email:string
 }
 
 export async function postReq(item: Data) {
 
-  const {to_name, to_phone, to_address, to_city,weight_value, height, width, length} = item
+  const {to_name, to_phone, to_address, to_city,to_email} = item
 
   const res = await fetch("https://api.shipengine.com/v1/labels",{
     method: "POST",
     headers: {
-      "API-Key" : process.env.NEXT_PUBLIC_SHIPENGINE_API_Token as string,
+      "API-Key" : process.env.NEXT_PUBLIC_SHIPENGINE_API_KEY as string,
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
@@ -48,6 +45,7 @@ export async function postReq(item: Data) {
           "address_line1": to_address,
           "city_locality": to_city,
           "state_province": "CA",
+          "email": to_email,
           "postal_code": "95128",
           "country_code": "US",
           "address_residential_indicator": "yes"
@@ -66,13 +64,13 @@ export async function postReq(item: Data) {
         "packages": [
           {
             "weight": {
-              "value": weight_value,
+              "value": 12,
               "unit": "ounce"
             },
             "dimensions": {
-              "height": height,
-              "width": width,
-              "length": length,
+              "height": 12,
+              "width": 22,
+              "length": 32,
               "unit": "inch"
             }
           }
@@ -84,4 +82,6 @@ export async function postReq(item: Data) {
   const data = await res.json()
 
   console.log("🍊",data);
+
+  return data;
 }

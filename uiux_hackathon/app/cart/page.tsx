@@ -149,7 +149,7 @@ function Cart() {
                   Continue Shopping
                 </button>
                 </Link>
-              <Link href={'/information'}>
+              <Link href={'/checkout'}>
               <button className="bg-secondary text-white py-2 px-4 rounded">
                   Next Step
                 </button>

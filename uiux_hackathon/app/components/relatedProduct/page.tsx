@@ -17,7 +17,7 @@ interface IProduct {
 
 const RelatedProducts = async ({ category }: { category?: string }) => {
 
-  const sofaProducts = await client.fetch(`*[_type == "product" && category == 'Sofa'][3...7]{"name":name,"description":description,"price" : price,"discoutPercentage": discountPercentage, "imagePath":image.asset->url ,"isFeaturedProduct": isFeaturedProduct,"stockLevel": stockLevel,"category": category}`)
+  const sofaProducts = await client.fetch(`*[_type == "product" && category == 'Sofa']{"name":name,"description":description,"price" : price,"discoutPercentage": discountPercentage, "imagePath":image.asset->url ,"isFeaturedProduct": isFeaturedProduct,"stockLevel": stockLevel,"category": category}`)
 
   const chairProducts = await client.fetch(`*[_type == "product" && category == 'Chair'][5...9]{"name":name,"description":description,"price" : price,"discoutPercentage": discountPercentage, "imagePath":image.asset->url ,"isFeaturedProduct": isFeaturedProduct,"stockLevel": stockLevel,"category": category}`)
 

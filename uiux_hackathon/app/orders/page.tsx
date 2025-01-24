@@ -41,7 +41,7 @@ function orders() {
 
     <div className="mx-auto flex justify-center">
       <button className="h-[34px] w-auto p-2 md:h-[54px] md:w-[170px] 2xl:h-[59px] 2xl:w-[208px] items-center text-white text-center bg-secondary mt-5 lg:my-8">
-        Calculate Shopping
+        View Details
       </button>
     </div>
   </div>
