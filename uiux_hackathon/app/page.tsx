@@ -40,18 +40,18 @@ export default async function Home() {
             Featured Products
           </h2>
 
-          <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 2xl:gap-[70px] 2xl:flex  justify-center 2xl:mt-24">
+          <div className="md:mx-5 md:space-y-5 lg:space-y-0 lg:mx-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 2xl:gap-36 2xl:flex  justify-center 2xl:mt-24">
             {featuredProducts.map((item: IData, i:number) => (
               <div key={i}
-                className="bg-white shadow-lg  transition w-[240px] 2xl:w-[270px] 2xl:h-[361px] md:w-full hover:bg-[#2F1AC4] mx-auto lg:mx-0"
+                className="bg-white shadow-lg h-auto transition w-[240px]  2xl:h-auto md:w-full hover:bg-[#2F1AC4] mx-auto lg:mx-0"
               >
-                <div className="h-[200px]  w-[240px] md:w-full 2xl:w-[270px] 2xl:h-[236px]  bg-[#F6F7FB] ">
+                <div className="h-[200px] w-[240px] md:h-[270px] md:w-full  2xl:h-[380px] bg-[#F6F7FB] ">
                   <Image
                     src={item.imagePath}
                     alt={item.name}
                     height={178}
                     width={178}
-                    className={`h-full w-full object-cover mx-auto `}
+                    className={`h-full w-full object-contain mx-auto `}
                   />
                 </div>
                 <div className="absolute top-4 left-4 flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -68,7 +68,7 @@ export default async function Home() {
                     }&price=${item.price}&imagePath=${item.imagePath
                     }&category=${item.category}&discountPercentage=${item.discountPercentage}&stockLevel=${item.stockLevel}&isFeaturedProduct=${item.isFeaturedProduct}`}
                   >
-                    <h3 className=" text-sm lg:text-base font-bold text-headingsText">
+                    <h3 className=" text-sm lg:text-base font-bold text-headingsText 2xl:text-2xl">
                       {item.name}
                     </h3>
                   </Link>
@@ -77,92 +77,80 @@ export default async function Home() {
                     <div className="h-1 w-[14px] rounded-md bg-secondary"></div>
                     <div className="h-1 w-[14px] rounded-md bg-headingsText"></div>
                   </div>
-                  <p className="text-gray-500">Code - {item.id}</p>
-                  <p className="text-secondary font-bold my-2">${item.price}</p>
+                  <p className="text-secondary font-bold my-2 2xl:text-2xl">${item.price}</p>
                 </div>
               </div>
             ))}
           </div>
-          <div className="flex gap-2 justify-center mt-8 lg:mt-20">
-            <div className="h-1 w-6 rounded-md bg-secondary"></div>
-            <div className="h-1 w-5 rounded-md bg-pink-200"></div>
-            <div className="h-1 w-5 rounded-md bg-pink-200"></div>
-            <div className="h-1 w-5 rounded-md bg-pink-200"></div>
-          </div>
         </div>
       </section>
 
-      <section className="md:py-16">
-        <div className="mx-auto lg:mx-[170px] 2xl:mx-default-margin">
-          <h2 className="text-2xl md:text-4xl font-bold text-center text-headingsText mb-10  ">
-            Latest Products
-          </h2>
+<section className="md:py-16 2xl:my-32">
+  <div className="mx-auto px-4 lg:px-[170px] 2xl:px-default-margin">
+    <h2 className="text-2xl md:text-4xl font-bold text-center text-headingsText mb-10 ">
+      Latest Products
+    </h2>
 
-          <ul className="flex flex-wrap justify-center gap-4 md:gap-8 my-8 2xl:mx-[450px] ">
-            <li className="text-secondary underline decoration-solid cursor-pointer">
-              New Arrival
-            </li>
-            <li className="text-textStyle underline decoration-solid cursor-pointer">
-              Best Seller
-            </li>
-            <li className="text-textStyle underline decoration-solid cursor-pointer">
-              Featured
-            </li>
-            <li className="text-textStyle underline decoration-solid cursor-pointer">
-              Special Offer
-            </li>
-          </ul>
+    <ul className="flex flex-wrap justify-center gap-4 md:gap-8 my-8 2xl:my-20">
+      <li className="text-secondary underline decoration-solid cursor-pointer 2xl:text-2xl">
+        New Arrival
+      </li>
+      <li className="text-textStyle underline decoration-solid cursor-pointer 2xl:text-2xl">
+        Best Seller
+      </li>
+      <li className="text-textStyle underline decoration-solid cursor-pointer 2xl:text-2xl">
+        Featured
+      </li>
+      <li className="text-textStyle underline decoration-solid cursor-pointer 2xl:text-2xl">
+        Special Offer
+      </li>
+    </ul>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px]  justify-center 2xl:mt-24">
-            {latestProducts.map((product:IData, i:number) => (
-              <div
-                key={i}
-                className="bg-white shadow-lg 2xl:h-[306px] md:w-full 2xl:w-[365px] h-[310px] w-[250px] lg:h-[320px] lg:w-[300px] mx-auto my-5"
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px] 2xl:gap-36 justify-center">
+      {latestProducts.map((product: IData, i: number) => (
+        <div
+          key={i}
+          className="bg-white shadow-lg h-[310px] sm:h-[320px] lg:h-[340px] w-full sm:w-[280px] lg:w-[300px] 2xl:w-full 2xl:h-[450px] mx-auto"
+        >
+          <div className="h-[200px] sm:h-[250px] 2xl:h-[380px] w-full bg-[#F6F7FB] flex items-center justify-center">
+            <Image
+              src={product.imagePath}
+              alt={product.name}
+              height={200}
+              width={230}
+              className="h-full w-full object-contain"
+            />
+          </div>
+
+          <div className="flex justify-between items-center mt-4 px-4">
+            <div>
+              <Link
+                href={`/products/id?name=${product.name}&description=${product.description}&price=${product.price}&imagePath=${product.imagePath}&category=${product.category}&discountPercentage=${product.discountPercentage}&stockLevel=${product.stockLevel}&isFeaturedProduct=${product.isFeaturedProduct}`}
               >
-                <div className="h-[250px] w-full bg-[#F6F7FB] flex items-center  ">
-                  <Image
-                    src={product.imagePath}
-                    alt={product.name}
-                    height={200}
-                    width={230}
-                    className="h-full w-full object-contain"
-                  />
-                </div>
-
-                <div className="flex justify-between items-center mt-4 px-2">
-                  <div>
-                    <Link href={`/products/id?name=${product.name}&description=${product.description
-                      }&price=${product.price}&imagePath=${product.imagePath
-                      }&category=${product.category}&discountPercentage=${product.discountPercentage}&stockLevel=${product.stockLevel}&isFeaturedProduct=${product.isFeaturedProduct}`}
-                    >
-                      <h3 className=" text-sm lg:text-base font-bold text-headingsText">
-                        {product.name}
-                      </h3>
-                    </Link>
-                    <div className="bg-[#EEEFFB] border-[2px] w-[100px] h-1 mt-2"></div>
-                  </div>
-                  <div className="flex flex-row gap-2 items-end text-sm md:text-base">
-                    <p className="text-textStyle font-bold  ">
-                      ${product.price}
-                    </p>
-                    <p className="text-[#FB2448] font-bold">
-                      ${product.discountPercentage}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
+                <h3 className="text-sm lg:text-base font-bold text-headingsText 2xl:text-2xl">
+                  {product.name}
+                </h3>
+              </Link>
+              <div className="bg-[#EEEFFB] border-[2px] w-[100px] h-1 mt-2"></div>
+            </div>
+            <div className="flex flex-row gap-2 items-end text-sm md:text-base 2xl:text-2xl">
+              <p className="text-textStyle font-bold">${product.price}</p>
+            </div>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
-      <div className=" my-10 md:my-20">
-        <h2 className=" text-2xl md:text-4xl font-bold text-center text-headingsText mb-10 ">
+
+      <div className=" my-10 md:my-20 2xl:my-32">
+        <h2 className=" text-2xl md:text-4xl font-bold text-center text-headingsText mb-10 2xl:mb-20">
           What Shopex Offer
         </h2>
 
-        <div className="flex flex-col lg:flex-row  mx-auto justify-center gap-[30px] 2xl:gap-[70px] 2xl:flex 2xl:mx-default-margin lg:mx-[170px]">
-          <div className="h-[320px] w-[250px] md:w-[270px] mt-4 cursor-pointer bg-white shadow-md p-4 flex flex-col items-center justify-center mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-auto md:mx-5 lg:mx-0 justify-center gap-[30px] 2xl:gap-36 2xl:mx-default-margin lg:mx-[170px]">
+          <div className="h-[320px] w-[250px] md:w-full 2xl:h-[450px] mt-4 cursor-pointer bg-white shadow-md p-4 flex flex-col items-center justify-center mx-auto">
             <Image
               src={"/truck.png"}
               alt="truck"
@@ -173,13 +161,13 @@ export default async function Home() {
             <h2 className="text-center mt-2 text-[22px] leading-[25.78px] font-bold">
               Fast Delivery
             </h2>
-            <p className="font-normal text-center text-base mx-auto">
+            <p className="font-normal text-center text-base mx-auto 2xl:text-2xl 2x:mt-3">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa
               purus gravida.
             </p>
           </div>
 
-          <div className="h-[320px] w-[250px] md:w-[270px] mt-4 cursor-pointer bg-white shadow-md p-4 flex flex-col items-center justify-center mx-auto">
+          <div className="h-[320px] w-[250px] 2xl:h-[450px] md:w-full mt-4 cursor-pointer bg-white shadow-md p-4 flex flex-col items-center justify-center mx-auto">
             <Image
               src={"/cashback-1.png"}
               alt="truck"
@@ -191,13 +179,13 @@ export default async function Home() {
             <h2 className="text-center mt-2 text-[22px] leading-[25.78px] font-bold">
               100% Cashback
             </h2>
-            <p className="font-normal text-center text-base mx-auto">
+            <p className="font-normal text-center text-base mx-auto 2xl:text-2xl 2xl:mt-3">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa
               purus gravida.
             </p>
           </div>
 
-          <div className="h-[320px] w-[250px] md:w-[270px] mt-4 cursor-pointer bg-white shadow-md p-4 flex flex-col items-center justify-center mx-auto">
+          <div className="h-[320px] w-[250px] 2xl:h-[450px] md:w-full mt-4 cursor-pointer bg-white shadow-md p-4 flex flex-col items-center justify-center mx-auto">
             <Image
               src={"/medal.png"}
               alt="truck"
@@ -209,13 +197,13 @@ export default async function Home() {
             <h2 className="text-center mt-2 text-[22px] leading-[25.78px] font-bold">
               Quality Product
             </h2>
-            <p className="font-normal text-center text-base mx-auto">
+            <p className="font-normal text-center text-base mx-auto 2xl:text-2xl 2xl:mt-3">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa
               purus gravida.
             </p>
           </div>
 
-          <div className="h-[320px] w-[250px] md:w-[270px] mt-4 cursor-pointer bg-white shadow-md p-4 flex flex-col items-center justify-center mx-auto">
+          <div className="h-[320px] w-[250px] 2xl:h-[450px] md:w-full mt-4 cursor-pointer bg-white shadow-md p-4 flex flex-col items-center justify-center mx-auto">
             <Image
               src={"/24-hours-support-1.png"}
               alt="truck"
@@ -226,7 +214,7 @@ export default async function Home() {
             <h2 className="text-center mt-2 text-[22px] leading-[25.78px] font-bold">
               24/7 Support
             </h2>
-            <p className="font-normal text-center text-base mx-auto">
+            <p className="font-normal text-center text-base mx-auto 2xl:text-2xl 2xl:mt-3">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa
               purus gravida.
             </p>
@@ -234,71 +222,73 @@ export default async function Home() {
         </div>
       </div>
 
-      <div className="h-auto lg:h-[579px] w-full my-8  py-14 bg-maingray px-4 lg:px-0 ">
-        <div className="2xl:mx-default-margin lg:mx-[170px] mx-auto justify-center  flex flex-col lg:flex-row  items-center gap-[30px]">
-          <div className=" relative flex items-center justify-center  ">
-            <Image
-              src={"/Ellipse-63.png"}
-              alt="ellipse"
-              height={300}
-              width={280}
-              className="object-cover w-full h-auto  "
-            />
 
-            <div className="absolute">
-              <Image
-                src={"/hero-3.png"}
-                alt="hero3"
-                height={100}
-                width={300}
-                className=" h-[270px] w-[270px] lg:h-[449.62px] lg:w-[481px]  object-cover"
-              />
-            </div>
-          </div>
+<div className="h-auto lg:h-[579px] w-full my-8 py-14 bg-maingray px-4 lg:px-0">
+  <div className="2xl:mx-default-margin lg:mx-[170px] mx-auto justify-center flex flex-col md:flex-row items-center gap-[30px] md:gap-[40px]">
+    <div className="relative flex items-center justify-center md:w-1/2">
+      <Image
+        src={"/Ellipse-63.png"}
+        alt="ellipse"
+        height={300}
+        width={280}
+        className="object-cover w-full h-auto 2xl:h-[450px] 2xl:w-[450px]"
+      />
+      <div className="absolute">
+        <Image
+          src={"/hero-3.png"}
+          alt="hero3"
+          height={100}
+          width={300}
+          className="h-[270px] w-[270px] md:h-[350px] md:w-[350px] lg:h-[449px] lg:w-[481px] object-cover"
+        />
+      </div>
+    </div>
 
-          <div className="flex flex-col 2xl:mx-4">
-            <h1 className=" text-2xl md:text-[35px] md:leading-[46.2px] text-headingsText font-semibold text-center md:text-left">
-              Unique Features Of Latest & Trending Products
-            </h1>
+    {/* Text Section */}
+    <div className="flex flex-col md:w-1/2">
+      <h1 className="text-2xl md:w-[90%] lg:w-full lg:text-[35px] lg:leading-[46.2px] text-headingsText font-semibold text-center md:text-left">
+        Unique Features Of Latest & Trending Products
+      </h1>
 
-            <ul className="my-10 space-y-4">
-              <li className="flex items-center gap-3">
-                <span className="bg-secondary h-[11px] w-[11px] rounded-full"></span>
-                <p className="font-medium text-[16px] leading-[21.12px] text-[#ABACC3]">
-                  All frames constructed with hardwood solids and laminates
-                </p>
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="bg-[#2B2BF5] h-[11px] w-[11px] rounded-full"></span>
-                <p className="font-medium text-[16px] leading-[28px] text-[#ABACC3]">
-                  Reinforced with double wood dowels, glue, screw - nails corner
-                  blocks and machine nails
-                </p>
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="bg-[#2BF5CC] h-[11px] w-[11px] rounded-full"></span>
-                <p className="font-medium text-[16px] leading-[21.12px] text-[#ABACC3]">
-                  Arms, backs and seats are structurally reinforced
-                </p>
-              </li>
-            </ul>
+      <ul className="my-10 space-y-4 md:w-[90%]">
+        <li className="flex items-center gap-3">
+          <span className="bg-secondary h-[11px] w-[11px] rounded-full"></span>
+          <p className="font-medium text-[16px] leading-[21.12px] text-[#ABACC3]">
+            All frames constructed with hardwood solids and laminates
+          </p>
+        </li>
+        <li className="flex items-center gap-3">
+          <span className="bg-[#2B2BF5] h-[11px] w-[11px] rounded-full"></span>
+          <p className="font-medium text-[16px] leading-[28px] text-[#ABACC3]">
+            Reinforced with double wood dowels, glue, screw - nails corner
+            blocks and machine nails
+          </p>
+        </li>
+        <li className="flex items-center gap-3">
+          <span className="bg-[#2BF5CC] h-[11px] w-[11px] rounded-full"></span>
+          <p className="font-medium text-[16px] leading-[21.12px] text-[#ABACC3]">
+            Arms, backs and seats are structurally reinforced
+          </p>
+        </li>
+      </ul>
 
-            <div className="flex items-center gap-3 lg:gap-5">
-              <button className="bg-secondary text-white font-bold text-xs lg:text-[16px] p-3 lg:px-8 lg:py-4 mt-6">
-                Add To Cart
-              </button>
-              <div className="mt-4">
-                <h3 className="text-headingsText text-[14px] leading-[16.41px]">
-                  B&B Italian Sofa
-                </h3>
-                <p className="text-headingsText text-[14px] leading-[16.41px] font-normal">
-                  $32.00
-                </p>
-              </div>
-            </div>
-          </div>
+      <div className="flex items-center gap-3 lg:gap-5">
+        <button className="bg-secondary text-white font-bold text-xs lg:text-[16px] p-3 lg:px-8 lg:py-4 mt-6">
+          Add To Cart
+        </button>
+        <div className="mt-4">
+          <h3 className="text-headingsText text-[14px] leading-[16.41px]">
+            B&B Italian Sofa
+          </h3>
+          <p className="text-headingsText text-[14px] leading-[16.41px] font-normal">
+            $32.00
+          </p>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
 
       <section className="my-10 md:py-16 ">
         <div className=" mx-auto lg:mx-[170px] 2xl:mx-default-margin">
@@ -306,19 +296,19 @@ export default async function Home() {
             Trending Products
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] 2xl:gap-[70px] 2xl:flex justify-center ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:mx-5 lg:mx-0 gap-[30px] 2xl:gap-36 2xl:flex justify-center ">
             {trendingProducts.map((product:IData, i:number) => (
               <div
                 key={i}
-                className="bg-white shadow-lg transition w-[240px] 2xl:h-[361px] md:w-full  md:my-0 mx-auto"
+                className="bg-white shadow-lg transition w-[240px] md:h-auto 2xl:h-auto md:w-full  md:my-0 mx-auto"
               >
-                <div className="h-[200px]  w-[240px] md:w-full 2xl:h-[236px] 2xl:w-[270px] bg-[#F6F7FB]  items-center mx-auto">
+                <div className="h-[200px]  w-[240px] md:w-full md:h-[300px] lg:h-[250px] 2xl:h-[356px]  bg-[#F6F7FB]  items-center mx-auto">
                   <Image
                     src={product.imagePath}
                     alt={product.name}
                     height={178}
                     width={178}
-                    className={`h-full w-full object-cover mx-auto `}
+                    className={`h-full w-full object-contain mx-auto `}
                   />
                 </div>
                 <div className="absolute top-4 left-4 flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -335,16 +325,13 @@ export default async function Home() {
                     }&price=${product.price}&imagePath=${product.imagePath
                     }&category=${product.category}&discountPercentage=${product.discountPercentage}&stockLevel=${product.stockLevel}&isFeaturedProduct=${product.isFeaturedProduct}`}
                   >
-                    <h3 className=" text-sm lg:text-base font-bold text-headingsText">
+                    <h3 className=" text-sm lg:text-base font-bold text-headingsText 2xl:text-2xl">
                       {product.name}
                     </h3>
                   </Link>
                   <div className="flex  gap-2 text-center justify-center">
-                    <p className="text-headingsText font-normal text-[14px] leading-[14px] mt-2">
+                    <p className="text-headingsText font-normal text-[14px] leading-[14px] mt-2 2xl:text-2xl">
                       ${product.price}
-                    </p>
-                    <p className="text-blue-100 font-normal text-[12px] leading-[12px] mt-2 line-through">
-                      ${product.discountPercentage}
                     </p>
                   </div>
                 </div>
@@ -352,103 +339,6 @@ export default async function Home() {
             ))}
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-[30px] items-center mt-7 px-4 lg:px-0">
-            <div className="h-[270px] w-full lg:w-[350px] 2xl:w-[420px] bg-[#fff6fb] p-3">
-              <div className="">
-                <h3 className="font-semibold text-[26px] leading-[26px] text-headingsText mt-3">
-                  23% off in all products
-                </h3>
-                <p className="text-base underline decoration-solid text-secondary my-2">
-                  Shop Now
-                </p>
-              </div>
-              <div className="flex justify-end items-end">
-                <Image
-                  src={"/trending-1.png"}
-                  alt=""
-                  height={207}
-                  width={213}
-                  className="object-cover h-[150px] lg:h-[207px] w-[213px]"
-                />
-              </div>
-            </div>
-
-            <div className="h-[270px] w-full lg:w-[350px] 2xl:w-[420px] bg-maingray p-3">
-              <div className="">
-                <h3 className="font-semibold text-[26px] leading-[26px] text-headingsText mt-3">
-                  23% off in all products
-                </h3>
-                <p className="text-base underline decoration-solid text-secondary my-2">
-                  Shop Now
-                </p>
-              </div>
-              <div className="flex justify-end items-end">
-                <Image
-                  src={"/trending-2.png"}
-                  alt=""
-                  height={173}
-                  width={312}
-                  className="object-cover h-[173px] w-[312px]"
-                />
-              </div>
-            </div>
-
-            <div className="grid grid-rows-3 space-y-2">
-              <div className="flex items-center justify-center gap-2">
-                <div className="bg-maingray w-[107px] h-[74px]">
-                  <Image
-                    src={"/trending-3.png"}
-                    alt=""
-                    height={57}
-                    width={71}
-                    className="object-cover h-[71px] w-[64px]"
-                  />
-                </div>
-                <div className="">
-                  <p className="text-base text-headingsText">
-                    Executive Seat chair
-                  </p>
-                  <p className="text-[11px] text-headingsText ">$32.00</p>
-                </div>
-              </div>
-
-              <div className="flex items-center justify-center gap-2">
-                <div className="bg-maingray w-[107px] h-[74px]">
-                  <Image
-                    src={"/trending-4.png"}
-                    alt=""
-                    height={57}
-                    width={71}
-                    className="object-cover h-[71px] w-[64px]"
-                  />
-                </div>
-                <div className="">
-                  <p className="text-base text-headingsText">
-                    Executive Seat chair
-                  </p>
-                  <p className="text-[11px] text-headingsText ">$32.00</p>
-                </div>
-              </div>
-
-              <div className="flex items-center justify-center gap-2">
-                <div className="bg-maingray w-[107px] h-[74px]">
-                  <Image
-                    src={"/trending-5.png"}
-                    alt=""
-                    height={57}
-                    width={71}
-                    className="object-cover h-[71px] w-[64px]"
-                  />
-                </div>
-                <div className="">
-                  <p className="text-base text-headingsText">
-                    Executive Seat chair
-                  </p>
-                  <p className="text-[11px] text-headingsText ">$32.00</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -528,19 +418,19 @@ export default async function Home() {
             Top Categoriese
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] 2xl:gap-[70px] 2xl:flex justify-center 2xl:mt-24 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] 2xl:gap-36 2xl:flex justify-center 2xl:mt-24 ">
             {topProducts.map((product: IData, i: number) => (
               <div
                 key={i}
-                className="h-[280px] w-[220px]  2xl:h-[361px] mx-auto relative group"
+                className="h-[280px] w-[220px]  2xl:h-auto 2xl:w-full mx-auto relative group"
               >
-                <div className=" h-[200px] w-[220px] 2xl:h-[236px] 2xl:w-[270px] bg-[#F6F7FB] rounded-full mx-auto hover:border-b-4 hover:border-l-4 hover:border-[#31208a] relative">
+                <div className=" h-[200px] w-[220px] 2xl:h-[340px] 2xl:w-[340px] bg-[#F6F7FB] rounded-full mx-auto hover:border-b-4 hover:border-l-4 hover:border-[#31208a] relative">
                   <Image
                     src={product.imagePath}
                     alt={product.name}
                     height={178}
                     width={178}
-                    className={`h-full w-full object-cover mx-auto my-4 `}
+                    className={`h-full w-full object-contain mx-auto my-4 `}
                   />
 
                   <div className="absolute inset-0 flex items-end mb-4 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -559,11 +449,11 @@ export default async function Home() {
                     }&price=${product.price}&imagePath=${product.imagePath
                     }&category=${product.category}&discountPercentage=${product.discountPercentage}&stockLevel=${product.stockLevel}&isFeaturedProduct=${product.isFeaturedProduct}`}
                   >
-                    <h3 className=" text-sm lg:text-base font-bold text-headingsText">
+                    <h3 className=" text-sm lg:text-base font-bold text-headingsText 2xl:text-2xl">
                       {product.name}
                     </h3>
                   </Link>
-                  <p className="text-secondary font-bold mt-2">
+                  <p className="text-secondary font-bold mt-2 2xl:text-2xl">
                     ${product.price}
                   </p>
                 </div>

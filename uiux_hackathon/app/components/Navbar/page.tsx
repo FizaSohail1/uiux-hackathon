@@ -2,33 +2,31 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { FaAngleDown, FaBars, FaTimes, FaSearch } from 'react-icons/fa';
+import { FaAngleDown, FaBars, FaTimes } from 'react-icons/fa';
 import SearchBar from '../searchBar/page';
 
 function Navbar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropdown,setDropdown] = useState(false);
 
-
-
   return (
     <div>
-      <nav className="flex items-center h-12 justify-between my-[13px] md:my-[23px]  mx-4 lg:mx-[200px] 2xl:mx-default-margin">
+      <nav className="flex items-center h-12 justify-between my-[13px] md:my-[23px]  mx-4 lg:mx-[150px] 2xl:mx-default-margin">
    
         <div className="inline-flex items-center gap-[30px] lg:gap-[80px] 2xl:gap-[90px] ">
  
           <div className="logo">
-            <h1 className={`font-bold text-2xl lg:text-[34px] lg:leading-[34px] overflow-hidden`}>
+            <h1 className={`font-bold text-2xl lg:text-[34px] lg:leading-[34px] 2xl:text-6xl overflow-hidden`}>
               Hekto
             </h1>
           </div>
 
-          <div className={`hidden lg:flex space-x-8 text-[16px] leading-[20px]`}>
+          <div className={`hidden lg:flex space-x-8 2xl:space-x-12 text-[16px] leading-[20px]`}>
            <ul className='flex'>
             <li className='relative' 
            
             >
-          <div className="flex items-center text-[#FB2E86] top-[10px]">
+          <div className="flex items-center text-[#FB2E86] top-[10px] 2xl:text-3xl">
           <Link href="/" className=" ">
               Home
             </Link>
@@ -59,26 +57,26 @@ function Navbar() {
             )}
             </li>
            </ul>
-            <Link href="/404" className="">
+            <Link href="/404" className="2xl:text-2xl">
               Pages
             </Link>
-            <Link href="/products" className="text-[#0D0E43] font-normal text-[16px] leading-[20px]">
+            <Link href="/products" className="text-[#0D0E43] font-normal text-[16px] leading-[20px] 2xl:text-3xl">
               Product
             </Link>
-            <Link href="/blogs" className="text-[#0D0E43] font-normal text-[16px] leading-[20px]">
+            <Link href="/blogs" className="text-[#0D0E43] font-normal text-[16px] leading-[20px] 2xl:text-3xl">
               Blog
             </Link>
-            <Link href="/shop" className="text-[#0D0E43] font-normal text-[16px] leading-[20px]">
+            <Link href="/shop" className="text-[#0D0E43] font-normal text-[16px] leading-[20px] 2xl:text-3xl">
               Shop
             </Link>
-            <Link href="/contact" className="text-[#0D0E43] font-normal text-[16px] leading-[20px]">
+            <Link href="/contact" className="text-[#0D0E43] font-normal text-[16px] leading-[20px] 2xl:text-3xl">
               Contact
             </Link>
           </div>
         </div>
 
        
-        <div className="relative hidden md:flex left-10">
+        <div className="relative hidden lg:flex left-10">
         <SearchBar />
         </div>
         <button

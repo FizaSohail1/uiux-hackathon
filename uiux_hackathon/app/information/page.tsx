@@ -69,7 +69,7 @@ function ShipmentInfo() {
         <input
           type="email"
           id="email"
-          value={shipToEmail} onChange={(e) => setShipToEmail(e.target.value)} autoComplete='off'
+          value={shipToEmail} onChange={(e) => setShipToEmail(e.target.value)}
           className="peer w-full border-b-2 border-gray-300 bg-transparent text-sm focus:outline-none mt-16 md:mt-5 lg:mt-10"
         />
       </div>
@@ -91,15 +91,15 @@ function ShipmentInfo() {
         <div className="relative my-5 w-1/2">
 
         <label
-            htmlFor="number"
+            htmlFor="name"
             className="absolute left-0 top-5 font-medium text-sm text-[#c1cbe1] peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-xs lg:peer-placeholder-shown:text-base peer-focus:-top-5 peer-focus:text-sm"
           >
             Full name
           </label>
           <input
             type="text"
-            id="first-name"
-            value={shipToName} onChange={(e) => setShipToName(e.target.value)} autoComplete='off'
+            id="name"
+            value={shipToName} onChange={(e) => setShipToName(e.target.value)}  
             className="peer w-full border-b-2 border-gray-300 bg-transparent text-sm focus:outline-none mt-10"
           />
         </div>
@@ -113,8 +113,8 @@ function ShipmentInfo() {
           </label>
           <input
             type="number"
-            id="number"
-            value={shipToPhone} onChange={(e) => setShipToPhone(e.target.value)} autoComplete='off'
+            id="phone-no"
+            value={shipToPhone} onChange={(e) => setShipToPhone(e.target.value)}  
             className="peer w-full border-b-2 border-gray-300 bg-transparent text-sm focus:outline-none mt-10"
           />
         </div>
@@ -130,22 +130,22 @@ function ShipmentInfo() {
         <input
           type="text"
           id="address"
-          value={shipToAddress} onChange={(e) => setShipToAddress(e.target.value)} autoComplete='off'
+          value={shipToAddress} onChange={(e) => setShipToAddress(e.target.value)}  
           className="peer w-full border-b-2 border-gray-300 bg-transparent text-sm focus:outline-none mt-10"
         />
       </div>
 
       <div className="relative my-5">
       <label
-          htmlFor="apartment"
+          htmlFor="residential"
           className="absolute left-0 top-5 font-medium text-sm text-[#c1cbe1] peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-xs lg:peer-placeholder-shown:text-base peer-focus:-top-5 peer-focus:text-sm"
         >
          Is Residential
         </label>
         <input
           type="text"
-          id="apartment"
-          value={shipToResidential} onChange={(e) => setShipToResidential(e.target.value)} autoComplete='off'
+          id="residential"
+          value={shipToResidential} onChange={(e) => setShipToResidential(e.target.value)}  
           className="peer w-full border-b-2 border-gray-300 bg-transparent text-sm focus:outline-none mt-10"
         />
       </div>
@@ -160,7 +160,7 @@ function ShipmentInfo() {
         <input
           type="text"
           id="city"
-         value={shipToCity} onChange={(e) => setShipToCity(e.target.value)} autoComplete='off'
+         value={shipToCity} onChange={(e) => setShipToCity(e.target.value)}  
           className="peer w-full border-b-2 border-gray-300 bg-transparent text-sm focus:outline-none mt-10"
         />
       </div>
@@ -176,7 +176,7 @@ function ShipmentInfo() {
           <input
             type="text"
             id="country"
-            value={shipToCountryCode} onChange={(e) => setShipToCountryCode(e.target.value)} autoComplete='off'
+            value={shipToCountryCode} onChange={(e) => setShipToCountryCode(e.target.value)}  
             className="peer w-full border-b-2 border-gray-300 bg-transparent text-sm focus:outline-none mt-10"
           />
         </div>
@@ -191,7 +191,7 @@ function ShipmentInfo() {
           <input
             type="text"
             id="postal-code"
-            value={shipToPostalCode} onChange={(e) => setShipToPostalCode(e.target.value)} autoComplete='off'
+            value={shipToPostalCode} onChange={(e) => setShipToPostalCode(e.target.value)}  
             className="peer w-full border-b-2 border-gray-300 bg-transparent text-sm focus:outline-none mt-10"
           />
         </div>

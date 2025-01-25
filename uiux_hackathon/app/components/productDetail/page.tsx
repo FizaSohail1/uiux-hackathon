@@ -63,7 +63,7 @@ export default function ProductDetails({
             <div className='flex gap-3 items-center mt-3'>
               <div className='text-headingsText text-[14px] leading-[29px]'> ({stockLevel}) </div>
             </div>
-            <p className='flex gap-2 text-headingsText text-[14px] leading-[29px] my-2'><span className="font-semibold">Price:</span>${price} <span className='text-secondary line-through'>${discountPercentage}</span></p>
+            <p className='flex gap-2 text-headingsText text-[14px] leading-[29px] my-2'><span className="font-semibold">Price:</span>${price}</p>
             <p className='text-[16px] leading-[19px] text-[#A9ACC6] max-w-[549px]'>{description}</p>
             <Link href={`/cart?name=${name}&imagePath=${imagePath}&description=${description}&price=${price}`}>
               <AlertDialog>

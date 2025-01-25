@@ -52,14 +52,14 @@ const SearchBar = () => {
         <div className="flex items-center w-full border border-gray-300 rounded-md overflow-hidden">
           <input
             type="text"
-            className="w-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full px-4 py-2 2xl:px-16 2xl:py-4 text-sm 2xl:text-2xl focus:outline-none focus:ring-2 focus:ring-blue-400"
             value={query}
             onChange={handleInputChange}
             placeholder="Search products..."
           />
           <button
             type="submit"
-            className="bg-secondary text-white px-4 py-2 hover:bg-pink-600"
+            className="bg-secondary text-white px-4 py-2 2xl:px-6 2xl:py-4 hover:bg-pink-600"
           >
             <FaSearch />
           </button>
