@@ -10,49 +10,49 @@ function Footer() {
   <div className="mx-4 lg:mx-[150px] 2xl:mx-default-margin flex flex-col lg:flex-row items-center justify-between gap-10 lg:mt-14">
 
     <div className="lg:w-1/2 text-center lg:text-left">
-      <h1 className="font-medium text-[38px] leading-[44px] text-black mb-4">
+      <h1 className="font-medium text-[38px] leading-[44px] text-black mb-4 2xl:text-5xl">
         Hekto
       </h1>
       <div className="flex justify-center lg:justify-start items-center gap-2 mb-4">
         <input
           type="text"
           placeholder="Enter Email Address"
-          className="bg-white w-[180px] 2xl:w-[377px] h-12 rounded-[3px] px-2"
+          className="bg-white w-[180px] 2xl:w-[377px] h-12 rounded-[3px] px-2 2xl:text-xl" 
         />
-        <button className="bg-secondary text-white px-4 h-12 rounded-[3px]">
+        <button className="bg-secondary text-white px-4 h-12 rounded-[3px] 2xl:text-xl">
           Sign Up
         </button>
       </div>
-      <p className="text-sm text-[#8A8FB9]">Contact Info</p>
-      <p className="text-sm text-[#8A8FB9] mt-2">
+      <p className="text-sm text-[#8A8FB9] 2xl:text-3xl">Contact Info</p>
+      <p className="text-sm text-[#8A8FB9] mt-2 2xl:text-3xl">
         17 Princess Road, London, Greater London NW1 8JR, UK
       </p>
     </div>
 
     <div className=" flex flex-wrap lg:flex-nowrap gap-8  ">
       <div>
-        <h2 className="text-black text-lg lg:text-[22px] lg:leading-[25.78px] mb-3">
+        <h2 className="text-black text-lg lg:text-[22px] lg:leading-[25.78px] mb-3 2xl:text-3xl">
           CUSTOMER CARE
         </h2>
         <nav className="list-none">
-          <li><a className="text-sm text-[#8A8FB9]">My Account</a></li>
-          <li><a className="text-sm text-[#8A8FB9]">Discount</a></li>
-          <li><a className="text-sm text-[#8A8FB9]">Returns</a></li>
-          <li><a className="text-sm text-[#8A8FB9]">Order History</a></li>
-          <li><a className="text-sm text-[#8A8FB9]">Order Tracking</a></li>
+          <li><a className="text-sm text-[#8A8FB9] 2xl:text-xl">My Account</a></li>
+          <li><a className="text-sm text-[#8A8FB9] 2xl:text-xl">Discount</a></li>
+          <li><a className="text-sm text-[#8A8FB9] 2xl:text-xl">Returns</a></li>
+          <li><a className="text-sm text-[#8A8FB9] 2xl:text-xl">Order History</a></li>
+          <li><a className="text-sm text-[#8A8FB9] 2xl:text-xl">Order Tracking</a></li>
         </nav>
       </div>
       <div>
-        <h2 className="text-black text-lg lg:text-[22px] lg:leading-[25.78px] mb-3">
+        <h2 className="text-black text-lg lg:text-[22px] lg:leading-[25.78px] mb-3 2xl:text-3xl">
           PAGES
         </h2>
         <nav className="list-none">
-          <li><Link href={'/products'} className='text-sm text-[#8A8FB9]'>Products</Link></li>
-          <li><Link href={'/login'} className='text-sm text-[#8A8FB9]'>Login</Link></li>
-          <li><Link href={'/cart'} className='text-sm text-[#8A8FB9]'>Cart</Link></li>
-          <li><Link href={'/faq'} className='text-sm text-[#8A8FB9]'>FAQ</Link></li>
-         <li> <Link href={'/about'} className='text-sm text-[#8A8FB9]'>About</Link></li>
-          <li><Link href={'/contact'} className='text-sm text-[#8A8FB9]'>Contact</Link></li>
+          <li><Link href={'/products'} className='text-sm text-[#8A8FB9] 2xl:text-xl'>Products</Link></li>
+          <li><Link href={'/login'} className='text-sm text-[#8A8FB9] 2xl:text-xl'>Login</Link></li>
+          <li><Link href={'/cart'} className='text-sm text-[#8A8FB9] 2xl:text-xl'>Cart</Link></li>
+          <li><Link href={'/faq'} className='text-sm text-[#8A8FB9] 2xl:text-xl'>FAQ</Link></li>
+         <li> <Link href={'/about'} className='text-sm text-[#8A8FB9] 2xl:text-xl'>About</Link></li>
+          <li><Link href={'/contact'} className='text-sm text-[#8A8FB9] 2xl:text-xl'>Contact</Link></li>
         </nav>
       </div>
     </div>

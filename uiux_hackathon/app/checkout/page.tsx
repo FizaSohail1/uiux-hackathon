@@ -66,11 +66,11 @@ const updateQuantity = (itemName: string, num: number) => {
                 alt={item.name}
                 width={100}
                 height={80}
-                className="rounded-md border-[1px]"
+                className="rounded-md border-[1px] 2xl:h-[200px] 2xl:w-[200px]"
               />
               <div className="ml-4 flex-grow">
-                <h3 className="font-semibold">{item.name}</h3>
-                <p className="text-gray-600 md:w-[80%]">{item.description}</p>
+                <h3 className="font-semibold 2xl:text-3xl">{item.name}</h3>
+                <p className="text-gray-600 md:w-[80%] 2xl:text-2xl">{item.description}</p>
                 <div className="flex items-center justify-between mt-2">
                <div>
                <span>QTY:</span>
@@ -80,9 +80,9 @@ const updateQuantity = (itemName: string, num: number) => {
                   </input>
                </div>
                  <div className="flex gap-3">
-                 <p className="font-semibold">${(item.price * item.quantity).toFixed(2)}</p>
+                 <p className="font-semibold 2xl:text-3xl">${(item.price * item.quantity).toFixed(2)}</p>
              <button onClick={() => removeItem(item.name)} className="ml-4 text-red-500 hover:text-red-700">
-               <Trash2 size={20} />
+               <Trash2 className="text-lg 2xl:text-3xl" />
              </button>
                  </div>
                 </div>
@@ -93,24 +93,24 @@ const updateQuantity = (itemName: string, num: number) => {
           ))}
         </div>
         <div className="md:w-1/2 my-14">
-          <div className="bg-gray-100 p-6 rounded-lg">
-            <h2 className="text-2xl font-semibold mb-4">Order Summary</h2>
-            <div className="flex justify-between mb-2">
+          <div className="bg-gray-100 p-6 rounded-lg 2xl:space-y-10">
+            <h2 className="text-2xl font-semibold mb-4 2xl:text-3xl">Order Summary</h2>
+            <div className="flex justify-between mb-2 2xl:text-2xl 2xl:font-bold">
               <span>Subtotal</span>
               <span>${subtotal.toFixed(2)}</span>
             </div>
-            <div className="flex justify-between mb-2">
+            <div className="flex justify-between mb-2 2xl:text-2xl">
               <span>Shipping</span>
               <span>${shipping.toFixed(2)}</span>
             </div>
             <div className="border-t pt-2 mt-2">
-              <div className="flex justify-between font-semibold">
+              <div className="flex justify-between font-semibold 2xl:text-2xl">
                 <span>Total</span>
                 <span>${total.toFixed(2)}</span>
               </div>
             </div>
           <Link href={'/information'}>
-          <button className="w-full bg-secondary text-white py-2 px-4 rounded-md mt-4 hover:bg-pink-500 transition duration-300">
+          <button className="w-full bg-secondary 2xl:mt-7 2xl:text-2xl text-white py-2 px-4 rounded-md mt-4 hover:bg-pink-500 transition duration-300">
             Continue to Shipping Details
             </button>
           </Link>

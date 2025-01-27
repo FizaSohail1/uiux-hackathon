@@ -5,7 +5,7 @@ export async function getReq() {
    const res = await fetch("https://api.shipengine.com/v1/carriers",{
     method: "GET",
     headers: {
-      "API-Key" : process.env.NEXT_PUBLIC_SHIPENGINE_API_KEY as string,
+      "API-Key" : process.env.SHIPENGINE_API_KEY as string,
       "Content-Type": "application/json"
     }
    })
@@ -18,21 +18,25 @@ export async function getReq() {
 //-postReq
 
 interface Data {
-  to_name : string
+  to_name: string
   to_phone: string
   to_address: string
   to_city: string
-  to_email:string
+  to_email: string
+  to_country: string
+  to_postal_code: string
 }
 
 export async function postReq(item: Data) {
 
-  const {to_name, to_phone, to_address, to_city,to_email} = item
+  const {
+    to_name, to_phone, to_address, to_city, to_email, to_country
+  } = item
 
-  const res = await fetch("https://api.shipengine.com/v1/labels",{
+  const res = await fetch("https://api.shipengine.com/v1/labels", {
     method: "POST",
     headers: {
-      "API-Key" : process.env.NEXT_PUBLIC_SHIPENGINE_API_KEY as string,
+      "API-Key": process.env.SHIPENGINE_API_KEY as string,
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
@@ -70,7 +74,7 @@ export async function postReq(item: Data) {
             "dimensions": {
               "height": 12,
               "width": 22,
-              "length": 32,
+              "length": 33,
               "unit": "inch"
             }
           }
@@ -81,7 +85,7 @@ export async function postReq(item: Data) {
 
   const data = await res.json()
 
-  console.log("🍊",data);
+  console.log("🍊", data);
 
   return data;
 }

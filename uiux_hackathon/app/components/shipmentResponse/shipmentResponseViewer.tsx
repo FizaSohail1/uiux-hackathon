@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
-import { Download, Package, Truck, DollarSign, MapPin} from 'lucide-react'
+import { Download, Package, Truck, DollarSign, MapPin } from 'lucide-react'
 import { AlertDialog, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog"
 import Link from 'next/link'
 
@@ -38,12 +38,14 @@ interface ShipmentResponse {
     }
   }>
   ship_to: {
-    name: string;
+    name: string
+    phone: string
     address_line1: string
     city_locality: string
-    state_province: string
-    postal_code: string
+    email: string
     country_code: string
+    postal_code: string
+    
   }
 }
 
@@ -64,13 +66,13 @@ export default function ShipmentResponseViewer({ data }: JsonResponseViewerProps
   };
 
   if (!data || !data.ship_to) {
-    return <p>Shipment information is unavailable.</p>;
+    return <p>Shipment information is unavailable.</p>
   }
 
   return (
     <div className="container mx-auto p-4">
       <Button
-        className="bg-secondary rounded-none mt-7 lg:mt-16 hover:bg-pink-600 text-white"
+        className="bg-secondary hover:bg-pink-600 text-white text-sm lg:text-base py-3 px-6 rounded-md shadow-md transition-all"
         onClick={() => setIsDialogOpen(true)}
       >
         View Shipment Details
@@ -103,7 +105,12 @@ export default function ShipmentResponseViewer({ data }: JsonResponseViewerProps
             <div className="flex items-center space-x-2">
               <MapPin className="text-red-500" />
               <span className="font-semibold">Ship To:</span>
-              <span>{`${data.ship_to.name || 'N/A'}, ${data.ship_to.address_line1 || 'N/A'}, ${data.ship_to.city_locality || 'N/A'}, ${data.ship_to.state_province || 'N/A'} ${data.ship_to.postal_code || 'N/A'}, ${data.ship_to.country_code || 'N/A'}`}</span>
+              <span>{`${data.ship_to.name || 'N/A'}, ${data.ship_to.address_line1 || 'N/A'}, ${data.ship_to.city_locality || 'N/A'}, ${data.ship_to.postal_code || 'N/A'}, ${data.ship_to.country_code || 'N/A'}`}</span>
+            </div>
+            
+            <div className="flex items-center space-x-2">
+              <span className="font-semibold">Tracking Status:</span>
+              <span>{data.tracking_status || 'N/A'}</span>
             </div>
           </div>
           <AlertDialogFooter>
@@ -115,14 +122,13 @@ export default function ShipmentResponseViewer({ data }: JsonResponseViewerProps
               Download Label
             </Button>
             <Link href={data.tracking_url}>
-            <Button
-              className="mt-4 bg-secondary hover:bg-pink-600 text-white"
-              onClick={handleDownload}
-            >
-              Track Order
-            </Button>
+              <Button
+                className="mt-4 bg-secondary hover:bg-pink-600 text-white"
+              >
+                Track Order
+              </Button>
             </Link>
-            
+
             <Button
               variant="outline"
               className="mt-4"
