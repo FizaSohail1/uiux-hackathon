@@ -43,7 +43,7 @@ export default async function Home() {
           <div className="md:mx-5 md:space-y-5 lg:space-y-0 lg:mx-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 2xl:gap-36 2xl:flex  justify-center 2xl:mt-24">
             {featuredProducts.map((item: IData, i:number) => (
               <div key={i}
-                className="bg-white shadow-lg h-auto transition w-[240px]  2xl:h-auto md:w-full hover:bg-[#2F1AC4] mx-auto lg:mx-0"
+                className="bg-white shadow-lg h-auto transition w-[240px] 2xl:h-auto sm:w-[280px] md:w-full hover:bg-[#2F1AC4] mx-auto lg:mx-0"
               >
                 <div className="h-[200px] w-[240px] md:h-[270px] md:w-full  2xl:h-[380px] bg-[#F6F7FB] ">
                   <Image
@@ -150,7 +150,7 @@ export default async function Home() {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-auto md:mx-5 lg:mx-0 justify-center gap-[30px] 2xl:gap-36 2xl:mx-default-margin lg:mx-[170px]">
-          <div className="h-[320px] w-[250px] md:w-full 2xl:h-[450px] mt-4 cursor-pointer bg-white shadow-md p-4 flex flex-col items-center justify-center mx-auto">
+          <div className="h-[320px] w-[250px] sm:w-[280px] md:w-full 2xl:h-[450px] mt-4 cursor-pointer bg-white shadow-md p-4 flex flex-col items-center justify-center mx-auto">
             <Image
               src={"/truck.png"}
               alt="truck"
@@ -167,7 +167,7 @@ export default async function Home() {
             </p>
           </div>
 
-          <div className="h-[320px] w-[250px] 2xl:h-[450px] md:w-full mt-4 cursor-pointer bg-white shadow-md p-4 flex flex-col items-center justify-center mx-auto">
+          <div className="h-[320px] w-[250px] 2xl:h-[450px] sm:w-[280px] md:w-full mt-4 cursor-pointer bg-white shadow-md p-4 flex flex-col items-center justify-center mx-auto">
             <Image
               src={"/cashback-1.png"}
               alt="truck"
@@ -185,7 +185,7 @@ export default async function Home() {
             </p>
           </div>
 
-          <div className="h-[320px] w-[250px] 2xl:h-[450px] md:w-full mt-4 cursor-pointer bg-white shadow-md p-4 flex flex-col items-center justify-center mx-auto">
+          <div className="h-[320px] w-[250px] 2xl:h-[450px] sm:w-[280px] md:w-full mt-4 cursor-pointer bg-white shadow-md p-4 flex flex-col items-center justify-center mx-auto">
             <Image
               src={"/medal.png"}
               alt="truck"
@@ -203,7 +203,7 @@ export default async function Home() {
             </p>
           </div>
 
-          <div className="h-[320px] w-[250px] 2xl:h-[450px] md:w-full mt-4 cursor-pointer bg-white shadow-md p-4 flex flex-col items-center justify-center mx-auto">
+          <div className="h-[320px] w-[250px] 2xl:h-[450px] sm:w-[280px] md:w-full mt-4 cursor-pointer bg-white shadow-md p-4 flex flex-col items-center justify-center mx-auto">
             <Image
               src={"/24-hours-support-1.png"}
               alt="truck"
@@ -225,7 +225,7 @@ export default async function Home() {
 
 <div className="h-auto lg:h-[579px] w-full my-8 py-14 bg-maingray px-4 lg:px-0">
   <div className="2xl:mx-default-margin lg:mx-[170px] mx-auto justify-center flex flex-col md:flex-row items-center gap-[30px] md:gap-[40px]">
-    <div className="relative flex items-center justify-center md:w-1/2">
+       <div className="relative flex items-center justify-center md:w-1/2">
       <Image
         src={"/Ellipse-63.png"}
         alt="ellipse"
@@ -235,8 +235,8 @@ export default async function Home() {
       />
       <div className="absolute">
         <Image
-          src={"/hero-3.png"}
-          alt="hero3"
+          src={'/hero-3.png'}
+          alt={'home4'}
           height={100}
           width={300}
           className="h-[270px] w-[270px] md:h-[350px] md:w-[350px] lg:h-[449px] lg:w-[481px] object-cover"
@@ -244,7 +244,6 @@ export default async function Home() {
       </div>
     </div>
 
-    {/* Text Section */}
     <div className="flex flex-col md:w-1/2">
       <h1 className="text-2xl md:w-[90%] lg:w-full lg:text-[35px] lg:leading-[46.2px] text-headingsText font-semibold text-center md:text-left">
         Unique Features Of Latest & Trending Products
@@ -273,9 +272,11 @@ export default async function Home() {
       </ul>
 
       <div className="flex items-center gap-3 lg:gap-5">
+        <Link href={'/products'}>
         <button className="bg-secondary text-white font-bold text-xs lg:text-[16px] p-3 lg:px-8 lg:py-4 mt-6">
-          Add To Cart
+          View more
         </button>
+        </Link>
         <div className="mt-4">
           <h3 className="text-headingsText text-[14px] leading-[16.41px]">
             B&B Italian Sofa
@@ -286,6 +287,7 @@ export default async function Home() {
         </div>
       </div>
     </div>
+  
   </div>
 </div>
 
@@ -296,13 +298,13 @@ export default async function Home() {
             Trending Products
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:mx-5 lg:mx-0 gap-[30px] 2xl:gap-36 2xl:flex justify-center ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:mx-5 lg:mx-0 gap-[30px] 2xl:gap-36 2xl:flex justify-center ">
             {trendingProducts.map((product:IData, i:number) => (
               <div
                 key={i}
-                className="bg-white shadow-lg transition w-[240px] md:h-auto 2xl:h-auto md:w-full  md:my-0 mx-auto"
+                className="bg-white shadow-lg transition w-[240px] md:h-auto md:w-full 2xl:h-auto sm:w-[280px]  md:my-0 mx-auto"
               >
-                <div className="h-[200px]  w-[240px] md:w-full md:h-[300px] lg:h-[250px] 2xl:h-[356px]  bg-[#F6F7FB]  items-center mx-auto">
+                <div className="h-[200px] w-[240px] sm:w-[280px] md:w-full md:h-[300px] lg:h-[250px] 2xl:h-[356px] md:w-full bg-[#F6F7FB]  items-center mx-auto">
                   <Image
                     src={product.imagePath}
                     alt={product.name}
@@ -347,18 +349,6 @@ export default async function Home() {
           Discount Item
         </h2>
 
-        <ul className="flex flex-wrap justify-center 2xl:justify-start gap-4 md:gap-8 my-8 2xl:mx-[450px] ">
-          <li className="text-secondary underline decoration-solid cursor-pointer">
-            Wood Chair
-          </li>
-          <li className="text-textStyle underline decoration-solid cursor-pointer">
-            Plastic Chair
-          </li>
-          <li className="text-textStyle underline decoration-solid cursor-pointer">
-            Sofa Collection
-          </li>
-        </ul>
-
         <div className="flex flex-col lg:flex-row mx-auto items-center lg:mx-[170px] 2xl:mx-default-margin lg:my-32">
           <div className=" mx-3 lg:mx-0 md:w-1/2 lg:w-full">
             <h2 className=" text-2xl md:text-[35px] md:leading-[46.2px] text-[#00008B] mb-4 font-semibold ">
@@ -393,9 +383,11 @@ export default async function Home() {
                 </li>
               </div>
             </ul>
+            <Link href={'/products'}>
             <button className="bg-secondary text-white px-4 py-2  text-[18px] leading-[19.92px] mx-[25%] lg:mx-0 transition-all">
               Shop Now
             </button>
+            </Link>
           </div>
 
           <div className="relative  mt-10 lg:mt-0 flex ">
@@ -424,7 +416,7 @@ export default async function Home() {
                 key={i}
                 className="h-[280px] w-[220px]  2xl:h-auto 2xl:w-full mx-auto relative group"
               >
-                <div className=" h-[200px] w-[220px] 2xl:h-[340px] 2xl:w-[340px] bg-[#F6F7FB] rounded-full mx-auto hover:border-b-4 hover:border-l-4 hover:border-[#31208a] relative">
+                <div className=" h-[200px] w-[220px] md:w-full 2xl:h-[340px] 2xl:w-[340px] bg-[#F6F7FB] rounded-full mx-auto hover:border-b-4 hover:border-l-4 hover:border-[#31208a] relative">
                   <Image
                     src={product.imagePath}
                     alt={product.name}
@@ -476,9 +468,11 @@ export default async function Home() {
           <h1 className="text-[28px] md:text-[35px] leading-[1.5] max-w-[90%] md:max-w-[574px] text-headingsText font-bold">
             Get Latest Updates By Subscribing To Our Newsletter
           </h1>
+          <Link href={'/products'}>
           <button className="bg-secondary text-white text-[15px] md:text-[17px] leading-[1.2] px-6 py-2 md:px-8 md:py-3 mt-4">
             Shop Now
-          </button>
+          </button>       
+          </Link>
         </div>
       </div>
 

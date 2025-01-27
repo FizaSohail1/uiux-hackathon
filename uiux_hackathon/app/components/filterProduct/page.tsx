@@ -19,11 +19,11 @@ function FilterProduct() {
             <div className="flex gap-7 md:gap-2 items-center mt-2 md:mt-0 border border-gray-300">
               <input
                 type="text"
-                className="px-2 py-1 text-sm focus:outline-none w-full"
+                className="px-2 py-1 text-sm 2xl:px-32 2xl:py-4 2xl:text-2xl focus:outline-none w-full"
                 placeholder="Sort By..."
               />
               <button
-                className="bg-secondary text-white px-1 py-1"
+                className="bg-secondary text-white px-1 py-1  2xl:px-10 2xl:py-4 "
                 onClick={() => setDropdown(!dropdown)}
               >
                 <FaAngleDown />
@@ -31,7 +31,7 @@ function FilterProduct() {
             </div>
 
             {dropdown && (
-              <ul className="absolute top-full left-0 mt-2 bg-white shadow-lg border rounded-md text-gray-800 z-10 w-[200px]">
+              <ul className="absolute top-full left-0 mt-2 bg-white shadow-lg border rounded-md text-gray-800 2xl:text:2xl z-10 w-[200px] 2xl:w-[600px]">
                 <li
                   className="hover:bg-gray-100 px-4 py-2 cursor-pointer"
                   onClick={() => handleCategoryClick("Chair")}
