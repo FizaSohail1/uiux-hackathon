@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { FaAngleDown, FaBars, FaTimes } from 'react-icons/fa';
 import SearchBar from '../searchBar/page';
+import { UserButton } from '@clerk/nextjs';
 
 function Navbar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -13,7 +14,7 @@ function Navbar() {
     <div>
       <nav className="flex items-center h-12 justify-between my-[13px] md:my-[23px]  mx-4 lg:mx-[150px] 2xl:mx-default-margin">
    
-        <div className="inline-flex items-center gap-[30px] lg:gap-[80px] 2xl:gap-[90px] ">
+        <div className="flex items-center gap-[30px] lg:gap-[80px] 2xl:gap-[90px] ">
  
           <div className="logo">
             <h1 className={`font-bold text-2xl lg:text-[34px] lg:leading-[34px] 2xl:text-6xl overflow-hidden`}>
@@ -75,16 +76,26 @@ function Navbar() {
           </div>
         </div>
 
-       
+        <div className='flex items-center gap-5'>
+           
         <div className="relative hidden lg:flex left-10">
         <SearchBar />
         </div>
+        <div className='justify-end ml-10 hidden lg:flex'>
+          <UserButton />
+        </div>
+        </div>
+        <div className='lg:hidden flex gap-3 items-center'>
         <button
-          className="lg:hidden text-xl text-[#FB2E86]"
+          className=" text-xl text-[#FB2E86]"
           onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
+        <div>
+        <UserButton/>
+        </div>
+        </div>
       </nav>
 
       {isMobileMenuOpen && (
