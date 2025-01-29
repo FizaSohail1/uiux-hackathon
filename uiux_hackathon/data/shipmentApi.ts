@@ -36,7 +36,11 @@ export async function postReq(item: Data) {
   const res = await fetch("https://api.shipengine.com/v1/labels", {
     method: "POST",
     headers: {
+<<<<<<< HEAD
       "API-Key": process.env.SHIPENGINE_API_KEY as string,
+=======
+      "API-Key": process.env.NEXT_PUBLIC_SHIPENGINE_API_KEY as string,
+>>>>>>> 1786e85b93a498fc177fb23eb96beae747f8945c
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
