@@ -35,6 +35,8 @@ function ShipmentInfo() {
   to_postal_code: shipToPostalCode,
     }
     const data = await postReq(submitData)
+    console.log(data);
+    
 
     setShipmentResponse(data)
   }
