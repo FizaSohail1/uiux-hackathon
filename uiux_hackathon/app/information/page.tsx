@@ -2,8 +2,8 @@
 import React, { useState } from 'react'
 import HeroSection from '../components/Hero/page';
 import { postReq } from '@/data/shipmentApi';
-import ShipmentResponseViewer from '../components/shipmentResponse/shipmentResponseViewer';
 import Link from 'next/link';
+import { CheckoutButton } from '../components/checkoutButton/page';
 
 
 function ShipmentInfo() {
@@ -18,29 +18,37 @@ function ShipmentInfo() {
   const [shipToEmail, setShipToEmail] = useState('')
   const [shipToPostalCode, setShipToPostalCode] = useState('')
   const [shipToCountryCode, setShipToCountryCode] = useState('PK')
-  const [shipToResidential, setShipToResidential] = useState(true)
 
   const [shipmentResponse, setShipmentResponse] = useState(null)
 
   async function handleSubmit(e: React.FormEvent) {
-
-    e.preventDefault()
+    e.preventDefault();
     const submitData = {
       to_name: shipToName,
-  to_phone: shipToPhone,
-  to_address: shipToAddress,
-  to_city: shipToCity,
-  to_email: shipToEmail,
-  to_country: shipToCountryCode,
-  to_postal_code: shipToPostalCode,
+      to_phone: shipToPhone,
+      to_address: shipToAddress,
+      to_city: shipToCity,
+      to_email: shipToEmail,
+      to_country: shipToCountryCode,
+      to_postal_code: shipToPostalCode,
+    };
+
+    const data = await postReq(submitData);
+    console.log('API Response:', data);
+
+    if (data) {
+      setShipmentResponse(data);
+    } else {
+      console.error('No data received from API');
     }
-    const data = await postReq(submitData)
-    console.log(data);
-    
 
-    setShipmentResponse(data)
+    localStorage.setItem("shipment", JSON.stringify(data));
+    localStorage.setItem('addressDetails', JSON.stringify(submitData))
+
+    const retrievedData = localStorage.getItem("shipment");
+    console.log('Stored Data:', retrievedData ? JSON.parse(retrievedData) : null);
+
   }
-
 
   return (
     <div>
@@ -188,7 +196,7 @@ function ShipmentInfo() {
 
             <div className="mt-6 grid grid-cols-1  gap-6">
 
-            <div className="relative my-5 w-1/2">
+              <div className="relative my-5 w-1/2">
                 <label
                   htmlFor="country"
                   className=" left-2 top-2 text-gray-500 text-sm transition-all peer-placeholder-shown:top-5 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-sm"
@@ -207,17 +215,7 @@ function ShipmentInfo() {
             </div>
 
             <div className="mt-6 flex flex-col items-center md:flex-row md:justify-between">
-              <button
-                type="submit"
-                className="bg-secondary md:w-[30%]  hover:bg-pink-600 text-white text-sm lg:text-base py-3 px-6 rounded-md shadow-md transition-all"
-              >
-                Confirm Order
-              </button>
-              {shipmentResponse && (
-                <ShipmentResponseViewer
-                  data={shipmentResponse}/>
-              )}
-              
+              <CheckoutButton />
             </div>
           </form>
 
