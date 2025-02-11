@@ -1,47 +1,47 @@
 export default {
-    name: 'shipment',
-    title: 'Shipment',
-    type: 'document',
-    fields: [
-      {
-        name: 'order',
-        title: 'Order',
-        type: 'reference',
-        to: [{ type: 'order' }],
+  name: "shipment",
+  title: "Shipment",
+  type: "document",
+  fields: [
+    {
+      name: "userID",
+      title: "User ID",
+      type: "string",
+    },
+    {
+      name: "userName",
+      title: "User Name",
+      type: "string",
+    },
+    {
+      name: "productLength",
+      title: "Total Products",
+      type: "number",
+    },
+    {
+      name: 'orderDate',
+      type: 'datetime',
+      title: 'Order Date & Time',
+      options: {
+        dateFormat: 'YYYY-MM-DD',
       },
-      {
-        name: 'trackingNumber',
-        title: 'Tracking Number',
-        type: 'string',
+    },
+    {
+      name: "totalAmount",
+      title: "Total Price",
+      type: "number",
+    },
+    {
+      name: "status",
+      title: "Status",
+      type: "string",
+      options: {
+        list: [
+          { title: "In-transit", value: "In-transit" },
+          { title: "Shipped", value: "shipped" },
+          { title: "Delivered", value: "delivered" },
+        ],
       },
-      {
-        name: 'carrier',
-        title: 'Carrier',
-        type: 'string',
-      },
-      {
-        name: 'shipmentStatus',
-        title: 'Shipment Status',
-        type: 'string',
-        options: {
-          list: [
-            { title: 'Not Shipped', value: 'not_shipped' },
-            { title: 'Shipped', value: 'shipped' },
-            { title: 'In Transit', value: 'in_transit' },
-            { title: 'Delivered', value: 'delivered' },
-          ],
-        },
-      },
-      {
-        name: 'shipmentDate',
-        title: 'Shipment Date',
-        type: 'datetime',
-      },
-      {
-        name: 'deliveryDate',
-        title: 'Delivery Date',
-        type: 'datetime',
-      },
-    ],
-  };
-  
+    },
+  ],
+};

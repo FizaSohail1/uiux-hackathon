@@ -2,7 +2,7 @@
 import { client } from '@/sanity/lib/client';
 import { auth, currentUser } from '@clerk/nextjs/server';
 
-async function getUserFromClerk() {
+export async function getUserFromClerk() {
     const { userId } = await auth();
     const user = await currentUser();
 
