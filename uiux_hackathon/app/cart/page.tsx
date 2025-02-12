@@ -16,6 +16,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Trash2 } from "lucide-react";
 import { Suspense } from "react";
+// import { sanityUserPost } from "@/data/userApi";
+import { syncUsersToSanity } from "@/data/userApi";
 
 interface IProduct {
   id: string,
@@ -30,6 +32,9 @@ function Cart() {
   const searchParam = useSearchParams();
   const router = useRouter();
   const [cart, setCart] = useState<IProduct[]>([]);
+
+  // syncUsersToSanity()
+  // sanityUserPost()
 
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");

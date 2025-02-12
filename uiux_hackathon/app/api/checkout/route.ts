@@ -1,8 +1,8 @@
 export const dynamic = "force-dynamic";
 import { NextRequest, NextResponse } from "next/server";
 import { client } from "@/sanity/lib/client";
-import { currentUser } from "@clerk/nextjs/server";
-import { getUserFromClerk } from "@/data/userApi";
+import { auth, currentUser } from "@clerk/nextjs/server";
+
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY!);
 
@@ -15,6 +15,21 @@ interface IProductDetails {
 }
 
 let totalAmount: number | null = null;
+
+export async function getUserFromClerk() {
+  const { userId } = await auth();
+  const user = await currentUser();
+
+  if (!user) {
+      throw new Error("User not found in Clerk.");
+  }
+
+  const userID = user.id;
+  const userName = `${user?.firstName} ${user?.lastName}`;
+  const createdAt = user.createdAt
+
+  return { userID, userName,createdAt};
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -64,7 +79,7 @@ export async function POST(request: NextRequest) {
       _id: `${userDetails.userID}`,
       userID: user.id,
       userName: userDetails.userName,
-      orderDate: new Date().toISOString(),
+      orderDate: userDetails.createdAt,
       productLength,
       totalAmount,
       status: "shipped",
@@ -78,6 +93,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Something went wrong!" }, { status: 500 });
   }
 }
+
 
 export function getAmountTotal() {
   return totalAmount;

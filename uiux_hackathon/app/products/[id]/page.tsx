@@ -1,6 +1,7 @@
 import React from 'react';
 import ProductDetails from '@/app/components/productDetail/page';
 import RelatedProducts from '@/app/components/relatedProduct/page';
+import { syncUsersToSanity } from '@/data/userApi';
 
 async function singleProductPage({searchParams} : {searchParams: Promise<{
   name:string,
@@ -12,6 +13,8 @@ async function singleProductPage({searchParams} : {searchParams: Promise<{
   stockLevel:number,
 
 }>}) {
+
+  syncUsersToSanity()
 
 
   const {name,price,description,imagePath,category,discountPercentage,stockLevel} = await searchParams 

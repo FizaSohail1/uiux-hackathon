@@ -20,7 +20,7 @@ export default function CarouselPlugin() {
       altHero: "Hero 1",
       headline: "Best Furniture For Your Castle....",
       title: "New Furniture Collection Trends in 2020",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
+      description: "Elevate your living space with our exclusive collection of elegant and comfortable furniture.",
       buttonText: "Shop Now",
       discountText: "50% Off",
     },

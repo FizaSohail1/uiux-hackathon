@@ -1,6 +1,7 @@
 import React from "react";
 import HeroSection from "../components/Hero/page";
 import Image from "next/image";
+import Link from "next/link";
 
 function about() {
   return (
@@ -31,9 +32,11 @@ function about() {
             </p>
 
             <div className="mt-10 mx-auto lg:mx-0 flex justify-center lg:justify-start">
+              <Link href={'/contact'}>
               <button className="bg-secondary text-white h-12 w-[145px] text-lg font-semibold text-center">
                 Contact us
-              </button>
+              </button> 
+              </Link>
             </div>
           </div>
         </div>

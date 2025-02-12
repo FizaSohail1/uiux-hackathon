@@ -1,62 +1,95 @@
 'use server'
-import { client } from '@/sanity/lib/client';
 import { auth, currentUser } from '@clerk/nextjs/server';
+import { client } from '@/sanity/lib/client';
 
-export async function getUserFromClerk() {
+export async function getUserFromClerck() {
     const { userId } = await auth();
     const user = await currentUser();
 
-    if (!user) {
-        throw new Error("User not found in Clerk.");
-    }
-
-    const userID = user.id;
-    const userName = `${user.firstName || ''} ${user.lastName || ''}`.trim();
-    const userEmail = user.emailAddresses?.[0]?.emailAddress || '';
-    const userImage = user.imageUrl || '';
-    const createdAt = user.createdAt
-
-    return { userID, userName, userEmail ,userImage,createdAt};
+    return {
+        userName: `${user?.firstName} ${user?.lastName}`,
+        userEmail: `${user?.emailAddresses[0].emailAddress}`,
+        userID: `${user?.id}`,
+        userImage: user?.imageUrl || '',
+        userPassword: `${user?.passwordEnabled}`,
+    };
 }
 
-export async function uploadImage(imageUrl: string) {
-    try {
-        const response = await fetch(imageUrl);
+// Fetch ALL users from Clerk
+export async function getAllUsersFromClerk() {
+    const CLERK_API_KEY = process.env.CLERK_SECRET_KEY;
 
-        if (!response.ok) {
-            throw new Error(`Failed to fetch image: ${response.statusText}`);
+    try {
+        const response = await fetch('https://api.clerk.com/v1/users', {
+            headers :{
+                Authorization :`Bearer ${CLERK_API_KEY}`,
+                'Content-Type' : 'application/json'
+            }
+        });
+
+        if(!response.ok){
+            throw new Error('Failed to Fetch')
         }
 
-        const blob = await response.blob();
-        const asset = await client.assets.upload('image', blob);
-        return asset;
+        return response.json();   
     } catch (error) {
-        console.error('Image upload error:', error);
-        return null; // Return null to use the URL directly
+        console.error('Error fetching users from Clerk:', error);
+        return [];    
     }
 }
 
-export async function sanityUserPost() {
+
+export async function uploadImage(imageUrl:string){
+
     try {
-        const userDetails = await getUserFromClerk();
-       const imageAsset = await uploadImage(userDetails.userImage);
+    const res = await fetch(imageUrl);
+
+    if (!res.ok) {
+        throw new Error(`Failed to fetch image: ${res.statusText}`);
+    }
+    const blob = await res.blob();
+    const asset = await client.assets.upload('image',blob);
+    return asset;
+        
+    } catch (error) {
+        console.error('Image upload error:', error);
+        return null;    
+    }
+
+}
+// Sync ALL users from Clerk to Sanity
+export async function syncUsersToSanity() {
+    const clerkUsers = await getAllUsersFromClerk();
+
+    for (const user of clerkUsers) {
+        const userId = user.id;
+        const userName = `${user.first_name} ${user.last_name}`;
+        const userEmail = user.email_addresses[0]?.email_address || '';
+        const userImage = user.image_url || '';
+        const userPassword = user.password_enabled || false;
+
+        const existingUser = await client.fetch(`*[_type == "user" && userId == $userId][0]`, { userId });
+
+        let imageAsset = null;
+        if (userImage) {
+            imageAsset = await uploadImage(userImage);
+        }
 
         const userData = {
-            _type: "user",
-            _id: `${userDetails.userID}`,
-            _createdAt:userDetails.createdAt,
-            name: userDetails.userName,
-            email: userDetails.userEmail,
-            userId: userDetails.userID,
-            image: {
-                _type: 'image',
-                asset: { _type: 'reference', _ref: imageAsset?._id },
-            },
+            _type: 'user',
+            _id: `user-${userId}`,
+            name: userName,
+            email: userEmail,
+            userId,
+            image: imageAsset
+                ? { _type: 'image', asset: { _type: 'reference', _ref: imageAsset._id } }
+                : existingUser?.image || null, 
+            password: userPassword,
+            createdAt: existingUser ? existingUser.createdAt : new Date().toISOString(), 
         };
 
-        const res = await client.createOrReplace(userData);
-        console.log("User data saved to Sanity:", res);
-    } catch (error) {
-        console.error("Error saving user data to Sanity:", error);
+        await client.createOrReplace(userData);
     }
+
+    console.log('All Clerk users synced to Sanity.');
 }

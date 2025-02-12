@@ -1,6 +1,7 @@
 import React from 'react'
 import HeroSection from '../components/Hero/page'
 import Image from 'next/image'
+import Link from 'next/link'
 
 function pageNotFound() {
   return (
@@ -13,7 +14,10 @@ function pageNotFound() {
         <p className='font-bold text-2xl text-headingsText text-center my-5'>Oops! The page you requested was not found!</p>
 
         <div className="mt-10 flex justify-center">
-                <button className='bg-secondary text-white px-3 py-2 text-lg font-semibold text-center rounded-[3px]'>Contact us</button>
+          <Link href={'/contact'}>
+          <button className='bg-secondary text-white px-3 py-2 text-lg font-semibold text-center rounded-[3px]'>Contact us</button>
+          
+          </Link>
             </div>
 
       </div>

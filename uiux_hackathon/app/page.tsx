@@ -28,8 +28,7 @@ export default async function Home() {
     latestProducts,
     trendingProducts,
     topProducts
-   ] = await allProducts()
-
+   ] = await allProducts();
   return (
     <div>
       <CarouselPlugin />
